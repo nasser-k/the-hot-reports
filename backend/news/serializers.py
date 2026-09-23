@@ -221,7 +221,7 @@ class StorySeriesListSerializer(serializers.ModelSerializer):
     def get_author(self, obj: StorySeries) -> dict:
         if not obj.author:
             return {
-                "name": "Pulse Writer",
+                "name": "Writer",
                 "slug": "",
                 "avatar": default_avatar_url(request=self.context.get("request")),
                 "bio": "",
@@ -232,7 +232,7 @@ class StorySeriesListSerializer(serializers.ModelSerializer):
         except Exception:
             avatar = default_avatar_url(request=request)
         return {
-            "name": getattr(obj.author, "full_name", None) or getattr(obj.author, "email", "Pulse Writer"),
+            "name": getattr(obj.author, "full_name", None) or getattr(obj.author, "email", "Writer"),
             "slug": getattr(obj.author, "slug", "") if hasattr(obj.author, "slug") else str(obj.author.pk),
             "avatar": avatar or default_avatar_url(request=request),
             "bio": getattr(obj.author, "bio", "") or "",

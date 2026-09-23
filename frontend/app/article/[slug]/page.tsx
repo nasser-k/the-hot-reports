@@ -197,14 +197,14 @@ export default async function ArticlePage({ params }: Props) {
                 <div className="flex items-center gap-3">
                   <Image
                     src={article.author.avatar}
-                    alt="Pulse Reporter"
+                    alt="Reporter"
                     width={40}
                     height={40}
                     className="w-10 h-10 rounded-full ring-2 ring-gray-100 dark:ring-gray-800"
                   />
                   <div>
                     <p className="text-sm font-bold text-gray-900 dark:text-white">
-                      Pulse Reporter
+                      Reporter
                     </p>
                     <p className="text-xs text-gray-500 dark:text-gray-400">
                       {publishDate}

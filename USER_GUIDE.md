@@ -63,7 +63,7 @@ This guide explains how to use the The Hot Reports content management system.
    
    - **Slug**: URL-friendly version of the title (auto-generated, read-only)
      - *Format*: Lowercase, hyphens instead of spaces
-     - *Example*: "kigezi-region-tourism-growth-2026"
+     - *Example*: "uganda-tourism-growth-2026"
      - *Note*: Auto-generated from title, cannot be edited
    
    - **Author**: Select any author from the dropdown
@@ -329,7 +329,7 @@ Tourism listings showcase accommodations, safaris, and experiences in Uganda.
    
    - **Slug**: URL-friendly version (auto-generated)
      - *Format*: Lowercase, hyphens instead of spaces
-     - *Example*: "kigezi-safari-lodge", "lake-bunyonyi-resort"
+     - *Example*: "queen-elizabeth-safari-lodge", "lake-bunyonyi-resort"
      - *Tip*: Keep it short and easy to remember
    
    - **Type**: Safari, Lodge, Hotel, Campsite, or Experience (required)
@@ -371,17 +371,17 @@ Tourism listings showcase accommodations, safaris, and experiences in Uganda.
    
    - **Email**: Contact email
      - *Format*: Valid email address
-     - *Example*: info@kigezilodge.com
+     - *Example*: info@examplelodge.com
      - *Tip*: Use a business email, not personal
    
    - **Website**: Business website URL
      - *Format*: Full URL including https://
-     - *Example*: https://www.kigezilodge.com
+     - *Example*: https://www.examplelodge.com
      - *Tip*: Test the link before saving
    
    - **Social Media**: Social media links
      - *Format*: Full URLs for Facebook, Instagram, Twitter, etc.
-     - *Example*: https://facebook.com/kigezilodge
+     - *Example*: https://facebook.com/examplelodge
      - *Tip*: Add all active social media accounts
 
    **Details:**
@@ -559,7 +559,7 @@ Editors can view and manage browser push notification subscriptions.
 
 - **Slug**: URL-friendly version (auto-generated, read-only)
   - *Format*: Lowercase, hyphens instead of spaces
-  - *Example*: "kigezi-region-tourism-growth-2026"
+  - *Example*: "uganda-tourism-growth-2026"
 
 - **Category**: Choose the appropriate category (required)
   - *Options*: Politics, Business, Sports, Health, Education, Tourism, etc.

@@ -61,12 +61,12 @@ export default function ArticleCard({
             <span className="flex items-center gap-1.5">
               <Image
                 src={article.author.avatar}
-                alt="Pulse Reporter"
+                alt="Reporter"
                 width={20}
                 height={20}
                 className="w-4 h-4 sm:w-5 sm:h-5 rounded-full"
               />
-              <span className="truncate max-w-[100px] sm:max-w-none">Pulse Reporter</span>
+              <span className="truncate max-w-[100px] sm:max-w-none">Reporter</span>
             </span>
             <span className="flex items-center gap-1">
               <Clock size={11} />
@@ -127,12 +127,12 @@ export default function ArticleCard({
             <span className="flex items-center gap-1.5">
               <Image
                 src={article.author.avatar}
-                alt="Pulse Reporter"
+                alt="Reporter"
                 width={16}
                 height={16}
                 className="w-4 h-4 rounded-full"
               />
-              Pulse Reporter
+              Reporter
             </span>
             <span className="flex items-center gap-1">
               <Clock size={10} />
@@ -263,7 +263,7 @@ export default function ArticleCard({
         <div className="flex items-center justify-between text-xs text-gray-500 dark:text-gray-400">
           <span className="flex items-center gap-1.5">
             <User size={11} />
-            Pulse Reporter
+            Reporter
           </span>
           <span className="flex items-center gap-1">
             <Clock size={10} />

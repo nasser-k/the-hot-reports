@@ -423,7 +423,7 @@ class StoryEpisode(models.Model):
 
 
 # ============================================
-# STORY STATISTICS (same implementation as Article statistics)
+# Story view counts (same fields as articles)
 # ============================================
 
 class StoryViewEvent(models.Model):

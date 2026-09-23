@@ -1,6 +1,6 @@
 # The Hot Reports — Django Backend
 
-Django **6.0** + Django REST Framework backend with **SQLite**, JWT auth (SimpleJWT), OpenAPI docs, role-based admin, push notifications, and server-hosted media.
+Django **6.0** + Django REST Framework backend with JWT auth (SimpleJWT), OpenAPI docs, role-based admin, and push notifications. Local development uses SQLite and disk uploads. Production runs on AWS Lightsail, with media in S3 served through CloudFront.
 
 ## Quick Start (Windows PowerShell)
 
@@ -13,7 +13,7 @@ copy .env.example .env
 # Edit .env — set DJANGO_SECRET_KEY to a long random string
 
 python manage.py migrate
-python manage.py setup_categories          # 12 news categories
+python manage.py setup_categories          # 11 news categories
 python manage.py setup_ad_slots            # 10 ad slots
 python manage.py create_default_users --insecure  # dev only
 python manage.py runserver
@@ -53,7 +53,6 @@ All JSON responses use **camelCase** (`djangorestframework-camel-case`).
 | GET | `/api/v1/articles/` | `?category=&search=&featured=&breaking=&trending=&tag=&page=&page_size=` |
 | GET | `/api/v1/articles/{slug}/` | Article detail |
 | GET | `/api/v1/articles/{slug}/related/` | `?limit=4` — related by category + tags |
-| GET | `/api/v1/articles/statistics/` | Total articles, views, monthly readers, years active |
 | POST | `/api/v1/articles/{slug}/track-view/` | `{ visitorId? }` — track unique view |
 | POST | `/api/v1/articles/{slug}/view/` | `{ visitorId? }` — track article view |
 
@@ -118,7 +117,7 @@ All JSON responses use **camelCase** (`djangorestframework-camel-case`).
 | Command | Description |
 |---------|-------------|
 | `python manage.py migrate` | Apply all migrations |
-| `python manage.py setup_categories` | Create 12 default news categories |
+| `python manage.py setup_categories` | Create 11 default news categories |
 | `python manage.py setup_ad_slots` | Create 8 ad slot positions |
 | `python manage.py create_default_users` | Create 5 default users with secure random passwords |
 | `python manage.py create_default_users --insecure` | Create users with simple passwords (dev only) |

@@ -301,7 +301,7 @@ export default async function EpisodePage({ params }: Props) {
                     {episode.series.author.avatar ? (
                       <Image
                         src={episode.series.author.avatar}
-                        alt={episode.series.author.name || "Pulse Writer"}
+                        alt={episode.series.author.name || "Writer"}
                         width={40}
                         height={40}
                         className="w-10 h-10 rounded-full object-cover"
@@ -315,7 +315,7 @@ export default async function EpisodePage({ params }: Props) {
                   <div className="flex-1 min-w-0">
                     <p className="text-sm text-gray-500 dark:text-gray-400">Written by</p>
                     <p className="font-bold text-gray-900 dark:text-white">
-                      {episode.series.author.name || "Pulse Writer"}
+                      {episode.series.author.name || "Writer"}
                     </p>
                   </div>
                 </div>

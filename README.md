@@ -52,7 +52,7 @@ python -m venv .venv
 
 pip install -r requirements.txt
 python manage.py migrate
-python manage.py setup_categories        # 12 default news categories
+python manage.py setup_categories        # 11 default news categories
 python manage.py setup_ad_slots          # 8 ad slot positions
 python manage.py create_default_users --insecure  # 5 default users (dev only)
 python manage.py runserver
@@ -155,9 +155,7 @@ the-hot-reports/
 - Rich descriptions and contact info
 
 ### Admin Dashboard
-- Role-specific dashboards with KPI cards
-- 30-day article & story analytics charts
-- Quick action links per role
+- Role-specific dashboards with quick action links
 - Story stats: series, episodes, views, likes, comments, shares
 - Mobile-responsive, dark mode
 
@@ -173,7 +171,6 @@ Full interactive docs: `http://127.0.0.1:8000/api/docs/`
 | GET | `/api/v1/articles/` | Articles list (`?category=&search=&featured=&breaking=&trending=&tag=&page=&page_size=`) |
 | GET | `/api/v1/articles/{slug}/` | Article detail |
 | GET | `/api/v1/articles/{slug}/related/?limit=4` | Related articles |
-| GET | `/api/v1/articles/statistics/` | Site statistics (total articles, views, readers) |
 | POST | `/api/v1/articles/{slug}/view/` | Track article view event |
 
 ### Stories

@@ -1,4 +1,4 @@
-"""Pulse project app config: mirror ModelAdmins onto custom AdminSite."""
+"""Project app config: mirror ModelAdmins onto the custom admin site."""
 
 from django.apps import AppConfig
 
@@ -6,7 +6,7 @@ from django.apps import AppConfig
 class PulseConfig(AppConfig):
     default_auto_field = "django.db.models.BigAutoField"
     name = "pulse"
-    verbose_name = "Pulse"
+    verbose_name = "The Hot Reports"
 
     def ready(self) -> None:
         # Custom AdminSite used in urls must host the same ModelAdmins as default site.
