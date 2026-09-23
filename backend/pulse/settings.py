@@ -1,4 +1,4 @@
-"""Django settings for Pulse of Kigezi API."""
+"""Django settings for The Hot Reports API."""
 
 from datetime import timedelta
 from pathlib import Path
@@ -190,8 +190,8 @@ SIMPLE_JWT = {
 }
 
 SPECTACULAR_SETTINGS = {
-    "TITLE": "PoKi API - Pulse of Kigezi",
-    "DESCRIPTION": "REST API for PoKi (Pulse of Kigezi) news, tourism listings, and advertising system.",
+    "TITLE": "The Hot Reports API",
+    "DESCRIPTION": "REST API for The Hot Reports: nationwide news, serial stories, and tourism listings.",
     "VERSION": "1.0.0",
     "SERVE_INCLUDE_SCHEMA": False,
 }

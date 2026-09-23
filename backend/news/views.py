@@ -3,10 +3,10 @@ import time
 import math
 from django.core.cache import cache
 from django.db import transaction, OperationalError
-from django.db.models import F, Q, Sum
+from django.db.models import F, Q
 from django.shortcuts import get_object_or_404
 from django.utils import timezone
-from datetime import date, timedelta
+from datetime import date
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import filters, generics, status, viewsets
 from rest_framework.decorators import action
@@ -173,76 +173,6 @@ class ArticleViewSet(viewsets.ReadOnlyModelViewSet):
         )
         ser = ArticleListSerializer(qs, many=True)
         return Response(ser.data)
-
-    @action(detail=False, methods=["get"], url_path="statistics")
-    def statistics(self, request):
-        """Return site statistics for About page"""
-        now = timezone.now()
-        thirty_days_ago = now - timedelta(days=30)
-        
-        # Article statistics
-        total_articles = Article.objects.filter(
-            status=Article.Status.PUBLISHED,
-            published_at__lte=now
-        ).count()
-        
-        article_views = Article.objects.filter(
-            status=Article.Status.PUBLISHED
-        ).aggregate(total=Sum('views_total'))['total'] or 0
-        
-        # Monthly readers (unique visitors in last 30 days)
-        article_monthly_readers = ArticleVisitorDay.objects.filter(
-            day__gte=thirty_days_ago.date()
-        ).values('visitor_key').distinct().count()
-        
-        # Story statistics
-        total_series = StorySeries.objects.filter(
-            status__in=[StorySeries.Status.ONGOING, StorySeries.Status.COMPLETED],
-            published_at__lte=now
-        ).count()
-        
-        total_episodes = StoryEpisode.objects.filter(
-            status=StoryEpisode.Status.PUBLISHED,
-            published_at__lte=now
-        ).count()
-        
-        story_views = StoryEpisode.objects.filter(
-            status=StoryEpisode.Status.PUBLISHED
-        ).aggregate(total=Sum('views_total'))['total'] or 0
-        
-        story_monthly_readers = StoryVisitorDay.objects.filter(
-            day__gte=thirty_days_ago.date()
-        ).values('visitor_key').distinct().count()
-        
-        # Categories count
-        categories_count = Category.objects.count()
-        
-        # Years active (calculate from oldest article or founding date)
-        oldest_article = Article.objects.filter(
-            status=Article.Status.PUBLISHED
-        ).order_by('published_at').first()
-        
-        if oldest_article:
-            years_active = (now - oldest_article.published_at).days / 365.25
-        else:
-            years_active = 0
-        
-        return Response({
-            "articles": {
-                "total": total_articles,
-                "totalViews": article_views,
-                "monthlyReaders": article_monthly_readers,
-            },
-            "stories": {
-                "totalSeries": total_series,
-                "totalEpisodes": total_episodes,
-                "totalViews": story_views,
-                "monthlyReaders": story_monthly_readers,
-            },
-            "categoriesCount": categories_count,
-            "yearsActive": round(years_active, 1),
-        })
-
 
 class ArticleTrackView(APIView):
     permission_classes = []
@@ -672,37 +602,40 @@ class SiteSettingsView(APIView):
     def get(self, request):
         from decouple import config
         settings = {
-            "siteName": config("SITE_NAME", default="Pulse of Kigezi"),
-            "siteDescription": config("SITE_DESCRIPTION", default="Trusted news, compelling writer stories, and tourism highlights from Kigezi and beyond."),
-            "siteUrl": config("SITE_URL", default="http://localhost:3000"),
+            "siteName": config("SITE_NAME", default="The Hot Reports"),
+            "siteDescription": config(
+                "SITE_DESCRIPTION",
+                default="Nationwide news, serial stories, and travel reporting from across Uganda.",
+            ),
+            "siteUrl": config("SITE_URL", default="https://thehotreports.com"),
             "ogImage": config("OG_IMAGE", default="/og-image.png"),
-            "twitterHandle": config("TWITTER_HANDLE", default="@pulseofkigezi"),
+            "twitterHandle": config("TWITTER_HANDLE", default="@thehotreports"),
             "storiesMeta": {
-                "title": "Serial Stories - Pulse of Kigezi",
-                "description": "Discover captivating serial stories. Village drama, campus life, true-life tales, and more — told by talented writers.",
-                "keywords": ["serial stories", "African fiction", "village drama", "campus life", "true life stories", "short stories"],
+                "title": "Serial Stories",
+                "description": "Serial stories from writers across Uganda. Follow each episode as it is published.",
+                "keywords": ["serial stories", "Uganda fiction", "narrative journalism", "short stories"],
             },
             "authorsMeta": {
-                "title": "Story Writers - Pulse of Kigezi",
-                "description": "Meet the talented writers behind our captivating serial stories.",
-                "keywords": ["story writers", "fiction authors", "serial stories", "African writers"],
+                "title": "Story Writers",
+                "description": "Writers publishing serial stories on The Hot Reports.",
+                "keywords": ["story writers", "Uganda writers", "serial stories"],
             },
             "articleMeta": {
-                "titleTemplate": "{title} | Pulse of Kigezi",
-                "description": "Read the latest news and updates from the Kigezi sub-region.",
+                "titleTemplate": "{title} | The Hot Reports",
+                "description": "Nationwide news from The Hot Reports.",
             },
             "categoryMeta": {
-                "titleTemplate": "{category} News - Pulse of Kigezi",
-                "description": "Latest {category} news from Pulse of Kigezi.",
+                "titleTemplate": "{category} News | The Hot Reports",
+                "description": "Latest {category} news from across Uganda.",
             },
             "tourismMeta": {
-                "title": "Tourism & Travel - Explore Kigezi",
-                "description": "Discover the best safaris, lodges, hotels, campsites, and cultural experiences in the Kigezi sub-region.",
-                "keywords": ["Kigezi tourism", "Uganda safaris", "Kabale lodges", "Kisoro hotels", "Kigezi travel"],
+                "title": "Tourism & Travel",
+                "description": "Safaris, lodges, hotels, and cultural travel across Uganda.",
+                "keywords": ["Uganda tourism", "Uganda safaris", "Uganda travel", "lodges", "hotels"],
             },
             "aboutMeta": {
-                "title": "About Us - Pulse of Kigezi",
-                "description": "Learn about Pulse of Kigezi, your trusted source for news and stories from the Kigezi sub-region of Uganda.",
+                "title": "About The Hot Reports",
+                "description": "The Hot Reports is a nationwide digital newsroom covering Uganda.",
             },
         }
         return Response(settings)

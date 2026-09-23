@@ -52,16 +52,8 @@ export default function Navbar({ initialCategories = [], initialTourismTypes = [
   const [categories, setCategories] = useState<CategoryInfo[]>(initialCategories);
   const [tourismTypes, setTourismTypes] = useState<TourismTypeInfo[]>(initialTourismTypes);
 
-  // Reorder categories to show Kigezi News first
-  const reorderedCategories = [...categories].sort((a, b) => {
-    if (a.slug === 'kigezi-news') return -1;
-    if (b.slug === 'kigezi-news') return 1;
-    return 0;
-  });
-
-  // Split categories for nav layout: first 8 inline, rest in More
-  const inlineCategories = reorderedCategories.slice(0, 8);
-  const moreCategories = reorderedCategories.slice(8);
+  const inlineCategories = categories.slice(0, 8);
+  const moreCategories = categories.slice(8);
 
   // Map icon names to Lucide components
   const iconMap: Record<string, any> = {
@@ -172,7 +164,6 @@ export default function Navbar({ initialCategories = [], initialTourismTypes = [
             </Link>
           </div>
 
-          {/* Desktop: leaderboard ad */}
           <div className="hidden lg:flex items-center">
             <LiveAdBanner slot="homepage_banner" />
           </div>

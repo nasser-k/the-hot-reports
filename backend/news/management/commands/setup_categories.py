@@ -9,35 +9,28 @@ from news.models import Category
 
 
 class Command(BaseCommand):
-    help = "Create default news categories for Pulse of Kigezi"
+    help = "Create default news categories for The Hot Reports"
 
     def handle(self, *args, **options):
         categories = [
-            # Local & Regional (Priority)
-            {
-                "name": "Kigezi News",
-                "slug": "kigezi-news",
-                "color": "#059669",  # Emerald
-                "order": 1,
-            },
             {
                 "name": "National",
                 "slug": "national",
-                "color": "#A21A47",  # Red
-                "order": 2,
+                "color": "#A21A47",
+                "order": 1,
             },
             {
                 "name": "Politics",
                 "slug": "politics",
                 "color": "#9333EA",  # Purple
-                "order": 3,
+                "order": 2,
             },
             # Business & Economy
             {
                 "name": "Business",
                 "slug": "business",
                 "color": "#EA580C",  # Orange
-                "order": 4,
+                "order": 3,
             },
             {
                 "name": "Technology",
@@ -132,6 +125,10 @@ class Command(BaseCommand):
                     updated_count += 1
                 else:
                     self.stdout.write(f"  Category already exists: {category.name}")
+
+        removed, _ = Category.objects.filter(slug="kigezi-news").delete()
+        if removed:
+            self.stdout.write(self.style.WARNING("Removed category: Kigezi News"))
 
         self.stdout.write("")
         self.stdout.write(

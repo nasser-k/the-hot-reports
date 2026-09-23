@@ -9,8 +9,8 @@ const nextConfig: NextConfig = {
     unoptimized: true,
     remotePatterns: [
       { protocol: "https", hostname: "pulse-of-kigezi-backend.onrender.com" },
-      { protocol: "https", hostname: "www.pulseofkigezi.com" },
-      { protocol: "https", hostname: "pulseofkigezi.com" },
+      { protocol: "https", hostname: "thehotreports.com" },
+      { protocol: "https", hostname: "www.thehotreports.com" },
       { protocol: "https", hostname: "**" },
       { protocol: "http", hostname: "localhost" },
       { protocol: "http", hostname: "127.0.0.1" },

@@ -1,35 +1,23 @@
 from django.contrib.admin import AdminSite
 from django.contrib.auth.models import Group
-from django.db.models import Avg, Count, Q, Sum
+from django.db.models import Count
 from django.utils import timezone
 
-from ads.models import (
-    AdSlot,
-    Ad,
-    AdEvent,
-)
 from news.models import (
     Article,
-    ArticleVisitorDay,
-    ArticleViewEvent,
     Category,
     ContactMessage,
     NewsletterSubscriber,
-    # Stories models
     StorySeries,
     StoryEpisode,
-    StoryEpisodeLike,
     StoryEpisodeComment,
-    StoryShare,
-    StoryViewEvent,
 )
-from pulse import admin_charts as charts
 from tourism.models import TourismListing
 
 
 class PulseAdminSite(AdminSite):
-    site_header = "Pulse of Kigezi"
-    site_title = "PoKi Admin"
+    site_header = "The Hot Reports"
+    site_title = "The Hot Reports Admin"
     index_title = "Dashboard"
     index_template = "admin/pulse_index.html"
 
@@ -47,7 +35,6 @@ class PulseAdminSite(AdminSite):
         
         # Role-based model visibility
         if is_super:
-            # Superadmin sees everything, but organized better
             return self._organize_superadmin_apps(app_list)
         elif is_editor:
             return self._organize_editor_apps(app_list)
@@ -61,7 +48,7 @@ class PulseAdminSite(AdminSite):
         return app_list
     
     def _organize_superadmin_apps(self, app_list):
-        """Organize apps for superadmin: Content → Ads → Users → System."""
+        """Organize apps for superadmin: Content → Users → System."""
         ordered = []
         app_order = ['news', 'tourism', 'ads', 'accounts', 'auth', 'admin']
         
@@ -79,7 +66,7 @@ class PulseAdminSite(AdminSite):
         return ordered
     
     def _organize_editor_apps(self, app_list):
-        """Editor sees: News management, Stories (view/delete only), Tourism, Users, Analytics."""
+        """Editor sees news, stories, tourism, and users."""
         allowed_apps = {'news', 'tourism', 'accounts'}
         allowed_models = {
             'news': [
@@ -123,16 +110,16 @@ class PulseAdminSite(AdminSite):
                 break
         
         return filtered
-    
+
     def _organize_ads_apps(self, app_list):
-        """Ads manager sees: Ads system, Tourism, Contact messages."""
+        """Ads manager sees ads, tourism listings, and contact messages."""
         allowed_apps = {'ads', 'tourism', 'news'}
         allowed_models = {
             'ads': ['adslot', 'ad', 'adevent'],
             'tourism': ['tourismlisting'],
-            'news': ['contactmessage'],  # Only contact messages for ad inquiries
+            'news': ['contactmessage'],
         }
-        
+
         filtered = []
         for app in app_list:
             app_label = app.get('app_label')
@@ -144,16 +131,15 @@ class PulseAdminSite(AdminSite):
                     ]
                 if app.get('models'):
                     filtered.append(app)
-        
-        return filtered
 
+        return filtered
+    
     def _organize_storywriter_apps(self, app_list):
-        """Storywriter sees: Stories management (series, episodes, comments), own analytics."""
+        """Storywriter sees series, episodes, and comments."""
         allowed_apps = {'news'}
         allowed_models = {
             'news': [
                 'storyseries', 'storyepisode', 'storyepisodecomment',
-                'storyepisodeimage', 'storyshare', 'storyviewevent',
             ],
         }
         
@@ -232,8 +218,6 @@ class PulseAdminSite(AdminSite):
         User = get_user_model()
         now = timezone.now()
         since_7d = now - timezone.timedelta(days=7)
-        since_30d = now - timezone.timedelta(days=30)
-        since_30d_date = (now - timezone.timedelta(days=30)).date()
 
         user = request.user
         is_super = user.is_superuser
@@ -250,11 +234,6 @@ class PulseAdminSite(AdminSite):
             "contact": ContactMessage.objects.count(),
             "articles_7d": Article.objects.filter(published_at__gte=since_7d).count(),
             "contact_7d": ContactMessage.objects.filter(created_at__gte=since_7d).count(),
-            "views_total": int(Article.objects.aggregate(v=Sum("views_total"))["v"] or 0),
-            "raw_views_30d": ArticleViewEvent.objects.filter(created_at__gte=since_30d).count(),
-            "ads_active": Ad.objects.filter(is_active=True).count(),
-            "ads_total": Ad.objects.count(),
-            "ad_events_30d": AdEvent.objects.filter(created_at__gte=since_30d).count(),
         }
         if is_super:
             stats["users"] = User.objects.count()
@@ -276,18 +255,6 @@ class PulseAdminSite(AdminSite):
             else 0,
         }
 
-        ads_stats = {
-            "ad_inquiries_open": ContactMessage.objects.filter(
-                subject="advertising", handled=False
-            ).count(),
-            "ad_inquiries_7d": ContactMessage.objects.filter(
-                subject="advertising", created_at__gte=since_7d
-            ).count(),
-            "ads_active": stats["ads_active"],
-            "ads_total": stats["ads_total"],
-            "ad_events_30d": stats["ad_events_30d"],
-        }
-
         top_categories = (
             Category.objects.annotate(article_count=Count("articles"))
             .order_by("-article_count", "name")[:6]
@@ -295,62 +262,21 @@ class PulseAdminSite(AdminSite):
         recent_articles = Article.objects.order_by("-published_at")[:8]
         recent_messages = ContactMessage.objects.order_by("-created_at")[:8]
 
-        most_read_all_time = Article.objects.order_by("-views_total", "-published_at")[:8]
-        most_read_7d = (
-            Article.objects.annotate(
-                views_7d=Count("view_events", filter=Q(view_events__created_at__gte=since_7d))
-            )
-            .order_by("-views_7d", "-published_at")[:8]
-        )
-
-        pulse_most_read_max = max((a.views_total for a in most_read_all_time), default=1) or 1
-
-        # Stories stats
         story_stats = {
             "series_total": StorySeries.objects.count(),
             "episodes_total": StoryEpisode.objects.count(),
             "series_ongoing": StorySeries.objects.filter(status=StorySeries.Status.ONGOING).count(),
             "episodes_published": StoryEpisode.objects.filter(status=StoryEpisode.Status.PUBLISHED).count(),
-            "total_views": StoryViewEvent.objects.count(),
-            "views_30d": StoryViewEvent.objects.filter(created_at__gte=since_30d).count(),
-            "total_likes": StoryEpisodeLike.objects.count(),
-            "total_comments": StoryEpisodeComment.objects.filter(is_approved=True).count(),
-            "total_shares": StoryShare.objects.count(),
         }
 
-        # Storywriter-scoped stats (for storywriter dashboard)
         if is_storywriter and user.is_authenticated:
             my_series = StorySeries.objects.filter(author=user)
-            my_episodes = StoryEpisode.objects.filter(series__author=user)
             story_stats["my_series_total"] = my_series.count()
-            story_stats["my_episodes_total"] = my_episodes.count()
             story_stats["my_series_ongoing"] = my_series.filter(status=StorySeries.Status.ONGOING).count()
-            story_stats["my_episodes_published"] = my_episodes.filter(status=StoryEpisode.Status.PUBLISHED).count()
-            story_stats["my_views_total"] = StoryViewEvent.objects.filter(episode__series__author=user).count()
-            story_stats["my_likes_total"] = StoryEpisodeLike.objects.filter(episode__series__author=user).count()
-            story_stats["my_comments_total"] = StoryEpisodeComment.objects.filter(episode__series__author=user, is_approved=True).count()
-            story_stats["my_shares_total"] = StoryShare.objects.filter(episode__series__author=user).count()
-            story_stats["pending_comments"] = StoryEpisodeComment.objects.filter(episode__series__author=user, is_approved=False).count()
+            story_stats["pending_comments"] = StoryEpisodeComment.objects.filter(
+                episode__series__author=user, is_approved=False
+            ).count()
 
-        # Analytics series (scoped for reporters)
-        view_event_qs = ArticleViewEvent.objects.all()
-        visitor_day_qs = ArticleVisitorDay.objects.all()
-        article_scope = Article.objects.all()
-        if is_reporter and user.is_authenticated:
-            view_event_qs = view_event_qs.filter(article__created_by=user)
-            visitor_day_qs = visitor_day_qs.filter(article__created_by=user)
-            article_scope = article_scope.filter(created_by=user)
-
-        pulse_views_per_day = charts.daily_counts_for_model(qs=view_event_qs, days=30)
-        pulse_uniques_per_day = charts.daily_counts_by_day_field(qs=visitor_day_qs, days=30)
-
-        pulse_completion_donut = []
-
-        top_performers = article_scope.annotate(
-            score=Count("visitor_days", filter=Q(visitor_days__day__gte=since_30d_date))
-        ).order_by("-score", "-published_at")[:10]
-
-        # Determine role string for template
         pulse_role = (
             "superadmin" if is_super
             else "editor" if is_editor
@@ -364,27 +290,16 @@ class PulseAdminSite(AdminSite):
             "pulse_role": pulse_role,
             "pulse_stats": stats,
             "pulse_editorial": editorial,
-            "pulse_ads": ads_stats,
             "pulse_stories": story_stats,
             "pulse_story_stats": story_stats,
             "pulse_flags": {
                 "is_superadmin": is_super,
                 "is_editor": is_editor,
                 "is_reporter": is_reporter,
-                "is_ads": is_ads,
             },
             "pulse_top_categories": top_categories,
             "pulse_recent_articles": recent_articles,
             "pulse_recent_messages": recent_messages,
-            "pulse_most_read_all_time": most_read_all_time,
-            "pulse_most_read_7d": most_read_7d,
-            "pulse_most_read_max": pulse_most_read_max,
-            "pulse_views_per_day": pulse_views_per_day,
-            "pulse_uniques_per_day": pulse_uniques_per_day,
-            "pulse_completion_per_day": [],
-            "pulse_completion_donut": pulse_completion_donut,
-            "pulse_top_performers": top_performers,
-            "pulse_show_charts": is_super or is_editor,
         }
         if extra_context:
             extra.update(extra_context)

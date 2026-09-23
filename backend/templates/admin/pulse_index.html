@@ -1,5 +1,5 @@
 {% extends "admin/index.html" %}
-{% load i18n pulse_charts %}
+{% load i18n %}
 
 {% block content %}
   <div id="content-main" class="pulse-dashboard">
@@ -36,11 +36,9 @@
           </div>
         </div>
       </section>
-    {% elif pulse_role == "ads" %}
-      {# Ads Manager uses default Django admin sidebar - no custom KPIs #}
     {% elif pulse_role == "storywriter" %}
       <section class="pulse-section">
-        <h2 class="pulse-section-title">{% trans "My Stats" %}</h2>
+        <h2 class="pulse-section-title">{% trans "My Stories" %}</h2>
         <div class="pulse-grid pulse-grid--2 max-w-2xl mx-auto">
           <div class="pulse-card pulse-card--kpi">
             <div class="pulse-kpi-label">{% trans "My Series" %}</div>
@@ -50,24 +48,6 @@
           <div class="pulse-card pulse-card--kpi">
             <div class="pulse-kpi-label">{% trans "Pending Comments" %}</div>
             <div class="pulse-kpi-value">{{ pulse_story_stats.pending_comments|default:0 }}</div>
-          </div>
-        </div>
-        <div class="pulse-grid pulse-grid--2 pulse-mt">
-          <div class="pulse-card pulse-card--kpi">
-            <div class="pulse-kpi-label">{% trans "Total Views" %}</div>
-            <div class="pulse-kpi-value">{{ pulse_story_stats.my_views_total|default:0 }}</div>
-          </div>
-          <div class="pulse-card pulse-card--kpi">
-            <div class="pulse-kpi-label">{% trans "Total Likes" %}</div>
-            <div class="pulse-kpi-value">{{ pulse_story_stats.my_likes_total|default:0 }}</div>
-          </div>
-          <div class="pulse-card pulse-card--kpi">
-            <div class="pulse-kpi-label">{% trans "Approved Comments" %}</div>
-            <div class="pulse-kpi-value">{{ pulse_story_stats.my_comments_total|default:0 }}</div>
-          </div>
-          <div class="pulse-card pulse-card--kpi">
-            <div class="pulse-kpi-label">{% trans "Social Shares" %}</div>
-            <div class="pulse-kpi-value">{{ pulse_story_stats.my_shares_total|default:0 }}</div>
           </div>
         </div>
       </section>
@@ -92,96 +72,7 @@
       </section>
     {% endif %}
 
-    {# === SECTION 2: ANALYTICS DASHBOARD (Charts & Metrics) === #}
-    {% if pulse_show_charts %}
-      <section class="pulse-section">
-        <h2 class="pulse-section-title">{% trans "Analytics Dashboard" %}</h2>
-        <div class="pulse-grid pulse-grid--3">
-          <div class="pulse-card">
-            <h3 class="pulse-card-subtitle">{% trans "Page Views" %}</h3>
-            <div class="pulse-chart-wrap">{% pulse_chart "bars" pulse_views_per_day %}</div>
-            <div class="pulse-metric-total">{{ pulse_stats.views_total|default:0 }} {% trans "total" %}</div>
-          </div>
-          <div class="pulse-card">
-            <h3 class="pulse-card-subtitle">{% trans "Unique Visitors" %}</h3>
-            <div class="pulse-chart-wrap">{% pulse_chart "sparkline" pulse_uniques_per_day %}</div>
-            <div class="pulse-metric-total">{{ pulse_engagement.site_uniques_30d|default:0 }} {% trans "uniques (30d)" %}</div>
-          </div>
-          <div class="pulse-card">
-            <h3 class="pulse-card-subtitle">{% trans "Views Trend" %}</h3>
-            <div class="pulse-chart-wrap">{% pulse_chart "bars" pulse_views_per_day %}</div>
-          </div>
-        </div>
-        <div class="pulse-grid">
-          <div class="pulse-card pulse-card--wide">
-            <h3 class="pulse-card-subtitle">{% trans "Engagement Metrics" %}</h3>
-            <div class="pulse-metrics-row">
-              <div class="pulse-metric">
-                <span class="pulse-metric-value">{{ pulse_engagement.site_uniques_30d|default:0 }}</span>
-                <span class="pulse-metric-label">{% trans "Unique visitors (30d)" %}</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    {% endif %}
-
-    {# === SECTION 3: CONTENT PERFORMANCE (Most Read Articles) === #}
-    {% if pulse_role == "superadmin" or pulse_role == "editor" %}
-      <section class="pulse-section">
-        <h2 class="pulse-section-title">{% trans "Content Performance" %}</h2>
-        <div class="pulse-grid">
-          <div class="pulse-card">
-            <h3 class="pulse-card-subtitle">{% trans "Most Read All-Time" %}</h3>
-            <ul class="pulse-list pulse-list--bare">
-              {% for a in pulse_most_read_all_time|slice:":10" %}
-                <li class="pulse-progress-item">
-                  <div class="pulse-progress-row">
-                    <span>{{ a.title|truncatechars:40 }}</span>
-                    <strong>{{ a.views_total }}</strong>
-                  </div>
-                  <div class="pulse-progress-track">
-                    {% widthratio a.views_total pulse_most_read_max 100 as pct %}
-                    <div class="pulse-progress-bar" data-pct="{{ pct }}"></div>
-                  </div>
-                </li>
-              {% empty %}
-                <li>{% trans "No view data yet" %}</li>
-              {% endfor %}
-            </ul>
-          </div>
-          <div class="pulse-card">
-            <h3 class="pulse-card-subtitle">{% trans "Trending (Last 7 Days)" %}</h3>
-            <ol class="pulse-list pulse-list--ranked">
-              {% for a in pulse_most_read_7d|slice:":10" %}
-                <li>
-                  <span class="pulse-rank">{{ forloop.counter }}</span>
-                  <span class="pulse-title">{{ a.title|truncatechars:40 }}</span>
-                  <span class="pulse-value">{{ a.views_7d }}</span>
-                </li>
-              {% empty %}
-                <li>{% trans "No recent views yet" %}</li>
-              {% endfor %}
-            </ol>
-          </div>
-        </div>
-        <div class="pulse-card pulse-mt">
-          <h3 class="pulse-card-subtitle">{% trans "Top Performers (30d unique visitor-days)" %}</h3>
-          <ol class="pulse-list pulse-list--inline">
-            {% for a in pulse_top_performers|slice:":5" %}
-              <li>
-                <a href="{% url 'admin:news_article_change' a.pk %}">{{ a.title|truncatechars:50 }}</a>
-                <span class="pulse-score">{{ a.score }}</span>
-              </li>
-            {% empty %}
-              <li>{% trans "No data yet" %}</li>
-            {% endfor %}
-          </ol>
-        </div>
-      </section>
-    {% endif %}
-
-    {# === SECTION 4: EDITORIAL INSIGHTS (Categories & Recent) === #}
+    {# === SECTION 2: EDITORIAL INSIGHTS (Categories & Recent) === #}
     {% if pulse_role == "editor" %}
       <section class="pulse-section">
         <h2 class="pulse-section-title">{% trans "Editorial Insights" %}</h2>
@@ -214,8 +105,6 @@
           </div>
         </div>
       </section>
-    {% elif pulse_role == "ads" %}
-      {# Ads Manager uses default Django admin only #}
     {% elif pulse_role == "storywriter" %}
       {# Storywriter stats shown above, no quick overview needed #}
     {% elif pulse_role != "superadmin" %}

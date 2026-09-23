@@ -223,26 +223,6 @@ export async function submitContact(payload: {
   });
 }
 
-export interface SiteStatistics {
-  articles: {
-    total: number;
-    totalViews: number;
-    monthlyReaders: number;
-  };
-  stories: {
-    totalSeries: number;
-    totalEpisodes: number;
-    totalViews: number;
-    monthlyReaders: number;
-  };
-  categoriesCount: number;
-  yearsActive: number;
-}
-
-export async function getStatistics(): Promise<SiteStatistics> {
-  return request<SiteStatistics>("/articles/statistics/");
-}
-
 export async function getTeamMembers(): Promise<TeamMember[]> {
   return request<TeamMember[]>("/team/");
 }
@@ -359,54 +339,39 @@ async function fetchSiteSettings(): Promise<SiteSettings> {
 
 export function defaultSiteSettings(): SiteSettings {
   return {
-    siteUrl: process.env.NEXT_PUBLIC_SITE_URL || "https://pulseofkigezi.com",
-    siteName: "Pulse of Kigezi",
+    siteUrl: process.env.NEXT_PUBLIC_SITE_URL || "https://thehotreports.com",
+    siteName: "The Hot Reports",
     siteDescription:
-      "Trusted news, compelling writer stories, and tourism highlights from Kigezi and beyond.",
+      "Nationwide news, serial stories, and travel reporting from across Uganda.",
     ogImage: "/og-image.png",
-    twitterHandle: process.env.NEXT_PUBLIC_TWITTER_HANDLE || "@pulseofkigezi",
+    twitterHandle: process.env.NEXT_PUBLIC_TWITTER_HANDLE || "@thehotreports",
     storiesMeta: {
-      title: "Serial Stories - Pulse of Kigezi",
+      title: "Serial Stories",
       description:
-        "Discover captivating serial stories. Village drama, campus life, true-life tales, and more — told by talented writers.",
-      keywords: [
-        "serial stories",
-        "African fiction",
-        "village drama",
-        "campus life",
-        "true life stories",
-        "short stories",
-      ],
+        "Serial stories from writers across Uganda. Follow each episode as it is published.",
+      keywords: ["serial stories", "Uganda fiction", "narrative journalism", "short stories"],
     },
     authorsMeta: {
-      title: "Story Writers - Pulse of Kigezi",
-      description: "Meet the talented writers behind our captivating serial stories.",
-      keywords: ["story writers", "fiction authors", "serial stories", "African writers"],
+      title: "Story Writers",
+      description: "Writers publishing serial stories on The Hot Reports.",
+      keywords: ["story writers", "Uganda writers", "serial stories"],
     },
     articleMeta: {
-      titleTemplate: "{title} | Pulse of Kigezi",
-      description: "Read the latest news and updates from the Kigezi sub-region.",
+      titleTemplate: "{title} | The Hot Reports",
+      description: "Nationwide news from The Hot Reports.",
     },
     categoryMeta: {
-      titleTemplate: "{category} News - Pulse of Kigezi",
-      description: "Latest {category} news from Pulse of Kigezi.",
+      titleTemplate: "{category} News | The Hot Reports",
+      description: "Latest {category} news from across Uganda.",
     },
     tourismMeta: {
-      title: "Tourism & Travel - Explore Kigezi",
-      description:
-        "Discover the best safaris, lodges, hotels, campsites, and cultural experiences in the Kigezi sub-region.",
-      keywords: [
-        "Kigezi tourism",
-        "Uganda safaris",
-        "Kabale lodges",
-        "Kisoro hotels",
-        "Kigezi travel",
-      ],
+      title: "Tourism & Travel",
+      description: "Safaris, lodges, hotels, and cultural travel across Uganda.",
+      keywords: ["Uganda tourism", "Uganda safaris", "Uganda travel", "lodges", "hotels"],
     },
     aboutMeta: {
-      title: "About Us - Pulse of Kigezi",
-      description:
-        "Learn about Pulse of Kigezi, your trusted source for news and stories from the Kigezi sub-region of Uganda.",
+      title: "About The Hot Reports",
+      description: "The Hot Reports is a nationwide digital newsroom covering Uganda.",
     },
   };
 }

@@ -175,25 +175,3 @@
   </style>
 {% endblock %}
 
-{% block after_related_objects %}
-  {{ block.super }}
-
-  {% if article_analytics %}
-  <div class="module aligned">
-    <h2>Article Engagement</h2>
-
-    <style>
-      .stat-card { background: #f8f9fa; padding: 20px; border-radius: 8px; text-align: center; }
-      .stat-value { font-size: 28px; font-weight: bold; color: #2563eb; }
-      .stat-label { color: #666; font-size: 13px; margin-top: 4px; }
-    </style>
-
-    <div class="form-row" style="display: grid; grid-template-columns: repeat(1, 1fr); gap: 15px;">
-      <div class="stat-card">
-        <div class="stat-value">{{ article_analytics.views_total }}</div>
-        <div class="stat-label">Total Views</div>
-      </div>
-    </div>
-  </div>
-  {% endif %}
-{% endblock %}

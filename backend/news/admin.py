@@ -151,18 +151,6 @@ class ArticleAdmin(FilterActionsMixin, MediaPreviewMixin, admin.ModelAdmin):
         }),
     )
 
-    def change_view(self, request, object_id, form_url="", extra_context=None):
-        extra = dict(extra_context or {})
-        try:
-            obj = Article.objects.get(pk=object_id)
-        except (Article.DoesNotExist, ValueError, TypeError):
-            return super().change_view(request, object_id, form_url, extra_context)
-        
-        extra["article_analytics"] = {
-            "views_total": obj.views_total,
-        }
-        return super().change_view(request, object_id, form_url, extra)
-
     def get_queryset(self, request):
         qs = super().get_queryset(request)
         if is_editor(request.user):
@@ -504,23 +492,6 @@ class StoryEpisodeAdmin(FilterActionsMixin, MediaPreviewMixin, StorywriterPermis
             "classes": ("collapse",),
         }),
     )
-
-    def change_view(self, request, object_id, form_url="", extra_context=None):
-        """Add simplified episode analytics to the admin change form."""
-        extra = dict(extra_context or {})
-        try:
-            obj = StoryEpisode.objects.get(pk=object_id)
-        except (StoryEpisode.DoesNotExist, ValueError, TypeError):
-            return super().change_view(request, object_id, form_url, extra_context)
-
-        extra["episode_analytics"] = {
-            "views_total": obj.views_total,
-            "comments_count": obj.comments.filter(is_approved=True).count(),
-            "shares_count": obj.shares.count(),
-            "likes_count": obj.likes.count(),
-        }
-        return super().change_view(request, object_id, form_url, extra)
-
 
 @admin.register(StoryEpisodeComment)
 class StoryEpisodeCommentAdmin(FilterActionsMixin, admin.ModelAdmin):

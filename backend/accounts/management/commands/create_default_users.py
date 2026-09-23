@@ -89,13 +89,9 @@ class Command(BaseCommand):
                 storywriter_group.permissions.set(storywriter_perms)
                 self.stdout.write(self.style.SUCCESS("Created Story Writer group with full story permissions"))
 
-            # Ads Manager group - Full advertising control
             ads_group, created = Group.objects.get_or_create(name="Ads Manager")
             if created:
-                # All permissions from ads app
-                ads_perms = Permission.objects.filter(
-                    content_type__app_label="ads"
-                )
+                ads_perms = Permission.objects.filter(content_type__app_label="ads")
                 ads_group.permissions.set(ads_perms)
                 self.stdout.write(self.style.SUCCESS("Created Ads Manager group with full ad permissions"))
 
@@ -133,7 +129,7 @@ class Command(BaseCommand):
                     "superuser": False,
                     "group": reporter_group,
                     "perms": [],
-                    "bio": "Passionate about culture, tourism, and community stories in Kigezi.",
+                    "bio": "Reporting news from across Uganda.",
                 },
                 {
                     "email": config("USER_ADS_EMAIL", default=f"ads@{site_domain}"),
