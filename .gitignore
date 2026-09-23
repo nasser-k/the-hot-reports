@@ -1,0 +1,52 @@
+# --- OS / editor ---
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+
+# --- Secrets ---
+**/.env
+**/.env.*
+!**/.env.example
+!**/.env.local.example
+!**/.env.production.template
+
+# --- Node / Next.js ---
+**/node_modules/
+**/.next/
+**/out/
+**/build/
+**/dist/
+**/.turbo/
+**/.vercel/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# --- Python / Django ---
+**/__pycache__/
+**/*.py[cod]
+**/*.pyd
+**/.pytest_cache/
+**/.ruff_cache/
+**/.mypy_cache/
+**/.venv/
+**/venv/
+**/.python-version
+**/*.log
+
+# Django runtime
+backend/db.sqlite3
+backend/db.sqlite3-journal
+backend/staticfiles/
+# User uploads (created at runtime; default avatar is in static/avatars/)
+backend/media/**
+!backend/media/.gitkeep
+
+# Test / coverage
+.coverage
+htmlcov/
+coverage.xml
+

@@ -1,0 +1,199 @@
+{% extends "admin/change_form.html" %}
+{% load static %}
+
+{% block extrahead %}
+  {{ block.super }}
+  <link rel="stylesheet" href="https://cdn.ckeditor.com/ckeditor5/43.3.0/ckeditor5.css" />
+  <script src="https://cdn.ckeditor.com/ckeditor5/43.3.0/ckeditor5.umd.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      document.querySelectorAll('textarea.ckeditor-editor').forEach(function(textarea) {
+        if (textarea.dataset.ckeditorInstance) return;
+
+        var ClassicEditor = CKEDITOR.ClassicEditor;
+        var Essentials = CKEDITOR.Essentials;
+        var Bold = CKEDITOR.Bold;
+        var Italic = CKEDITOR.Italic;
+        var Underline = CKEDITOR.Underline;
+        var Strikethrough = CKEDITOR.Strikethrough;
+        var Link = CKEDITOR.Link;
+        var Table = CKEDITOR.Table;
+        var TableToolbar = CKEDITOR.TableToolbar;
+        var List = CKEDITOR.List;
+        var Alignment = CKEDITOR.Alignment;
+        var Heading = CKEDITOR.Heading;
+        var RemoveFormat = CKEDITOR.RemoveFormat;
+        var SpecialCharacters = CKEDITOR.SpecialCharacters;
+        var Image = CKEDITOR.Image;
+        var ImageToolbar = CKEDITOR.ImageToolbar;
+        var ImageCaption = CKEDITOR.ImageCaption;
+        var ImageStyle = CKEDITOR.ImageStyle;
+        var ImageResize = CKEDITOR.ImageResize;
+        var Paragraph = CKEDITOR.Paragraph;
+        var BlockQuote = CKEDITOR.BlockQuote;
+        var Code = CKEDITOR.Code;
+        var CodeBlock = CKEDITOR.CodeBlock;
+        var HorizontalLine = CKEDITOR.HorizontalLine;
+        var ImageInsert = CKEDITOR.ImageInsert;
+        var ImageUpload = CKEDITOR.ImageUpload;
+        var SimpleUploadAdapter = CKEDITOR.SimpleUploadAdapter;
+        var MediaEmbed = CKEDITOR.MediaEmbed;
+        var PasteFromOffice = CKEDITOR.PasteFromOffice;
+        var FindAndReplace = CKEDITOR.FindAndReplace;
+        var SelectAll = CKEDITOR.SelectAll;
+
+        ClassicEditor.create(textarea, {
+          plugins: [
+            Essentials, Bold, Italic, Underline, Strikethrough,
+            Link, Table, TableToolbar, List, Alignment, Heading,
+            RemoveFormat, SpecialCharacters, Image, ImageToolbar,
+            ImageCaption, ImageStyle, ImageResize, Paragraph,
+            BlockQuote, Code, CodeBlock, HorizontalLine,
+            ImageInsert, ImageUpload, SimpleUploadAdapter,
+            MediaEmbed, PasteFromOffice, FindAndReplace, SelectAll
+          ],
+          simpleUpload: {
+            uploadUrl: '/api/v1/upload/ckeditor/',
+            headers: {
+              'X-CSRFToken': document.querySelector('[name=csrfmiddlewaretoken]')?.value || ''
+            }
+          },
+          toolbar: [
+            'undo', 'redo', '|',
+            'heading', '|',
+            'bold', 'italic', 'underline', 'strikethrough', '|',
+            'link', 'insertImage', 'insertTable', 'mediaEmbed', '|',
+            'bulletedList', 'numberedList', 'blockQuote', '|',
+            'alignment', 'outdent', 'indent', '|',
+            'code', 'codeBlock', 'horizontalLine', '|',
+            'removeFormat', 'specialCharacters', 'findAndReplace', '|',
+            'selectAll'
+          ],
+          table: {
+            contentToolbar: ['tableColumn', 'tableRow', 'mergeTableCells']
+          },
+          image: {
+            toolbar: ['imageTextAlternative', '|', 'imageStyle:alignLeft', 'imageStyle:alignCenter', 'imageStyle:alignRight', '|', 'imageResize'],
+            styles: {
+              options: [
+                { name: 'alignLeft', title: 'Align Left (Wrap Text)', icon: 'left', className: 'image-style-align-left' },
+                { name: 'alignCenter', title: 'Center', icon: 'center', className: 'image-style-align-center' },
+                { name: 'alignRight', title: 'Align Right (Wrap Text)', icon: 'right', className: 'image-style-align-right' }
+              ]
+            }
+          },
+          heading: {
+            options: [
+              { model: 'paragraph', title: 'Paragraph', class: 'ck-heading_paragraph' },
+              { model: 'heading1', view: 'h1', title: 'Heading 1', class: 'ck-heading_heading1' },
+              { model: 'heading2', view: 'h2', title: 'Heading 2', class: 'ck-heading_heading2' },
+              { model: 'heading3', view: 'h3', title: 'Heading 3', class: 'ck-heading_heading3' }
+            ]
+          },
+          licenseKey: 'GPL'
+        }).then(function(editor) {
+          textarea.dataset.ckeditorInstance = 'true';
+          editor.model.document.on('change:data', function() {
+            textarea.value = editor.getData();
+          });
+        }).catch(function(error) {
+          console.error('CKEditor error:', error);
+        });
+      });
+    });
+  </script>
+  <style>
+    .ck-editor__editable { min-height: 400px; }
+    .ck.ck-editor { max-width: 100%; }
+
+    /* Light mode (default) */
+    .ck-editor__editable {
+      background: #ffffff !important;
+      color: #333333 !important;
+    }
+    .ck.ck-toolbar {
+      background: #f8f9fa !important;
+      border-color: #d1d5db !important;
+    }
+    .ck.ck-button {
+      color: #374151 !important;
+    }
+    .ck.ck-button:hover {
+      background: #e5e7eb !important;
+    }
+    .ck.ck-button.ck-on {
+      background: #d1d5db !important;
+      color: #111827 !important;
+    }
+    .ck.ck-dropdown__panel {
+      background: #ffffff !important;
+      border-color: #d1d5db !important;
+    }
+    .ck.ck-icon {
+      filter: none;
+    }
+
+    /* Dark mode - Django admin uses .dark class on body/html */
+    .dark .ck-editor__editable,
+    html.dark .ck-editor__editable {
+      background: #1e1e1e !important;
+      color: #e5e7eb !important;
+      border-color: #374151 !important;
+    }
+    .dark .ck.ck-toolbar,
+    html.dark .ck.ck-toolbar {
+      background: #27272a !important;
+      border-color: #374151 !important;
+    }
+    .dark .ck.ck-toolbar__items,
+    .dark .ck.ck-dropdown__panel,
+    html.dark .ck.ck-toolbar__items,
+    html.dark .ck.ck-dropdown__panel {
+      background: #27272a !important;
+    }
+    .dark .ck.ck-button,
+    html.dark .ck.ck-button {
+      color: #e5e7eb !important;
+    }
+    .dark .ck.ck-button:hover,
+    html.dark .ck.ck-button:hover {
+      background: #3f3f46 !important;
+    }
+    .dark .ck.ck-button.ck-on,
+    html.dark .ck.ck-button.ck-on {
+      background: #52525b !important;
+      color: #ffffff !important;
+    }
+    .dark .ck.ck-icon,
+    html.dark .ck.ck-icon {
+      filter: invert(1) brightness(1.2);
+    }
+    .dark .ck.ck-dropdown__panel,
+    html.dark .ck.ck-dropdown__panel {
+      border-color: #374151 !important;
+    }
+  </style>
+{% endblock %}
+
+{% block after_related_objects %}
+  {{ block.super }}
+
+  {% if article_analytics %}
+  <div class="module aligned">
+    <h2>Article Engagement</h2>
+
+    <style>
+      .stat-card { background: #f8f9fa; padding: 20px; border-radius: 8px; text-align: center; }
+      .stat-value { font-size: 28px; font-weight: bold; color: #2563eb; }
+      .stat-label { color: #666; font-size: 13px; margin-top: 4px; }
+    </style>
+
+    <div class="form-row" style="display: grid; grid-template-columns: repeat(1, 1fr); gap: 15px;">
+      <div class="stat-card">
+        <div class="stat-value">{{ article_analytics.views_total }}</div>
+        <div class="stat-label">Total Views</div>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+{% endblock %}

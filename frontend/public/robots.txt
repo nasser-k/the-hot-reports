@@ -1,0 +1,20 @@
+User-Agent: Googlebot
+Allow: /
+Disallow: /api/
+Disallow: /_next/static/
+Disallow: /admin/
+
+User-Agent: Bingbot
+Allow: /
+Disallow: /api/
+Disallow: /_next/static/
+Disallow: /admin/
+
+User-Agent: *
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+Crawl-delay: 1
+
+Sitemap: https://pulseofkigezi.com/sitemap.xml
