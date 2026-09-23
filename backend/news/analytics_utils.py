@@ -49,6 +49,6 @@ def visitor_key_from_request(request, visitor_id: str | None, *, day: date | Non
     day = day or timezone.now().date()
     ip = get_client_ip(request) or ""
     ua = (request.META.get("HTTP_USER_AGENT") or "")[:400]
-    salt = getattr(settings, "PULSE_VISITOR_HASH_SALT", "") or settings.SECRET_KEY
+    salt = getattr(settings, "HOTREPORTS_VISITOR_HASH_SALT", "") or settings.SECRET_KEY
     digest = hashlib.sha256(f"{salt}|{ip}|{ua}|{day.isoformat()}".encode()).hexdigest()[:32]
     return f"ip:{digest}"

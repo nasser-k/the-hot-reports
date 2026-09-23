@@ -80,7 +80,7 @@ async function HeroContent() {
                 </>
               )}
               {!isFallback && article.highlight === "breaking" && (
-                <div className={`${hasImage(article.image) ? 'absolute top-3 left-3' : 'mb-2'} px-2 py-1 bg-red-600 text-white text-[10px] font-bold uppercase tracking-wider rounded-full animate-pulse inline-block`}>
+                <div className={`${hasImage(article.image) ? 'absolute top-3 left-3' : 'mb-2'} px-2 py-1 bg-red-600 text-white text-[10px] font-bold uppercase tracking-wider rounded-full animate-soft-blink inline-block`}>
                   Breaking
                 </div>
               )}

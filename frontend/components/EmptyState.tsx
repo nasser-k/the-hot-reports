@@ -171,7 +171,7 @@ export function ArticleCardSkeleton({ variant = "standard" }: { variant?: string
 
   if (variant === "horizontal") {
     return (
-      <div className="flex gap-4 p-3 animate-pulse">
+      <div className="flex gap-4 p-3 animate-soft-blink">
         <div className="w-24 h-24 bg-gray-200 dark:bg-gray-800 rounded-lg flex-shrink-0" />
         <div className="flex-1 space-y-2">
           <div className="h-4 bg-gray-200 dark:bg-gray-800 rounded w-16" />
@@ -184,7 +184,7 @@ export function ArticleCardSkeleton({ variant = "standard" }: { variant?: string
 
   if (variant === "compact") {
     return (
-      <div className="flex gap-3 py-3 border-b border-gray-100 dark:border-gray-800 last:border-0 animate-pulse">
+      <div className="flex gap-3 py-3 border-b border-gray-100 dark:border-gray-800 last:border-0 animate-soft-blink">
         <div className="w-12 h-12 bg-gray-200 dark:bg-gray-800 rounded-lg flex-shrink-0" />
         <div className="flex-1 space-y-2">
           <div className="h-3 bg-gray-200 dark:bg-gray-800 rounded w-full" />
@@ -195,7 +195,7 @@ export function ArticleCardSkeleton({ variant = "standard" }: { variant?: string
   }
 
   return (
-    <div className={`${heightClasses[variant as keyof typeof heightClasses] || "h-40"} bg-gray-100 dark:bg-gray-900 rounded-xl animate-pulse`}>
+    <div className={`${heightClasses[variant as keyof typeof heightClasses] || "h-40"} bg-gray-100 dark:bg-gray-900 rounded-xl animate-soft-blink`}>
       <div className="p-4 space-y-3">
         <div className="h-4 bg-gray-200 dark:bg-gray-800 rounded w-20" />
         <div className="h-6 bg-gray-200 dark:bg-gray-800 rounded w-3/4" />
@@ -210,12 +210,12 @@ export function HeroSectionSkeleton() {
     <section className="max-w-[1400px] mx-auto px-4 py-6">
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
         {/* Main hero skeleton */}
-        <div className="lg:col-span-2 h-80 sm:h-96 bg-gray-200 dark:bg-gray-800 rounded-xl animate-pulse" />
+        <div className="lg:col-span-2 h-80 sm:h-96 bg-gray-200 dark:bg-gray-800 rounded-xl animate-soft-blink" />
         {/* Side articles skeleton */}
         <div className="flex flex-col gap-5">
-          <div className="h-24 bg-gray-200 dark:bg-gray-800 rounded-xl animate-pulse" />
-          <div className="h-24 bg-gray-200 dark:bg-gray-800 rounded-xl animate-pulse" />
-          <div className="h-24 bg-gray-200 dark:bg-gray-800 rounded-xl animate-pulse" />
+          <div className="h-24 bg-gray-200 dark:bg-gray-800 rounded-xl animate-soft-blink" />
+          <div className="h-24 bg-gray-200 dark:bg-gray-800 rounded-xl animate-soft-blink" />
+          <div className="h-24 bg-gray-200 dark:bg-gray-800 rounded-xl animate-soft-blink" />
         </div>
       </div>
     </section>
@@ -224,7 +224,7 @@ export function HeroSectionSkeleton() {
 
 export function CategorySectionSkeleton() {
   return (
-    <section className="space-y-4 animate-pulse">
+    <section className="space-y-4 animate-soft-blink">
       {/* Header */}
       <div className="flex items-center justify-between mb-5">
         <div className="flex items-center gap-3">
@@ -247,7 +247,7 @@ export function CategorySectionSkeleton() {
 
 export function SidebarSkeleton() {
   return (
-    <div className="space-y-6 animate-pulse">
+    <div className="space-y-6 animate-soft-blink">
       {/* Latest News */}
       <div className="bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 p-5 space-y-4">
         <div className="flex items-center gap-2 mb-4">
@@ -287,7 +287,7 @@ export function SidebarSkeleton() {
 
 export function TourismCardSkeleton() {
   return (
-    <div className="bg-white/[0.06] backdrop-blur-sm rounded-xl border border-white/[0.08] overflow-hidden animate-pulse">
+    <div className="bg-white/[0.06] backdrop-blur-sm rounded-xl border border-white/[0.08] overflow-hidden animate-soft-blink">
       <div className="aspect-[4/3] bg-gray-700" />
       <div className="p-4 space-y-3">
         <div className="h-4 bg-gray-700 rounded w-3/4" />

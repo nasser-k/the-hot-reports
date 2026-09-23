@@ -100,7 +100,7 @@ STATICFILES_DIRS = [BASE_DIR / "static"]
 MEDIA_ROOT = Path(config("MEDIA_ROOT", default=str(BASE_DIR / "media")))
 USE_S3 = config("USE_S3", default=False, cast=bool)
 
-PULSE_VISITOR_HASH_SALT = config("PULSE_VISITOR_HASH_SALT", default="")
+HOTREPORTS_VISITOR_HASH_SALT = config("HOTREPORTS_VISITOR_HASH_SALT", default="")
 STORAGES = {
     "default": {"BACKEND": "django.core.files.storage.FileSystemStorage"},
     "staticfiles": {"BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage"},

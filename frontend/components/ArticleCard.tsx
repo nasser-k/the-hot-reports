@@ -35,7 +35,7 @@ export default function ArticleCard({
         )}
         <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
         {article.highlight === "breaking" && (
-          <div className="absolute top-4 left-4 flex items-center gap-2 px-3 py-1.5 bg-red-600 text-white text-xs font-bold uppercase tracking-wider rounded-full animate-pulse">
+          <div className="absolute top-4 left-4 flex items-center gap-2 px-3 py-1.5 bg-red-600 text-white text-xs font-bold uppercase tracking-wider rounded-full animate-soft-blink">
             <span className="w-1.5 h-1.5 bg-white rounded-full" />
             Breaking
           </div>

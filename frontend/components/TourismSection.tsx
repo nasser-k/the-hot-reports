@@ -12,7 +12,7 @@ function TourismSectionSkeleton() {
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-gray-950 via-gray-900 to-red-950">
       <div className="relative max-w-[1400px] mx-auto px-4 py-12 sm:py-16">
-        <div className="flex items-center gap-2 mb-8 animate-pulse">
+        <div className="flex items-center gap-2 mb-8 animate-soft-blink">
           <div className="w-5 h-5 bg-gray-700 rounded" />
           <div className="h-4 bg-gray-700 rounded w-32" />
         </div>

@@ -86,7 +86,7 @@ function FeaturedStory({ story, genreInfo, isLatestFallback }: { story: StorySer
             </span>
             {story.status === "ongoing" && (
               <span className="flex items-center gap-1.5 text-green-400">
-                <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
+                <span className="w-2 h-2 bg-green-400 rounded-full animate-soft-blink" />
                 Ongoing
               </span>
             )}

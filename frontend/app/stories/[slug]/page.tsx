@@ -178,7 +178,7 @@ export default async function StoryDetailPage({ params }: Props) {
               {/* Status Badge */}
               <div className="flex items-center gap-3 mb-4">
                 <span className={`inline-flex items-center gap-1.5 px-3 py-1 text-white text-xs font-bold uppercase tracking-wider rounded-full ${series.status === 'ongoing' ? 'bg-green-500' : 'bg-red-500'}`}>
-                  {series.status === 'ongoing' && <span className="w-2 h-2 bg-white rounded-full animate-pulse" />}
+                  {series.status === 'ongoing' && <span className="w-2 h-2 bg-white rounded-full animate-soft-blink" />}
                   {STATUS_LABELS[series.status] || series.status}
                 </span>
               </div>
@@ -201,7 +201,7 @@ export default async function StoryDetailPage({ params }: Props) {
                 </span>
                 {series.status === "ongoing" && (
                   <span className="flex items-center gap-1.5 text-green-400">
-                    <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
+                    <span className="w-2 h-2 bg-green-400 rounded-full animate-soft-blink" />
                     Ongoing Series
                   </span>
                 )}

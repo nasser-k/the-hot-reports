@@ -65,7 +65,7 @@ function StoryCard({ story, genres, index = 0 }: StoryCardProps) {
             </span>
             {story.status === "ongoing" && (
               <span className="inline-flex items-center gap-1 px-2.5 py-1 bg-green-500 text-white text-[10px] font-bold uppercase tracking-wider rounded-lg shadow-lg">
-                <span className="w-1.5 h-1.5 bg-white rounded-full animate-pulse" />
+                <span className="w-1.5 h-1.5 bg-white rounded-full animate-soft-blink" />
                 Ongoing
               </span>
             )}
@@ -126,7 +126,7 @@ function StoryCard({ story, genres, index = 0 }: StoryCardProps) {
             </span>
             {story.status === "ongoing" && (
               <span className="inline-flex items-center gap-1 px-2.5 py-1 bg-green-500 text-white text-[10px] font-bold uppercase tracking-wider rounded-lg">
-                <span className="w-1.5 h-1.5 bg-white rounded-full animate-pulse" />
+                <span className="w-1.5 h-1.5 bg-white rounded-full animate-soft-blink" />
                 Ongoing
               </span>
             )}

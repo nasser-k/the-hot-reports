@@ -7,7 +7,7 @@ import type { Article } from "@/data/data";
 // Simple skeleton for trending bar
 function TrendingBarSkeleton() {
   return (
-    <div className="bg-gray-950 text-white overflow-hidden animate-pulse">
+    <div className="bg-gray-950 text-white overflow-hidden animate-soft-blink">
       <div className="max-w-[1400px] mx-auto px-4 flex items-center h-10">
         <div className="flex items-center gap-2 flex-shrink-0 pr-4">
           <div className="w-4 h-4 bg-gray-800 rounded" />
