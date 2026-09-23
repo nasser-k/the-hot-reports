@@ -59,7 +59,7 @@ This guide explains how to use the The Hot Reports content management system.
    - **Title**: The headline of your article (required)
      - *Format*: Clear, engaging headline
      - *Length*: 50-100 characters recommended
-     - *Example*: "Kigezi Region Sees Record Tourism Growth in 2026"
+     - *Example*: "Uganda Sees Record Tourism Growth in 2026"
    
    - **Slug**: URL-friendly version of the title (auto-generated, read-only)
      - *Format*: Lowercase, hyphens instead of spaces
@@ -82,7 +82,7 @@ This guide explains how to use the The Hot Reports content management system.
    - **Summary**: Brief overview of the article (appears in cards and previews)
      - *Format*: 1-2 sentences
      - *Length*: 150-300 characters recommended
-     - *Example*: "Kigezi's tourism sector has experienced unprecedented growth this year, with visitor numbers up 45% compared to 2025."
+     - *Example*: "Uganda's tourism sector has experienced unprecedented growth this year, with visitor numbers up 45% compared to 2025."
      - *Tip*: Make it compelling to attract readers
    
    - **Content**: Full article body (supports rich text formatting)
@@ -125,11 +125,11 @@ This guide explains how to use the The Hot Reports content management system.
    - **Meta Description**: Search engine description (optional)
      - *Format*: 1-2 sentences describing the article
      - *Length*: 150-160 characters ideal
-     - *Example*: "Discover how Kigezi's tourism sector achieved record growth in 2026 with insights from local business owners and tourism officials."
+     - *Example*: "Discover how Uganda's tourism sector achieved record growth in 2026 with insights from local business owners and tourism officials."
    
    - **Meta Keywords**: Search keywords (optional)
      - *Format*: Comma-separated keywords
-     - *Example*: "tourism, Kigezi, travel, Uganda, economic growth"
+     - *Example*: "tourism, Uganda, travel, safaris, economic growth"
      - *Tip*: Use 5-10 relevant keywords
 
 4. **Save or Publish**
@@ -324,7 +324,7 @@ Tourism listings showcase accommodations, safaris, and experiences in Uganda.
    - **Name**: Business or attraction name (required)
      - *Format*: Official business name
      - *Length*: 20-100 characters recommended
-     - *Example*: "Kigezi Safari Lodge", "Lake Bunyonyi Resort"
+     - *Example*: "Uganda Safari Lodge", "Lake Bunyonyi Resort"
      - *Tip*: Use the official, recognizable name
    
    - **Slug**: URL-friendly version (auto-generated)
@@ -555,7 +555,7 @@ Editors can view and manage browser push notification subscriptions.
 - **Title**: The headline of your article (required)
   - *Format*: Clear, engaging headline
   - *Length*: 50-100 characters recommended
-  - *Example*: "Kigezi Region Sees Record Tourism Growth in 2026"
+  - *Example*: "Uganda Sees Record Tourism Growth in 2026"
 
 - **Slug**: URL-friendly version (auto-generated, read-only)
   - *Format*: Lowercase, hyphens instead of spaces
@@ -570,7 +570,7 @@ Editors can view and manage browser push notification subscriptions.
 
 **Content:**
 - **Summary**: Brief overview (150-300 characters)
-  - *Example*: "Kigezi's tourism sector has experienced unprecedented growth this year."
+  - *Example*: "Uganda's tourism sector has experienced unprecedented growth this year."
 
 - **Content**: Full article body (500-2000 words)
   - *Tip*: Use H2 for headings, bullet points for lists
@@ -725,7 +725,7 @@ Editors can view and manage browser push notification subscriptions.
 
 **Basic Information:**
 - **Name**: Business or attraction name (required)
-  - *Example*: "Kigezi Safari Lodge", "Lake Bunyonyi Resort"
+  - *Example*: "Uganda Safari Lodge", "Lake Bunyonyi Resort"
 
 - **Slug**: URL-friendly version (auto-generated)
 
