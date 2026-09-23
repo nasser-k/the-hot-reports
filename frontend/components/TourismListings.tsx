@@ -101,12 +101,12 @@ export default function TourismListings() {
               <Compass className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
             </div>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900 dark:text-white tracking-tight">
-              {validActive ? typeConfig[validActive].label : "Explore Kigezi"}
+              {validActive ? typeConfig[validActive].label : "Explore Uganda"}
             </h1>
           </div>
           <p className="text-base sm:text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
             {validActive
-              ? `Browse our curated selection of ${typeConfig[validActive].label.toLowerCase()} in the Kigezi region.`
+              ? `Browse our curated selection of ${typeConfig[validActive].label.toLowerCase()} in Uganda.`
               : "The Switzerland of Africa awaits. Discover world-class gorilla safaris, breathtaking lake resorts, volcanic adventures, and authentic Bakiga cultural experiences."}
           </p>
 
@@ -165,7 +165,7 @@ export default function TourismListings() {
               No Listings Yet
             </h3>
             <p className="text-sm text-gray-600 dark:text-gray-400 max-w-md mx-auto mb-6">
-              We're currently building our tourism collection in the Kigezi region. Check back soon for amazing options!
+              We're currently building our tourism collection in Uganda. Check back soon for amazing options!
             </p>
             <Link
               href="/contact"
@@ -271,7 +271,7 @@ export default function TourismListings() {
             List Your Tourism Business
           </h2>
           <p className="text-red-100 text-sm sm:text-base max-w-xl mx-auto mb-6">
-            Reach thousands of visitors exploring the Kigezi region. Get your safari, lodge, hotel, or experience featured on Pulse of Kigezi.
+            Reach thousands of visitors exploring Uganda. Get your safari, lodge, hotel, or experience featured on The Hot Reports.
           </p>
           <Link
             href="/contact"

@@ -1,6 +1,6 @@
-# Pulse of Kigezi - User Guide
+# The Hot Reports - User Guide
 
-This guide explains how to use the Pulse of Kigezi content management system.
+This guide explains how to use the The Hot Reports content management system.
 
 ## Table of Contents
 - [Logging In](#logging-in)
@@ -200,7 +200,7 @@ Stories are serialized content like dramas, fiction series, or true-life tales p
    - **Description**: Brief overview of the series
      - *Format*: 1-3 paragraphs describing the series
      - *Length*: 200-500 characters recommended
-     - *Example*: "A gripping drama set in a small village in Kigezi, following the lives of three families as they navigate love, betrayal, and redemption."
+     - *Example*: "A gripping drama set in a small village in Uganda, following the lives of three families as they navigate love, betrayal, and redemption."
      - *Tip*: Hook readers with an intriguing summary
 
    **Cover Image:**
@@ -308,7 +308,7 @@ Stories are serialized content like dramas, fiction series, or true-life tales p
 
 ## Managing Tourism Listings
 
-Tourism listings showcase accommodations, safaris, and experiences in the Kigezi region.
+Tourism listings showcase accommodations, safaris, and experiences in Uganda.
 
 ### Adding a Tourism Listing
 
@@ -341,7 +341,7 @@ Tourism listings showcase accommodations, safaris, and experiences in the Kigezi
        - Experience: Activities and tours
      - *Tip*: Choose the most accurate category
    
-   - **Location**: Town/area in Kigezi (required)
+   - **Location**: Town/area in Uganda (required)
      - *Format*: Town name or area description
      - *Example*: "Kabale Town", "Lake Bunyonyi", "Bwindi Impenetrable Forest"
      - *Tip*: Be specific to help visitors find it
@@ -437,7 +437,7 @@ Tourism listings showcase accommodations, safaris, and experiences in the Kigezi
    - **Description**: Brief description
      - *Format*: 1-2 sentences explaining the category
      - *Length*: 100-200 characters recommended
-     - *Example*: "News and updates about political developments in Kigezi region"
+     - *Example*: "News and updates about political developments in Uganda"
      - *Tip*: Help users understand what content belongs here
    
    - **Order**: Display order in navigation
@@ -646,7 +646,7 @@ Editors can view and manage browser push notification subscriptions.
   - *Options*: Drama, Campus Life, True Life, Village, Business, Romance
 
 - **Description**: Brief overview (200-500 characters)
-  - *Example*: "A gripping drama set in a small village in Kigezi..."
+  - *Example*: "A gripping drama set in a small village in Uganda..."
 
 **Cover Image:**
 - Upload a cover image (1200x630px recommended)
@@ -731,7 +731,7 @@ Editors can view and manage browser push notification subscriptions.
 
 - **Type**: Safari, Lodge, Hotel, Campsite, or Experience (required)
 
-- **Location**: Town/area in Kigezi (required)
+- **Location**: Town/area in Uganda (required)
   - *Example*: "Kabale Town", "Lake Bunyonyi"
 
 - **Description**: Detailed description (300-800 characters)
@@ -814,7 +814,7 @@ Editors can view and manage browser push notification subscriptions.
 
 For technical issues or questions:
 - Contact the site administrator
-- Email: info@pulseofkigezi.com
+- Email: info@thehotreports.com
 
 ---
 

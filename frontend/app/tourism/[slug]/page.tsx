@@ -31,14 +31,14 @@ const typeLabels: Record<string, string> = {
 // Generate dynamic metadata for SEO
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://pulseofkigezi.com";
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://thehotreports.com";
 
   try {
     const listing = await getTourismBySlug(slug);
 
-    const title = listing.metaTitle || `${listing.name} | ${typeLabels[listing.type] || "Tourism"} in Kigezi`;
-    const description = listing.metaDescription || listing.tagline || `Explore ${listing.name} in Kigezi, Uganda. ${listing.description?.substring(0, 150)}...`;
-    const keywords = listing.metaKeywords || `${listing.name}, ${listing.type}, Kigezi tourism, Uganda travel, ${listing.location}`;
+    const title = listing.metaTitle || `${listing.name} | ${typeLabels[listing.type] || "Tourism"} in Uganda`;
+    const description = listing.metaDescription || listing.tagline || `Explore ${listing.name} in Uganda, Uganda. ${listing.description?.substring(0, 150)}...`;
+    const keywords = listing.metaKeywords || `${listing.name}, ${listing.type}, Uganda tourism, Uganda travel, ${listing.location}`;
 
     return {
       title,
@@ -58,7 +58,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
           },
         ],
         locale: "en_US",
-        siteName: "Pulse of Kigezi",
+        siteName: "The Hot Reports",
       },
       twitter: {
         card: "summary_large_image",
@@ -72,8 +72,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
   } catch {
     return {
-      title: "Tourism Listing | Pulse of Kigezi",
-      description: "Discover amazing tourism experiences in Kigezi, Uganda.",
+      title: "Tourism Listing | The Hot Reports",
+      description: "Discover amazing tourism experiences in Uganda, Uganda.",
     };
   }
 }
@@ -194,7 +194,7 @@ export default async function TourismDetailPage({ params }: Props) {
               <div className="flex items-center gap-2 pt-6 border-t border-gray-100 dark:border-gray-800">
                 <span className="text-[10px] font-bold text-gray-400 dark:text-gray-500 uppercase tracking-wider mr-1">Share</span>
                 <a
-                  href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(`${process.env.NEXT_PUBLIC_SITE_URL || "https://pulseofkigezi.com"}/tourism/${listing.slug}`)}`}
+                  href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(`${process.env.NEXT_PUBLIC_SITE_URL || "https://thehotreports.com"}/tourism/${listing.slug}`)}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-8 h-8 flex items-center justify-center rounded-full bg-[#1877F2] text-white hover:bg-[#166fe5] transition-colors"
@@ -205,7 +205,7 @@ export default async function TourismDetailPage({ params }: Props) {
                   </svg>
                 </a>
                 <a
-                  href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(`${process.env.NEXT_PUBLIC_SITE_URL || "https://pulseofkigezi.com"}/tourism/${listing.slug}`)}&text=${encodeURIComponent(`Check out ${listing.name} in Kigezi!`)}`}
+                  href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(`${process.env.NEXT_PUBLIC_SITE_URL || "https://thehotreports.com"}/tourism/${listing.slug}`)}&text=${encodeURIComponent(`Check out ${listing.name} in Uganda!`)}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-8 h-8 flex items-center justify-center bg-black text-white rounded-full hover:bg-gray-800 transition-colors"
@@ -216,7 +216,7 @@ export default async function TourismDetailPage({ params }: Props) {
                   </svg>
                 </a>
                 <a
-                  href={`https://wa.me/?text=${encodeURIComponent(`Check out ${listing.name} in Kigezi! ${process.env.NEXT_PUBLIC_SITE_URL || "https://pulseofkigezi.com"}/tourism/${listing.slug}`)}`}
+                  href={`https://wa.me/?text=${encodeURIComponent(`Check out ${listing.name} in Uganda! ${process.env.NEXT_PUBLIC_SITE_URL || "https://thehotreports.com"}/tourism/${listing.slug}`)}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-8 h-8 flex items-center justify-center bg-[#25D366] text-white rounded-full hover:bg-[#22c35e] transition-colors"
@@ -227,7 +227,7 @@ export default async function TourismDetailPage({ params }: Props) {
                   </svg>
                 </a>
                 <a
-                  href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(`${process.env.NEXT_PUBLIC_SITE_URL || "https://pulseofkigezi.com"}/tourism/${listing.slug}`)}`}
+                  href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(`${process.env.NEXT_PUBLIC_SITE_URL || "https://thehotreports.com"}/tourism/${listing.slug}`)}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-8 h-8 flex items-center justify-center bg-[#0A66C2] text-white rounded-full hover:bg-[#0958a8] transition-colors"
@@ -238,9 +238,9 @@ export default async function TourismDetailPage({ params }: Props) {
                   </svg>
                 </a>
                 <ShareButton
-                  url={`${process.env.NEXT_PUBLIC_SITE_URL || "https://pulseofkigezi.com"}/tourism/${listing.slug}`}
+                  url={`${process.env.NEXT_PUBLIC_SITE_URL || "https://thehotreports.com"}/tourism/${listing.slug}`}
                   title={listing.name}
-                  text={`Check out ${listing.name} in Kigezi!`}
+                  text={`Check out ${listing.name} in Uganda!`}
                 />
               </div>
             </div>

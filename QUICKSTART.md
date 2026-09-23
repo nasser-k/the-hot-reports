@@ -1,4 +1,4 @@
-# ⚡ Quick Start — Pulse of Kigezi
+# ⚡ Quick Start — The Hot Reports
 
 **Get up and running in under 10 minutes!**
 
@@ -35,11 +35,11 @@ python manage.py runserver
 
 | Role | Email | Password |
 |------|-------|----------|
-| Superadmin | admin@pulseofkigezi.com | admin123 |
-| Editor | editor@pulseofkigezi.com | editor123 |
-| Reporter | reporter@pulseofkigezi.com | reporter123 |
-| Story Writer | stories@pulseofkigezi.com | stories123 |
-| Ads Manager | ads@pulseofkigezi.com | ads123 |
+| Superadmin | admin@thehotreports.com | admin123 |
+| Editor | editor@thehotreports.com | editor123 |
+| Reporter | reporter@thehotreports.com | reporter123 |
+| Story Writer | stories@thehotreports.com | stories123 |
+| Ads Manager | ads@thehotreports.com | ads123 |
 
 ---
 
@@ -53,8 +53,8 @@ npm install
 # 2. Create .env.local
 echo "NEXT_PUBLIC_API_BASE_URL=http://127.0.0.1:8000/api/v1" > .env.local
 echo "NEXT_PUBLIC_VAPID_PUBLIC_KEY=your-public-key" >> .env.local
-echo "NEXT_PUBLIC_EMAIL=info@pulseofkigezi.com" >> .env.local
-echo "NEXT_PUBLIC_ADS_EMAIL=ads@pulseofkigezi.com" >> .env.local
+echo "NEXT_PUBLIC_EMAIL=info@thehotreports.com" >> .env.local
+echo "NEXT_PUBLIC_ADS_EMAIL=ads@thehotreports.com" >> .env.local
 
 # 3. Start development server
 npm run dev

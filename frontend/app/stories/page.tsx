@@ -182,7 +182,7 @@ export default async function StoriesPage({ searchParams }: Props) {
           <p className="text-base sm:text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
             {activeGenre
               ? (activeGenre.description || `Browse our collection of ${activeGenre.label} stories from talented writers.`)
-              : "Serial tales from talented writers across the Kigezi region and beyond. Follow gripping multi-episode stories that keep you coming back for every new chapter."}
+              : "Serial tales from talented writers across Uganda and beyond. Follow gripping multi-episode stories that keep you coming back for every new chapter."}
           </p>
         </div>
 

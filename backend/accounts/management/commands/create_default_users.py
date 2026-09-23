@@ -8,7 +8,7 @@ User = get_user_model()
 
 
 class Command(BaseCommand):
-    help = "Create default users and groups for Pulse of Kigezi"
+    help = "Create default users and groups for The Hot Reports"
 
     def handle(self, *args, **options):
         with transaction.atomic():
@@ -100,7 +100,7 @@ class Command(BaseCommand):
             
             # Create users with secure passwords (5 default users)
             # Emails can be customized via environment variables
-            site_domain = config("SITE_DOMAIN", default="pulseofkigezi.com")
+            site_domain = config("SITE_DOMAIN", default="thehotreports.com")
             # Remove www. prefix if present to avoid emails like admin@www.domain.com
             if site_domain.startswith("www."):
                 site_domain = site_domain[4:]
@@ -120,7 +120,7 @@ class Command(BaseCommand):
                     "superuser": False,
                     "group": editor_group,
                     "perms": ["can_publish_article"],
-                    "bio": "Leading Pulse of Kigezi with a passion for storytelling and community journalism.",
+                    "bio": "Leading The Hot Reports with a passion for storytelling and community journalism.",
                 },
                 {
                     "email": config("USER_REPORTER_EMAIL", default=f"reporter@{site_domain}"),

@@ -1,7 +1,7 @@
 import { MetadataRoute } from "next";
 import { getCategories, listArticles, listTourism, listStorySeries } from "@/lib/api";
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://pulseofkigezi.com";
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://thehotreports.com";
 
 export const revalidate = 3600; // Regenerate sitemap every hour
 

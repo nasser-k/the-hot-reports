@@ -47,7 +47,7 @@ export default function UtilityBar() {
             <Facebook size={12} />
           </a>
           <a
-            href={`https://twitter.com/${process.env.NEXT_PUBLIC_TWITTER_HANDLE?.replace('@', '') || 'PulseofKigezi'}`}
+            href={`https://twitter.com/${process.env.NEXT_PUBLIC_TWITTER_HANDLE?.replace('@', '') || 'TheHotReports'}`}
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-white transition-colors"
@@ -67,7 +67,7 @@ export default function UtilityBar() {
             </svg>
           </a>
           <a
-            href={`https://tiktok.com/${process.env.NEXT_PUBLIC_TIKTOK_HANDLE || '@pulseofkigezi'}`}
+            href={`https://tiktok.com/${process.env.NEXT_PUBLIC_TIKTOK_HANDLE || '@thehotreports'}`}
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-white transition-colors"
@@ -76,7 +76,7 @@ export default function UtilityBar() {
             <TikTokIcon size={12} />
           </a>
           <a
-            href={`https://youtube.com/${process.env.NEXT_PUBLIC_YOUTUBE_CHANNEL || '@PulseofKigezi'}`}
+            href={`https://youtube.com/${process.env.NEXT_PUBLIC_YOUTUBE_CHANNEL || '@TheHotReports'}`}
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-white transition-colors"

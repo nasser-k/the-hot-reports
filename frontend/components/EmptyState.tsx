@@ -67,7 +67,7 @@ const defaultMessages: Record<string, DefaultMessage> = {
   },
   tourism: {
     title: "No Listings Yet",
-    description: "Discover amazing places in Kigezi coming soon!",
+    description: "Discover amazing places in Uganda coming soon!",
   },
   trending: {
     title: "No Trending Stories",

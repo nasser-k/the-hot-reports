@@ -102,10 +102,10 @@ export default async function CategoryPage({ params, searchParams }: Props) {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
     name: `${cat.name} News`,
-    description: `Latest ${cat.name} news from Pulse of Kigezi`,
+    description: `Latest ${cat.name} news from The Hot Reports`,
     publisher: {
       "@type": "Organization",
-      name: "Pulse of Kigezi",
+      name: "The Hot Reports",
     },
   };
 
@@ -226,7 +226,7 @@ export default async function CategoryPage({ params, searchParams }: Props) {
                   className="block bg-gradient-to-br from-gray-950 to-red-950 rounded-xl p-5 text-white hover:from-gray-900 hover:to-red-900 transition-all group overflow-hidden relative"
                 >
                   <div className="absolute top-0 right-0 w-20 h-20 bg-red-600/10 rounded-full -translate-y-1/2 translate-x-1/2" />
-                  <p className="text-[10px] font-bold uppercase tracking-widest text-red-400 mb-1 relative">Explore Kigezi</p>
+                  <p className="text-[10px] font-bold uppercase tracking-widest text-red-400 mb-1 relative">Explore Uganda</p>
                   <p className="font-black text-sm sm:text-base leading-snug relative">Discover safaris, lodges & experiences</p>
                   <p className="text-xs text-gray-400 mt-2 group-hover:text-gray-300 transition-colors relative">Browse tourism listings →</p>
                 </Link>

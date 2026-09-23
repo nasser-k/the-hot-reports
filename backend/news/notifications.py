@@ -16,7 +16,7 @@ def get_vapid_keys():
     return {
         "public": config("VAPID_PUBLIC_KEY", default=""),
         "private": config("VAPID_PRIVATE_KEY", default=""),
-        "admin_email": config("VAPID_ADMIN_EMAIL", default="admin@pulseofkigezi.com"),
+        "admin_email": config("VAPID_ADMIN_EMAIL", default="admin@thehotreports.com"),
     }
 
 

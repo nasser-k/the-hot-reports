@@ -45,7 +45,7 @@ async function TourismContent() {
         <div className="relative max-w-[1400px] mx-auto px-4 py-12 sm:py-16">
           <div className="flex items-center gap-2 mb-6">
             <Compass size={20} className="text-red-400" />
-            <span className="text-red-400 text-xs font-bold uppercase tracking-widest">Explore Kigezi</span>
+            <span className="text-red-400 text-xs font-bold uppercase tracking-widest">Explore Uganda</span>
           </div>
           <div className="bg-white/[0.06] backdrop-blur-sm rounded-xl border border-white/[0.08]">
             <EmptyState variant={hasError ? "error" : "tourism"} />
@@ -54,7 +54,7 @@ async function TourismContent() {
           <div className="mt-8 bg-white/[0.04] backdrop-blur-sm rounded-xl border border-white/[0.08] px-6 py-4 flex flex-col sm:flex-row items-center justify-between gap-4">
             <div>
               <p className="text-white font-bold text-sm">Want your tourism business featured here?</p>
-              <p className="text-gray-400 text-xs mt-0.5">Reach thousands of visitors exploring the Kigezi region</p>
+              <p className="text-gray-400 text-xs mt-0.5">Reach thousands of visitors exploring Uganda</p>
             </div>
             <Link
               href="/contact"
@@ -79,7 +79,7 @@ async function TourismContent() {
           <div>
             <div className="flex items-center gap-2 mb-2">
               <Compass size={20} className="text-red-400" />
-              <span className="text-red-400 text-xs font-bold uppercase tracking-widest">Explore Kigezi</span>
+              <span className="text-red-400 text-xs font-bold uppercase tracking-widest">Explore Uganda</span>
             </div>
             <h2 className="text-2xl sm:text-3xl font-black text-white leading-tight">
               Tourism & Travel
@@ -158,7 +158,7 @@ async function TourismContent() {
         <div className="mt-6 sm:mt-8 bg-white/[0.04] backdrop-blur-sm rounded-xl border border-white/[0.08] px-4 sm:px-6 py-3 sm:py-4 flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4">
           <div>
             <p className="text-white font-bold text-sm">Want your tourism business featured here?</p>
-            <p className="text-gray-500 text-xs mt-0.5">Reach thousands of visitors exploring the Kigezi region</p>
+            <p className="text-gray-500 text-xs mt-0.5">Reach thousands of visitors exploring Uganda</p>
           </div>
           <Link
             href="/contact"

@@ -55,7 +55,7 @@ class TourismListing(models.Model):
     # SEO fields
     meta_title = models.CharField(max_length=500, blank=True, help_text="Custom title for SEO/social (falls back to listing name)")
     meta_description = models.TextField(blank=True, help_text="Custom description for SEO/social (falls back to tagline)")
-    meta_keywords = models.CharField(max_length=500, blank=True, help_text="Comma-separated keywords for SEO (e.g., 'safari, lodge, Kigezi')")
+    meta_keywords = models.CharField(max_length=500, blank=True, help_text="Comma-separated keywords for SEO (e.g., 'safari, lodge, Uganda')")
 
     class Meta:
         ordering = ("name",)

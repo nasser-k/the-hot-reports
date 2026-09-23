@@ -219,7 +219,7 @@ export default function SearchModal({ open, onClose }: SearchModalProps) {
           <span>
             Press <kbd className="px-1.5 py-0.5 bg-gray-100 dark:bg-gray-800 rounded text-[10px]">ESC</kbd> to close
           </span>
-          <span>Pulse of Kigezi Search</span>
+          <span>The Hot Reports Search</span>
         </div>
       </div>
     </div>

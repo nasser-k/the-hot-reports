@@ -1,6 +1,6 @@
-# Pulse of Kigezi — Frontend
+# The Hot Reports — Frontend
 
-Next.js 15 (App Router) + TypeScript + TailwindCSS frontend for the Pulse of Kigezi news and stories platform.
+Next.js 15 (App Router) + TypeScript + TailwindCSS frontend for the The Hot Reports news and stories platform.
 
 ## Features
 

@@ -1,15 +1,15 @@
-# Pulse of Kigezi
+# The Hot Reports
 
-**The Heartbeat of Kigezi** - A modern, full-stack news and storytelling platform delivering accurate, timely, and impactful news coverage alongside captivating serial stories from the Kigezi sub-region and beyond.
+**Nationwide news for Uganda** - A modern, full-stack news and storytelling platform delivering accurate, timely, and impactful news coverage alongside captivating serial stories from the country and beyond.
 
 ## 🌟 Overview
 
-Pulse of Kigezi is a professional news and stories website built with modern web technologies, featuring:
+The Hot Reports is a professional news and stories website built with modern web technologies, featuring:
 
 - 📰 **News Management**: Full-featured CMS with editorial workflows
 - 📖 **Serial Stories**: Dedicated stories section with episodes, likes, comments, and share tracking
 - 💼 **Advertising System**: Complete ad management with slot targeting and click/impression analytics
-- 🏔️ **Tourism Showcase**: Dedicated section for Kigezi tourism listings
+- 🏔️ **Tourism Showcase**: Travel listings from across Uganda
 - 👥 **Role-Based Access**: Superadmin, Editor, Reporter, Story Writer, and Ads Manager roles
 - 📊 **Analytics**: Article & story views, likes, comments, share tracking
 - 📱 **Mobile-First**: Responsive design for all devices
@@ -70,8 +70,8 @@ npm install
 # Create frontend/.env.local:
 # NEXT_PUBLIC_API_BASE_URL=http://127.0.0.1:8000/api/v1
 # NEXT_PUBLIC_VAPID_PUBLIC_KEY=your-public-key
-# NEXT_PUBLIC_EMAIL=info@pulseofkigezi.com
-# NEXT_PUBLIC_ADS_EMAIL=ads@pulseofkigezi.com
+# NEXT_PUBLIC_EMAIL=info@thehotreports.com
+# NEXT_PUBLIC_ADS_EMAIL=ads@thehotreports.com
 npm run dev
 ```
 
@@ -85,7 +85,7 @@ npm run dev
 ## 📁 Project Structure
 
 ```
-Pulse-of-Kigezi/
+the-hot-reports/
 ├── backend/
 │   ├── accounts/          # User auth, profiles, JWT
 │   ├── ads/               # Ad slots, ads, impression/click tracking
@@ -117,11 +117,11 @@ Pulse-of-Kigezi/
 
 | Role | Email | Access |
 |------|-------|--------|
-| **Superadmin** | admin@pulseofkigezi.com | Full system access, all models, user management |
-| **Editor** | editor@pulseofkigezi.com | Articles (full), categories, tourism, stories (view/delete), comment moderation |
-| **Reporter** | reporter@pulseofkigezi.com | Create/edit own articles; author auto-set; draft-only |
-| **Story Writer** | stories@pulseofkigezi.com | Create/edit own stories; author auto-set; draft-only |
-| **Ads Manager** | ads@pulseofkigezi.com | Create tourism listings; created_by auto-set; draft-only |
+| **Superadmin** | admin@thehotreports.com | Full system access, all models, user management |
+| **Editor** | editor@thehotreports.com | Articles (full), categories, tourism, stories (view/delete), comment moderation |
+| **Reporter** | reporter@thehotreports.com | Create/edit own articles; author auto-set; draft-only |
+| **Story Writer** | stories@thehotreports.com | Create/edit own stories; author auto-set; draft-only |
+| **Ads Manager** | ads@thehotreports.com | Create tourism listings; created_by auto-set; draft-only |
 
 > **Note:** Storywriters and Editors can create/edit stories. Storywriters can only save as Draft and must have Editor approval to publish.
 
@@ -236,11 +236,11 @@ After running `create_default_users --insecure` (development only):
 
 | Role | Email | Password |
 |------|-------|----------|
-| Superadmin | admin@pulseofkigezi.com | admin123 |
-| Editor | editor@pulseofkigezi.com | editor123 |
-| Reporter | reporter@pulseofkigezi.com | reporter123 |
-| Storywriter | stories@pulseofkigezi.com | stories123 |
-| Ads Manager | ads@pulseofkigezi.com | ads123 |
+| Superadmin | admin@thehotreports.com | admin123 |
+| Editor | editor@thehotreports.com | editor123 |
+| Reporter | reporter@thehotreports.com | reporter123 |
+| Storywriter | stories@thehotreports.com | stories123 |
+| Ads Manager | ads@thehotreports.com | ads123 |
 
 **⚠️ Use `create_default_users` (without `--insecure`) in production — it generates secure random passwords shown once at creation time.**
 
@@ -285,7 +285,7 @@ After running `create_default_users --insecure` (development only):
 
 ## 📄 License
 
-Proprietary - Pulse of Kigezi © 2026
+Proprietary - The Hot Reports © 2026
 
 ## 🤝 Support
 
@@ -293,4 +293,4 @@ For technical support or inquiries, contact the development team.
 
 ---
 
-**Built with ❤️ for the Kigezi community**
+**Nationwide news for Uganda**

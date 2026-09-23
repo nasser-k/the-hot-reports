@@ -25,7 +25,7 @@ export default function StoriesCTA() {
               Discover <span className="text-red-400">Stories</span>
             </h2>
             <p className="text-sm sm:text-base text-white/70 mb-4">
-              Serial tales from talented writers. Explore genres from Kigezi.
+              Serial stories from writers across Uganda.
             </p>
 
             {/* Genres from API */}

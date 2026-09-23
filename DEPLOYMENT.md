@@ -1,4 +1,4 @@
-# Production Deployment Guide — Pulse of Kigezi
+# Production Deployment Guide — The Hot Reports
 
 ## Hosting Architecture
 
@@ -48,7 +48,7 @@ Ensure your frontend code is in the same repository or a connected repository.
 Add variables under **Project → Settings → Environment Variables** (copy values from `frontend/.env.production`). Required for production:
 
 - `NEXT_PUBLIC_API_BASE_URL` — Backend API URL
-- `NEXT_PUBLIC_SITE_URL` — `https://pulseofkigezi.com`
+- `NEXT_PUBLIC_SITE_URL` — `https://thehotreports.com`
 - `NEXT_PUBLIC_VAPID_PUBLIC_KEY` — Web push public key
 - `NEXT_PUBLIC_EMAIL`, `NEXT_PUBLIC_ADS_EMAIL`, contact/social vars as needed
 - All `NEXT_PUBLIC_ADSENSE_*` keys (10 slots — see `frontend/.env.example`)
@@ -64,24 +64,24 @@ Add variables under **Project → Settings → Environment Variables** (copy val
 | `DEBUG` | `False` | Disable debug mode |
 | `DJANGO_SECRET_KEY` | (generate 50+ chars) | Django secret key |
 | `ALLOWED_HOSTS` | `pulse-of-kigezi-backend.onrender.com,localhost` | Comma-separated allowed hosts |
-| `CORS_ALLOWED_ORIGINS` | `https://pulseofkigezi.com,https://pulseofkigezi.vercel.app` | Frontend origin(s) |
-| `SITE_URL` | `https://pulseofkigezi.com` | Canonical frontend domain |
+| `CORS_ALLOWED_ORIGINS` | `https://thehotreports.com,https://thehotreports.vercel.app` | Frontend origin(s) |
+| `SITE_URL` | `https://thehotreports.com` | Canonical frontend domain |
 | `BACKEND_URL` | `https://pulse-of-kigezi-backend.onrender.com` | Absolute URLs for uploaded media |
-| `EMAIL_HOST_USER` | `pulseofkigezi@gmail.com` | SMTP email for sending |
-| `DEFAULT_FROM_EMAIL` | `Pulse of Kigezi <pulseofkigezi@gmail.com>` | From email address |
+| `EMAIL_HOST_USER` | `thehotreports@gmail.com` | SMTP email for sending |
+| `DEFAULT_FROM_EMAIL` | `The Hot Reports <thehotreports@gmail.com>` | From email address |
 | `VAPID_PUBLIC_KEY` | (generate) | Web push public key |
 | `VAPID_PRIVATE_KEY` | (generate) | Web push private key |
-| `VAPID_ADMIN_EMAIL` | `admin@pulseofkigezi.com` | VAPID contact email |
+| `VAPID_ADMIN_EMAIL` | `admin@thehotreports.com` | VAPID contact email |
 
 ### Frontend (Vercel)
 
 | Variable | Example Value | Description |
 |----------|--------------|-------------|
 | `NEXT_PUBLIC_API_BASE_URL` | `https://pulse-of-kigezi-backend.onrender.com/api/v1` | Backend API URL |
-| `NEXT_PUBLIC_SITE_URL` | `https://pulseofkigezi.com` | Frontend domain |
+| `NEXT_PUBLIC_SITE_URL` | `https://thehotreports.com` | Frontend domain |
 | `NEXT_PUBLIC_VAPID_PUBLIC_KEY` | (from backend) | Push notification key |
-| `NEXT_PUBLIC_EMAIL` | `info@pulseofkigezi.com` | Public contact email |
-| `NEXT_PUBLIC_ADS_EMAIL` | `ads@pulseofkigezi.com` | Ads contact email |
+| `NEXT_PUBLIC_EMAIL` | `info@thehotreports.com` | Public contact email |
+| `NEXT_PUBLIC_ADS_EMAIL` | `ads@thehotreports.com` | Ads contact email |
 
 ---
 
@@ -158,12 +158,12 @@ Add the generated keys to:
 ### SMTP Settings (Backend)
 - **Host:** smtp.gmail.com
 - **Port:** 587
-- **User:** pulseofkigezi@gmail.com
+- **User:** thehotreports@gmail.com
 - **Password:** Gmail App Password (generate in Google Account → Security → 2-Step Verification → App Passwords)
 
 ### Public Emails (Frontend)
-- **General Contact:** info@pulseofkigezi.com
-- **Advertising:** ads@pulseofkigezi.com
+- **General Contact:** info@thehotreports.com
+- **Advertising:** ads@thehotreports.com
 
 ---
 
@@ -191,7 +191,7 @@ Add the generated keys to:
 
 ### Frontend (Vercel)
 1. In Vercel dashboard → your project → Settings → Domains
-2. Add your domain (e.g., `pulseofkigezi.com`)
+2. Add your domain (e.g., `thehotreports.com`)
 3. Follow DNS instructions (CNAME or A record)
 
 ---

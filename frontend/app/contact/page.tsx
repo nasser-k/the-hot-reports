@@ -74,7 +74,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <p className="text-sm font-semibold text-gray-900 dark:text-white">Email</p>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">{process.env.NEXT_PUBLIC_EMAIL || 'info@pulseofkigezi.com'}</p>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">{process.env.NEXT_PUBLIC_EMAIL || 'info@thehotreports.com'}</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
@@ -103,13 +103,13 @@ export default function ContactPage() {
                 <a href="https://www.facebook.com/profile.php?id=61590570837905" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-3 py-2.5 bg-blue-50 dark:bg-blue-950/30 text-blue-600 rounded-lg text-sm font-medium hover:bg-blue-100 dark:hover:bg-blue-950/50 transition-colors">
                   <Facebook size={16} /> Facebook
                 </a>
-                <a href="https://twitter.com/PulseofKigezi" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-3 py-2.5 bg-gray-50 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-lg text-sm font-medium hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+                <a href="https://twitter.com/TheHotReports" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-3 py-2.5 bg-gray-50 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-lg text-sm font-medium hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
                   <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg> Twitter
                 </a>
-                <a href="https://tiktok.com/@pulseofkigezi" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-3 py-2.5 bg-gray-50 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-lg text-sm font-medium hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+                <a href="https://tiktok.com/@thehotreports" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-3 py-2.5 bg-gray-50 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-lg text-sm font-medium hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
                   <TikTokIcon size={16} /> TikTok
                 </a>
-                <a href="https://youtube.com/@PulseofKigezi" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-3 py-2.5 bg-red-50 dark:bg-red-950/30 text-red-600 rounded-lg text-sm font-medium hover:bg-red-100 dark:hover:bg-red-950/50 transition-colors">
+                <a href="https://youtube.com/@TheHotReports" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-3 py-2.5 bg-red-50 dark:bg-red-950/30 text-red-600 rounded-lg text-sm font-medium hover:bg-red-100 dark:hover:bg-red-950/50 transition-colors">
                   <Youtube size={16} /> YouTube
                 </a>
                 <a href={process.env.NEXT_PUBLIC_WHATSAPP_CHANNEL || "https://whatsapp.com/channel/0029VbC5UBvJ3juyNbna6L26"} target="_blank" rel="noopener noreferrer" className="col-span-2 flex items-center justify-center gap-2 px-3 py-2.5 bg-green-50 dark:bg-green-950/30 text-green-600 rounded-lg text-sm font-medium hover:bg-green-100 dark:hover:bg-green-950/50 transition-colors">
@@ -130,10 +130,10 @@ export default function ContactPage() {
               </p>
               <div className="flex justify-center">
                 <a
-                  href={`mailto:${process.env.NEXT_PUBLIC_ADS_EMAIL || 'ads@pulseofkigezi.com'}`}
+                  href={`mailto:${process.env.NEXT_PUBLIC_ADS_EMAIL || 'ads@thehotreports.com'}`}
                   className="inline-block px-5 py-2.5 bg-white dark:bg-gray-800 text-red-600 dark:text-red-400 text-sm font-bold rounded-full hover:bg-red-50 dark:hover:bg-red-900/30 transition-colors"
                 >
-                  {process.env.NEXT_PUBLIC_ADS_EMAIL || 'ads@pulseofkigezi.com'}
+                  {process.env.NEXT_PUBLIC_ADS_EMAIL || 'ads@thehotreports.com'}
                 </a>
               </div>
             </div>

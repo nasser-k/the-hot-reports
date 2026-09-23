@@ -121,7 +121,7 @@ export default async function ArticlePage({ params }: Props) {
     },
     publisher: {
       "@type": "Organization",
-      name: "Pulse of Kigezi",
+      name: "The Hot Reports",
       logo: {
         "@type": "ImageObject",
         url: "/icons/icon-512.png",
@@ -135,7 +135,7 @@ export default async function ArticlePage({ params }: Props) {
     keywords: article.tags.join(", "),
   };
 
-  const shareUrl = `https://pulseofkigezi.com/article/${article.slug}`;
+  const shareUrl = `${process.env.NEXT_PUBLIC_SITE_URL || "https://thehotreports.com"}/article/${article.slug}`;
   const shareText = encodeURIComponent(article.title);
 
   return (
@@ -370,7 +370,7 @@ export default async function ArticlePage({ params }: Props) {
                   className="block bg-gradient-to-br from-gray-950 to-red-950 rounded-xl p-5 text-white hover:from-gray-900 hover:to-red-900 transition-all group overflow-hidden relative"
                 >
                   <div className="absolute top-0 right-0 w-20 h-20 bg-red-600/10 rounded-full -translate-y-1/2 translate-x-1/2" />
-                  <p className="text-[10px] font-bold uppercase tracking-widest text-red-400 mb-1 relative">Explore Kigezi</p>
+                  <p className="text-[10px] font-bold uppercase tracking-widest text-red-400 mb-1 relative">Explore Uganda</p>
                   <p className="font-black text-base leading-snug relative">Discover safaris, lodges & experiences</p>
                   <p className="text-xs text-gray-400 mt-2 group-hover:text-gray-300 transition-colors relative">Browse tourism listings →</p>
                 </Link>

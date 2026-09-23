@@ -1,4 +1,4 @@
-# Pulse of Kigezi — Django Backend
+# The Hot Reports — Django Backend
 
 Django **6.0** + Django REST Framework backend with **SQLite**, JWT auth (SimpleJWT), OpenAPI docs, role-based admin, push notifications, and server-hosted media.
 

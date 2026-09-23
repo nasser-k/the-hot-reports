@@ -5,6 +5,7 @@ import os
 from urllib.parse import quote
 
 import requests
+from decouple import config
 
 logger = logging.getLogger(__name__)
 
@@ -15,7 +16,7 @@ INDEXNOW_ENDPOINTS = [
     "https://yandex.com/indexnow",
 ]
 
-SITE_URL = "https://www.pulseofkigezi.com"
+SITE_URL = config("SITE_URL", default="https://thehotreports.com")
 
 
 def notify_indexnow(url: str) -> bool:

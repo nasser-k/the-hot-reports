@@ -17,4 +17,4 @@ Disallow: /_next/
 Disallow: /admin/
 Crawl-delay: 1
 
-Sitemap: https://pulseofkigezi.com/sitemap.xml
+Sitemap: https://thehotreports.com/sitemap.xml

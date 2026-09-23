@@ -56,10 +56,10 @@ export default function Footer({ initialCategories = [] }: FooterProps) {
             <div>
               <div className="flex items-start gap-4 mb-4">
                 <Link href="/" className="flex-shrink-0">
-                  <img src="/logo.png" alt="Pulse of Kigezi" className="h-20 w-20 rounded-lg object-cover" />
+                  <img src="/logo.png" alt="The Hot Reports" className="h-20 w-20 rounded-lg object-cover" />
                 </Link>
                 <p className="text-sm text-gray-300 leading-relaxed">
-                  A leading digital news platform dedicated to delivering trusted news, compelling writer stories, and tourism highlights from Kigezi and beyond.
+                  A leading digital news platform dedicated to delivering trusted news, compelling writer stories, and tourism highlights from Uganda and beyond.
                 </p>
               </div>
               <div className="flex items-center gap-3">
@@ -73,7 +73,7 @@ export default function Footer({ initialCategories = [] }: FooterProps) {
                   <Facebook size={16} />
                 </a>
                 <a
-                  href={`https://twitter.com/${process.env.NEXT_PUBLIC_TWITTER_HANDLE?.replace('@', '') || 'PulseofKigezi'}`}
+                  href={`https://twitter.com/${process.env.NEXT_PUBLIC_TWITTER_HANDLE?.replace('@', '') || 'TheHotReports'}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-9 h-9 flex items-center justify-center bg-gray-800 hover:bg-black rounded-full transition-colors"
@@ -93,7 +93,7 @@ export default function Footer({ initialCategories = [] }: FooterProps) {
                   </svg>
                 </a>
                 <a
-                  href={`https://tiktok.com/${process.env.NEXT_PUBLIC_TIKTOK_HANDLE || '@pulseofkigezi'}`}
+                  href={`https://tiktok.com/${process.env.NEXT_PUBLIC_TIKTOK_HANDLE || '@thehotreports'}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-9 h-9 flex items-center justify-center bg-gray-800 hover:bg-gray-700 rounded-full transition-colors"
@@ -102,7 +102,7 @@ export default function Footer({ initialCategories = [] }: FooterProps) {
                   <TikTokIcon size={16} />
                 </a>
                 <a
-                  href={`https://youtube.com/${process.env.NEXT_PUBLIC_YOUTUBE_CHANNEL || '@PulseofKigezi'}`}
+                  href={`https://youtube.com/${process.env.NEXT_PUBLIC_YOUTUBE_CHANNEL || '@TheHotReports'}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-9 h-9 flex items-center justify-center bg-gray-800 hover:bg-red-600 rounded-full transition-colors"
@@ -125,8 +125,8 @@ export default function Footer({ initialCategories = [] }: FooterProps) {
                 </li>
                 <li className="flex items-center gap-2 text-sm text-gray-300">
                   <Mail size={14} className="flex-shrink-0" />
-                  <a href={`mailto:${process.env.NEXT_PUBLIC_EMAIL || 'info@pulseofkigezi.com'}`} className="hover:text-white transition-colors">
-                    {process.env.NEXT_PUBLIC_EMAIL || 'info@pulseofkigezi.com'}
+                  <a href={`mailto:${process.env.NEXT_PUBLIC_EMAIL || 'info@thehotreports.com'}`} className="hover:text-white transition-colors">
+                    {process.env.NEXT_PUBLIC_EMAIL || 'info@thehotreports.com'}
                   </a>
                 </li>
               </ul>
@@ -192,7 +192,7 @@ export default function Footer({ initialCategories = [] }: FooterProps) {
                   </div>
                   <div>
                     <p className="text-sm font-bold text-red-300 group-hover:text-red-200">Tourism</p>
-                    <p className="text-[11px] text-red-400/70">Explore Kigezi</p>
+                    <p className="text-[11px] text-red-400/70">Explore Uganda</p>
                   </div>
                 </Link>
               </div>
@@ -217,7 +217,7 @@ export default function Footer({ initialCategories = [] }: FooterProps) {
       {/* Bottom bar */}
       <div className="border-t border-gray-800">
         <div className="max-w-[1400px] mx-auto px-4 py-4 flex items-center justify-center text-xs text-gray-400">
-          <p>&copy; {new Date().getFullYear()} Pulse of Kigezi. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} The Hot Reports. All rights reserved.</p>
         </div>
       </div>
     </footer>

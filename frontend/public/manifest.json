@@ -1,13 +1,13 @@
 {
-  "name": "Pulse of Kigezi",
-  "short_name": "Pulse of Kigezi",
-  "description": "The Heartbeat of Kigezi - Delivering accurate, timely, and impactful news coverage from the Kigezi sub-region.",
+  "name": "The Hot Reports",
+  "short_name": "The Hot Reports",
+  "description": "Nationwide news, serial stories, and travel reporting from across Uganda.",
   "start_url": "/",
   "background_color": "#ffffff",
   "theme_color": "#DC2626",
   "orientation": "portrait-primary",
   "scope": "/",
-  "id": "pulse-of-kigezi",
+  "id": "the-hot-reports",
   "icons": [
     {
       "src": "/android-chrome-192x192.png",
@@ -34,9 +34,9 @@
   "dir": "ltr",
   "shortcuts": [
     {
-      "name": "Kigezi News",
-      "url": "/#kigezi-news",
-      "description": "Local Kigezi news and updates"
+      "name": "National",
+      "url": "/category/national",
+      "description": "National news from across Uganda"
     },
     {
       "name": "Stories",
@@ -46,7 +46,7 @@
     {
       "name": "Tourism",
       "url": "/tourism",
-      "description": "Tourism and travel in Kigezi"
+      "description": "Tourism and travel in Uganda"
     }
   ],
   "edge_side_panel": {},

@@ -1,5 +1,5 @@
 """
-Canonical ad slot registry for Pulse of Kigezi.
+Canonical ad slot registry for The Hot Reports.
 
 Keep in sync with:
   - frontend/lib/ad-slots.ts (LIVE_AD_SLOT_KEYS)

@@ -25,7 +25,7 @@ export default function PrivacyPage() {
           <section>
             <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-3">1. Introduction</h2>
             <p className="text-justify">
-              Pulse of Kigezi (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) is committed to protecting your privacy and ensuring transparency in how we handle your personal information. This Privacy Policy explains in detail how we collect, use, disclose, and safeguard your information when you visit our website pulseofkigezi.com, including any other media form, media channel, mobile website, or mobile application related or connected thereto. By using our services, you agree to the collection and use of information in accordance with this policy. We encourage you to read this policy carefully to understand our practices regarding your personal data.
+              The Hot Reports (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) is committed to protecting your privacy and ensuring transparency in how we handle your personal information. This Privacy Policy explains in detail how we collect, use, disclose, and safeguard your information when you visit our website thehotreports.com, including any other media form, media channel, mobile website, or mobile application related or connected thereto. By using our services, you agree to the collection and use of information in accordance with this policy. We encourage you to read this policy carefully to understand our practices regarding your personal data.
             </p>
           </section>
 
@@ -134,8 +134,8 @@ export default function PrivacyPage() {
             </p>
             <p className="text-justify">
               <strong>Email:</strong>{" "}
-              <a href={`mailto:${process.env.NEXT_PUBLIC_EMAIL || 'info@pulseofkigezi.com'}`} className="text-red-600 hover:underline">
-                {process.env.NEXT_PUBLIC_EMAIL || 'info@pulseofkigezi.com'}
+              <a href={`mailto:${process.env.NEXT_PUBLIC_EMAIL || 'info@thehotreports.com'}`} className="text-red-600 hover:underline">
+                {process.env.NEXT_PUBLIC_EMAIL || 'info@thehotreports.com'}
               </a>
               <br />
               <strong>Contact Form:</strong> Visit our{" "}
