@@ -79,7 +79,7 @@ npm run dev
 
 ### Production Deployment
 
-**Backend:** Render (https://render.com) - See `DEPLOYMENT.md`  
+**Backend:** AWS Lightsail. Uploads go to S3 and are served through CloudFront. See `DEPLOYMENT.md`.  
 **Frontend:** Vercel (https://vercel.com) - See `DEPLOYMENT.md`
 
 ## 📁 Project Structure

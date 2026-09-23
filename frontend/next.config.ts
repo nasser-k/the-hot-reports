@@ -8,8 +8,8 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
     remotePatterns: [
-      { protocol: "https", hostname: "the-hot-reports-backend.onrender.com" },
       { protocol: "https", hostname: "thehotreports.com" },
+      { protocol: "https", hostname: "**.cloudfront.net" },
       { protocol: "https", hostname: "www.thehotreports.com" },
       { protocol: "https", hostname: "**" },
       { protocol: "http", hostname: "localhost" },
@@ -25,7 +25,7 @@ const nextConfig: NextConfig = {
       // CSP: Allow scripts from self, Google Ads, and Vercel; allow unsafe-eval for some third-party libs
       {
         key: "Content-Security-Policy",
-        value: "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' https://pagead2.googlesyndication.com https://*.adtrafficquality.google https://*.vercel-scripts.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https: http://localhost:* http://127.0.0.1:*; connect-src 'self' http://localhost:* http://127.0.0.1:* https://the-hot-reports-backend.onrender.com https://*.vercel-scripts.com https://ep1.adtrafficquality.google https://*.google.com; font-src 'self'; frame-src https://googleads.g.doubleclick.net https://*.adtrafficquality.google https://www.google.com; object-src 'none'; base-uri 'self'; form-action 'self';"
+        value: "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' https://pagead2.googlesyndication.com https://*.adtrafficquality.google https://*.vercel-scripts.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https: http://localhost:* http://127.0.0.1:*; connect-src 'self' http://localhost:* http://127.0.0.1:* https://api.thehotreports.com https://*.cloudfront.net https://*.vercel-scripts.com https://ep1.adtrafficquality.google https://*.google.com; font-src 'self'; frame-src https://googleads.g.doubleclick.net https://*.adtrafficquality.google https://www.google.com; object-src 'none'; base-uri 'self'; form-action 'self';"
       },
     ];
     return [
