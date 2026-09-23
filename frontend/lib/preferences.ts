@@ -2,7 +2,7 @@
  * Simple dark mode persistence using cookies
  */
 
-const DARK_MODE_COOKIE = "pulse_dark_mode";
+const DARK_MODE_COOKIE = "hotreports_dark_mode";
 const COOKIE_MAX_AGE = 365 * 24 * 60 * 60; // 1 year in seconds
 
 /**

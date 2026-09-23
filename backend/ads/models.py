@@ -12,7 +12,7 @@ from datetime import datetime
 from django.db import models
 from django.utils import timezone
 from django.utils.text import slugify
-from pulse.fields import ProcessedImageField
+from hotreports.fields import ProcessedImageField
 
 
 def ad_image_path(instance, filename: str) -> str:

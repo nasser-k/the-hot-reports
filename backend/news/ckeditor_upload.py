@@ -9,8 +9,8 @@ from django.utils.text import slugify
 from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_http_methods
 
-from pulse.fields import process_image
-from pulse.media_urls import absolute_url
+from hotreports.fields import process_image
+from hotreports.media_urls import absolute_url
 
 
 def generate_upload_path(filename: str) -> str:

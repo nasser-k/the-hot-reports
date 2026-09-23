@@ -1,4 +1,4 @@
-const STORAGE_KEY = "pulse_vid";
+const STORAGE_KEY = "hotreports_vid";
 
 function randomUuid(): string {
   if (typeof crypto !== "undefined" && crypto.randomUUID) {

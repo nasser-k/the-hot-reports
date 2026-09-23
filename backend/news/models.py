@@ -1,7 +1,7 @@
 from django.db import models
 from django.utils.text import slugify
-from pulse.fields import ProcessedImageField
-from pulse.media_storage import article_image_path, episode_image_path, story_cover_path
+from hotreports.fields import ProcessedImageField
+from hotreports.media_storage import article_image_path, episode_image_path, story_cover_path
 
 
 class Category(models.Model):

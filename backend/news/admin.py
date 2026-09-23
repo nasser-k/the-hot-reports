@@ -1,8 +1,8 @@
 from django.contrib import admin, messages
 from django.utils import timezone
 
-from pulse.admin_media import MediaPreviewMixin
-from pulse.admin_roles import (
+from hotreports.admin_media import MediaPreviewMixin
+from hotreports.admin_roles import (
     FilterActionsMixin,
     NoActionsMixin,
     can_manage_ads,

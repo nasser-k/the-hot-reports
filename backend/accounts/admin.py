@@ -1,7 +1,7 @@
 from django.contrib import admin
 
-from pulse.admin_media import MediaPreviewMixin
-from pulse.admin_roles import FilterActionsMixin, is_editor
+from hotreports.admin_media import MediaPreviewMixin
+from hotreports.admin_roles import FilterActionsMixin, is_editor
 
 from .models import User
 

@@ -15,11 +15,11 @@ from news.models import (
 from tourism.models import TourismListing
 
 
-class PulseAdminSite(AdminSite):
+class HotReportsAdminSite(AdminSite):
     site_header = "The Hot Reports"
     site_title = "The Hot Reports Admin"
     index_title = "Dashboard"
-    index_template = "admin/pulse_index.html"
+    index_template = "admin/hotreports_index.html"
 
     def get_app_list(self, request, app_label=None):
         """Customize app list based on user role."""
@@ -169,7 +169,7 @@ class PulseAdminSite(AdminSite):
         is_ads = user.groups.filter(name="Ads Manager").exists()
         is_storywriter = user.groups.filter(name="storywriter").exists()
         
-        ctx["pulse_role"] = (
+        ctx["hotreports_role"] = (
             "superadmin" if is_super
             else "editor" if is_editor
             else "reporter" if is_reporter
@@ -180,35 +180,35 @@ class PulseAdminSite(AdminSite):
         
         # Role-specific quick links
         if is_super:
-            ctx["pulse_links"] = [
+            ctx["hotreports_links"] = [
                 ("API Docs", "/api/docs/"),
                 ("View Site", "/"),
             ]
         elif is_editor:
-            ctx["pulse_links"] = [
+            ctx["hotreports_links"] = [
                 ("Pending Review", "/admin/news/article/?status__exact=pending"),
                 ("Stories", "/admin/news/storyseries/"),
                 ("View Site", "/"),
             ]
         elif is_reporter:
-            ctx["pulse_links"] = [
+            ctx["hotreports_links"] = [
                 ("My Drafts", "/admin/news/article/?status__exact=draft"),
                 ("View Site", "/"),
             ]
         elif is_ads:
-            ctx["pulse_links"] = [
+            ctx["hotreports_links"] = [
                 ("Active Ads", "/admin/ads/ad/?is_active__exact=1"),
                 ("View Site", "/"),
             ]
         elif is_storywriter:
-            ctx["pulse_links"] = [
+            ctx["hotreports_links"] = [
                 ("My Series", "/admin/news/storyseries/"),
                 ("My Episodes", "/admin/news/storyepisode/"),
                 ("Comments", "/admin/news/storyepisodecomment/"),
                 ("View Site", "/stories/"),
             ]
         else:
-            ctx["pulse_links"] = [("View Site", "/")]
+            ctx["hotreports_links"] = [("View Site", "/")]
         
         return ctx
 
@@ -277,7 +277,7 @@ class PulseAdminSite(AdminSite):
                 episode__series__author=user, is_approved=False
             ).count()
 
-        pulse_role = (
+        hotreports_role = (
             "superadmin" if is_super
             else "editor" if is_editor
             else "reporter" if is_reporter
@@ -287,23 +287,23 @@ class PulseAdminSite(AdminSite):
         )
 
         extra = {
-            "pulse_role": pulse_role,
-            "pulse_stats": stats,
-            "pulse_editorial": editorial,
-            "pulse_stories": story_stats,
-            "pulse_story_stats": story_stats,
-            "pulse_flags": {
+            "hotreports_role": hotreports_role,
+            "hotreports_stats": stats,
+            "hotreports_editorial": editorial,
+            "hotreports_stories": story_stats,
+            "hotreports_story_stats": story_stats,
+            "hotreports_flags": {
                 "is_superadmin": is_super,
                 "is_editor": is_editor,
                 "is_reporter": is_reporter,
             },
-            "pulse_top_categories": top_categories,
-            "pulse_recent_articles": recent_articles,
-            "pulse_recent_messages": recent_messages,
+            "hotreports_top_categories": top_categories,
+            "hotreports_recent_articles": recent_articles,
+            "hotreports_recent_messages": recent_messages,
         }
         if extra_context:
             extra.update(extra_context)
         return super().index(request, extra_context=extra)
 
 
-pulse_admin_site = PulseAdminSite(name="pulse_admin")
+hotreports_admin_site = HotReportsAdminSite(name="hotreports_admin")

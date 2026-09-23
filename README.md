@@ -91,7 +91,7 @@ the-hot-reports/
 │   ├── ads/               # Ad slots, ads, impression/click tracking
 │   ├── news/              # Articles, stories, categories, comments, analytics
 │   ├── tourism/           # Tourism listings
-│   ├── pulse/             # Django settings, admin site, URL routing
+│   ├── hotreports/             # Django settings, admin site, URL routing
 │   ├── common/            # Shared utilities
 │   ├── templates/         # Django HTML templates (admin)
 │   ├── static/            # Static files

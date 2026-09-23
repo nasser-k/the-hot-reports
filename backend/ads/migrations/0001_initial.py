@@ -2,7 +2,7 @@
 
 import ads.models
 import django.db.models.deletion
-import pulse.fields
+import hotreports.fields
 from django.db import migrations, models
 
 
@@ -34,7 +34,7 @@ class Migration(migrations.Migration):
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('name', models.CharField(help_text='Internal name', max_length=200)),
                 ('client_name', models.CharField(blank=True, help_text='Advertiser name', max_length=200)),
-                ('image', pulse.fields.ProcessedImageField(blank=True, help_text='IMPORTANT: Upload images at EXACT dimensions for best results: Leaderboard 728×90px, Mobile 320×100px, Sidebar 300×250px. Images maintain aspect ratio - wrong sizes will show with black bars.', max_size=(728, 250), null=True, upload_to=ads.models.ad_image_path)),
+                ('image', hotreports.fields.ProcessedImageField(blank=True, help_text='IMPORTANT: Upload images at EXACT dimensions for best results: Leaderboard 728×90px, Mobile 320×100px, Sidebar 300×250px. Images maintain aspect ratio - wrong sizes will show with black bars.', max_size=(728, 250), null=True, upload_to=ads.models.ad_image_path)),
                 ('link_url', models.URLField(blank=True, max_length=1000)),
                 ('alt_text', models.CharField(blank=True, max_length=200)),
                 ('start_date', models.DateField()),

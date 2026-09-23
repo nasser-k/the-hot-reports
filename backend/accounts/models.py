@@ -1,8 +1,8 @@
 from django.contrib.auth.models import AbstractUser, BaseUserManager
 from django.db import models
-from pulse.fields import ProcessedImageField
-from pulse.media_storage import avatar_image_path
-from pulse.media_urls import default_avatar_url, resolve_media_image
+from hotreports.fields import ProcessedImageField
+from hotreports.media_storage import avatar_image_path
+from hotreports.media_urls import default_avatar_url, resolve_media_image
 
 
 class UserManager(BaseUserManager):

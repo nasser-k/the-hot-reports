@@ -4,7 +4,7 @@ from __future__ import annotations
 from django.contrib import admin
 from django.utils.html import format_html
 
-from pulse.media_urls import resolve_media_image
+from hotreports.media_urls import resolve_media_image
 
 
 def media_preview_html(

@@ -1,0 +1,148 @@
+{% extends "admin/index.html" %}
+{% load i18n %}
+
+{% block content %}
+  <div id="content-main" class="hotreports-dashboard">
+    {# === SECTION 1: EDITORIAL STATUS (Quick KPIs) === #}
+    {% if hotreports_role == "superadmin" or hotreports_role == "editor" %}
+      <section class="hotreports-section">
+        <h2 class="hotreports-section-title">{% trans "Editorial Status" %}</h2>
+        <div class="hotreports-grid hotreports-grid--3">
+          <div class="hotreports-card hotreports-card--kpi">
+            <div class="hotreports-kpi-label">{% trans "Pending review" %}</div>
+            <div class="hotreports-kpi-value">{{ hotreports_editorial.pending }}</div>
+          </div>
+          <div class="hotreports-card hotreports-card--kpi">
+            <div class="hotreports-kpi-label">{% trans "Scheduled" %}</div>
+            <div class="hotreports-kpi-value">{{ hotreports_editorial.scheduled }}</div>
+          </div>
+          <div class="hotreports-card hotreports-card--kpi">
+            <div class="hotreports-kpi-label">{% trans "Drafts" %}</div>
+            <div class="hotreports-kpi-value">{{ hotreports_editorial.drafts }}</div>
+          </div>
+        </div>
+      </section>
+    {% elif hotreports_role == "reporter" %}
+      <section class="hotreports-section">
+        <h2 class="hotreports-section-title">{% trans "My Work" %}</h2>
+        <div class="hotreports-grid">
+          <div class="hotreports-card hotreports-card--kpi">
+            <div class="hotreports-kpi-label">{% trans "My drafts" %}</div>
+            <div class="hotreports-kpi-value">{{ hotreports_editorial.my_drafts }}</div>
+          </div>
+          <div class="hotreports-card hotreports-card--kpi">
+            <div class="hotreports-kpi-label">{% trans "My pending review" %}</div>
+            <div class="hotreports-kpi-value">{{ hotreports_editorial.my_pending }}</div>
+          </div>
+        </div>
+      </section>
+    {% elif hotreports_role == "storywriter" %}
+      <section class="hotreports-section">
+        <h2 class="hotreports-section-title">{% trans "My Stories" %}</h2>
+        <div class="hotreports-grid hotreports-grid--2 max-w-2xl mx-auto">
+          <div class="hotreports-card hotreports-card--kpi">
+            <div class="hotreports-kpi-label">{% trans "My Series" %}</div>
+            <div class="hotreports-kpi-value">{{ hotreports_story_stats.my_series_total|default:0 }}</div>
+            <div class="hotreports-kpi-sub">{{ hotreports_story_stats.my_series_ongoing|default:0 }} {% trans "ongoing" %}</div>
+          </div>
+          <div class="hotreports-card hotreports-card--kpi">
+            <div class="hotreports-kpi-label">{% trans "Pending Comments" %}</div>
+            <div class="hotreports-kpi-value">{{ hotreports_story_stats.pending_comments|default:0 }}</div>
+          </div>
+        </div>
+      </section>
+    {% else %}
+      <section class="hotreports-section">
+        <h2 class="hotreports-section-title">{% trans "Site Overview" %}</h2>
+        <div class="hotreports-grid hotreports-grid--3">
+          <div class="hotreports-card hotreports-card--kpi">
+            <div class="hotreports-kpi-label">{% trans "Articles" %}</div>
+            <div class="hotreports-kpi-value">{{ hotreports_stats.articles }}</div>
+            <div class="hotreports-kpi-sub">+{{ hotreports_stats.articles_7d }} {% trans "last 7 days" %}</div>
+          </div>
+          <div class="hotreports-card hotreports-card--kpi">
+            <div class="hotreports-kpi-label">{% trans "Categories" %}</div>
+            <div class="hotreports-kpi-value">{{ hotreports_stats.categories }}</div>
+          </div>
+          <div class="hotreports-card hotreports-card--kpi">
+            <div class="hotreports-kpi-label">{% trans "Tourism" %}</div>
+            <div class="hotreports-kpi-value">{{ hotreports_stats.tourism }}</div>
+          </div>
+        </div>
+      </section>
+    {% endif %}
+
+    {# === SECTION 2: EDITORIAL INSIGHTS (Categories & Recent) === #}
+    {% if hotreports_role == "editor" %}
+      <section class="hotreports-section">
+        <h2 class="hotreports-section-title">{% trans "Editorial Insights" %}</h2>
+        <div class="hotreports-grid">
+          <div class="hotreports-card">
+            <h3 class="hotreports-card-subtitle">{% trans "Top Categories" %}</h3>
+            <ul class="hotreports-list">
+              {% for c in hotreports_top_categories %}
+                <li>
+                  <a href="/admin/news/article/?category__id__exact={{ c.id }}">{{ c.name }}</a>
+                  <span class="hotreports-count">{{ c.article_count }}</span>
+                </li>
+              {% empty %}
+                <li>{% trans "No categories yet" %}</li>
+              {% endfor %}
+            </ul>
+          </div>
+          <div class="hotreports-card">
+            <h3 class="hotreports-card-subtitle">{% trans "Recent Articles" %}</h3>
+            <ul class="hotreports-list">
+              {% for a in hotreports_recent_articles|slice:":10" %}
+                <li>
+                  <span class="hotreports-date">{{ a.published_at|date:"M d" }}</span>
+                  <a href="{% url 'admin:news_article_change' a.pk %}">{{ a.title|truncatechars:45 }}</a>
+                </li>
+              {% empty %}
+                <li>{% trans "No articles yet" %}</li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+      </section>
+    {% elif hotreports_role == "storywriter" %}
+      {# Storywriter stats shown above, no quick overview needed #}
+    {% elif hotreports_role != "superadmin" %}
+      <section class="hotreports-section">
+        <h2 class="hotreports-section-title">{% trans "Quick Overview" %}</h2>
+        <div class="hotreports-grid hotreports-grid--3">
+          <div class="hotreports-card">
+            <h3 class="hotreports-card-subtitle">{% trans "Quick links" %}</h3>
+            <ul class="hotreports-list">
+              {% for label, url in hotreports_links %}
+                <li><a href="{{ url }}">{{ label }}</a></li>
+              {% endfor %}
+            </ul>
+          </div>
+          <div class="hotreports-card">
+            <h3 class="hotreports-card-subtitle">{% trans "Top categories" %}</h3>
+            <ul class="hotreports-list">
+              {% for c in hotreports_top_categories %}
+                <li>{{ c.name }} <span class="hotreports-count">{{ c.article_count }}</span></li>
+              {% empty %}
+                <li>{% trans "No categories yet" %}</li>
+              {% endfor %}
+            </ul>
+          </div>
+          <div class="hotreports-card">
+            <h3 class="hotreports-card-subtitle">{% trans "Recent messages" %}</h3>
+            <ul class="hotreports-list">
+              {% for m in hotreports_recent_messages|slice:":5" %}
+                <li>{{ m.get_subject_display }} - {{ m.email|truncatechars:25 }}</li>
+              {% empty %}
+                <li>{% trans "No messages yet" %}</li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+      </section>
+    {% endif %}
+
+    {{ block.super }}
+  </div>
+{% endblock %}

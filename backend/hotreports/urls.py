@@ -23,7 +23,7 @@ from news.views import (
     VapidPublicKeyView,
 )
 from tourism.views import TourismViewSet
-from pulse.admin_site import pulse_admin_site
+from hotreports.admin_site import hotreports_admin_site
 from news.ckeditor_upload import ckeditor5_image_upload
 
 
@@ -55,7 +55,7 @@ api_v1 = [
 
 urlpatterns = [
     path("favicon.ico", RedirectView.as_view(url="/static/admin/img/icon.svg", permanent=False)),
-    path("admin/", pulse_admin_site.urls),
+    path("admin/", hotreports_admin_site.urls),
     path("api/v1/", include(api_v1)),
     path("api/schema/", SpectacularAPIView.as_view(), name="schema"),
     path("api/docs/", SpectacularSwaggerView.as_view(url_name="schema"), name="swagger-ui"),

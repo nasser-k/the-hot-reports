@@ -27,7 +27,7 @@ INSTALLED_APPS = [
     "news",
     "tourism",
     "ads",
-    "pulse.apps.PulseConfig",
+    "hotreports.apps.HotReportsConfig",
 ]
 
 MIDDLEWARE = [
@@ -42,7 +42,7 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
-ROOT_URLCONF = "pulse.urls"
+ROOT_URLCONF = "hotreports.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
@@ -58,7 +58,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = "pulse.wsgi.application"
+WSGI_APPLICATION = "hotreports.wsgi.application"
 
 # Database - supports SQLite (dev) and PostgreSQL (production)
 DATABASE_URL = config("DATABASE_URL", default=str(BASE_DIR / "db.sqlite3"))

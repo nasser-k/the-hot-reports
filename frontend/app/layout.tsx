@@ -100,7 +100,7 @@ export default function RootLayout({
               (function() {
                 try {
                   var cookies = document.cookie.split('; ');
-                  var darkCookie = cookies.find(function(c) { return c.startsWith('pulse_dark_mode='); });
+                  var darkCookie = cookies.find(function(c) { return c.startsWith('hotreports_dark_mode='); });
                   var isDark = false;
                   
                   if (darkCookie) {

@@ -1,7 +1,7 @@
 from datetime import date
 
 from rest_framework import serializers
-from pulse.media_urls import default_avatar_url, resolve_media_image
+from hotreports.media_urls import default_avatar_url, resolve_media_image
 
 from news.analytics_utils import visitor_key_from_request
 from .models import (

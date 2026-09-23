@@ -23,7 +23,7 @@ python manage.py collectstatic --noinput
 python manage.py setup_categories
 python manage.py setup_ad_slots
 python manage.py create_default_users
-gunicorn pulse.wsgi:application --bind 0.0.0.0:8000
+gunicorn hotreports.wsgi:application --bind 0.0.0.0:8000
 ```
 
 Put Nginx or a Lightsail load balancer in front of Gunicorn and terminate TLS on `api.thehotreports.com`.

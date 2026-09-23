@@ -1,6 +1,6 @@
 from django.contrib.auth import get_user_model
 from rest_framework import serializers
-from pulse.media_urls import default_avatar_url
+from hotreports.media_urls import default_avatar_url
 
 User = get_user_model()
 

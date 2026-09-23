@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from pulse.media_urls import resolve_media_image
+from hotreports.media_urls import resolve_media_image
 
 from .models import TourismListing
 

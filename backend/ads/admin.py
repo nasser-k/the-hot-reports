@@ -6,8 +6,8 @@ Django Admin for ads.
 """
 from django.contrib import admin
 
-from pulse.admin_media import MediaPreviewMixin
-from pulse.admin_roles import FilterActionsMixin, NoActionsMixin, can_manage_ads
+from hotreports.admin_media import MediaPreviewMixin
+from hotreports.admin_roles import FilterActionsMixin, NoActionsMixin, can_manage_ads
 
 from .models import AdSlot, Ad, AdEvent
 

@@ -1,7 +1,7 @@
 from django.db import models
 from django.utils.text import slugify
-from pulse.fields import ProcessedImageField
-from pulse.media_storage import tourism_image_path
+from hotreports.fields import ProcessedImageField
+from hotreports.media_storage import tourism_image_path
 
 
 class TourismListing(models.Model):

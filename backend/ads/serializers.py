@@ -3,7 +3,7 @@ Ads API serializers (camelCase JSON via djangorestframework-camel-case).
 """
 from rest_framework import serializers
 
-from pulse.media_urls import uploaded_file_url
+from hotreports.media_urls import uploaded_file_url
 
 from .models import Ad, AdSlot
 
