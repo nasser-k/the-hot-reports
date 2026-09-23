@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: pulse-of-kigezi-backend
+    name: the-hot-reports-backend
     runtime: python
     version: "3.13"
     buildCommand: pip install -r requirements.txt && python manage.py collectstatic --noinput
@@ -15,11 +15,11 @@ services:
       - key: DJANGO_DEBUG
         value: "False"
       - key: ALLOWED_HOSTS
-        value: "pulse-of-kigezi-backend.onrender.com,localhost,127.0.0.1"
+        value: "the-hot-reports-backend.onrender.com,localhost,127.0.0.1"
       - key: CORS_ALLOWED_ORIGINS
-        value: "https://pulse-of-kigezi-frontend.vercel.app,https://pulseofkigezi.vercel.app,https://pulseofkigezi.com,https://www.pulseofkigezi.com,http://localhost:3000"
+        value: "https://the-hot-reports.vercel.app,https://thehotreports.vercel.app,https://thehotreports.com,https://www.thehotreports.com,http://localhost:3000"
       - key: CSRF_TRUSTED_ORIGINS
-        value: "https://pulse-of-kigezi-backend.onrender.com,https://pulse-of-kigezi-frontend.vercel.app,https://pulseofkigezi.vercel.app,https://pulseofkigezi.com,https://www.pulseofkigezi.com"
+        value: "https://the-hot-reports-backend.onrender.com,https://the-hot-reports.vercel.app,https://thehotreports.vercel.app,https://thehotreports.com,https://www.thehotreports.com"
       - key: CSRF_COOKIE_SECURE
         value: "True"
       - key: SESSION_COOKIE_SECURE
@@ -35,19 +35,19 @@ services:
       - key: DATABASE_URL
         value: "postgresql://admin:gDGrTnKc7y76xFF2ZL0WUyY4dU4jBNhs@dpg-d8i0jf7lk1mc73fkq9sg-a/pulse_kigezi_database"
       - key: SITE_URL
-        value: "https://pulseofkigezi.com"
+        value: "https://thehotreports.com"
       - key: BACKEND_URL
-        value: "https://pulse-of-kigezi-backend.onrender.com"
+        value: "https://the-hot-reports-backend.onrender.com"
       - key: SITE_DOMAIN
-        value: "pulseofkigezi.com"
+        value: "thehotreports.com"
       - key: SITE_NAME
-        value: "Pulse of Kigezi"
+        value: "The Hot Reports"
       - key: SITE_DESCRIPTION
-        value: "Trusted news, compelling writer stories, and tourism highlights from Kigezi and beyond."
+        value: "Nationwide news, serial stories, and travel reporting from across Uganda."
       - key: OG_IMAGE
-        value: "https://pulseofkigezi.com/og-image.png"
+        value: "https://thehotreports.com/og-image.png"
       - key: TWITTER_HANDLE
-        value: "@PulseofKigezi"
+        value: "@thehotreports"
       - key: PULSE_VISITOR_HASH_SALT
         generateValue: true
       - key: VAPID_PUBLIC_KEY
@@ -55,17 +55,17 @@ services:
       - key: VAPID_PRIVATE_KEY
         value: "4wf20_s7YF4teKOqbm-LzVk2ZmPpFoCWhwvTBu1taTc"
       - key: VAPID_ADMIN_EMAIL
-        value: "admin@pulseofkigezi.com"
+        value: "admin@thehotreports.com"
       - key: EMAIL_HOST
         value: "smtp.gmail.com"
       - key: EMAIL_PORT
         value: "587"
       - key: EMAIL_HOST_USER
-        value: "pulseofkigezi@gmail.com"
+        value: "thehotreports@gmail.com"
       - key: EMAIL_USE_TLS
         value: "True"
       - key: DEFAULT_FROM_EMAIL
-        value: "Pulse of Kigezi <pulseofkigezi@gmail.com>"
+        value: "The Hot Reports <thehotreports@gmail.com>"
       - key: GOOGLE_SERVICE_ACCOUNT_JSON
         value: "pulse-of-kigezi-indexing-0d3a637a4974.json"
     disk:

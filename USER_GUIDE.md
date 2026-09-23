@@ -24,7 +24,7 @@ This guide explains how to use the The Hot Reports content management system.
 
 ## Logging In
 
-1. Go to the admin panel at: `https://pulse-of-kigezi-backend.onrender.com/admin/`
+1. Go to the admin panel at: `https://the-hot-reports-backend.onrender.com/admin/`
 2. Enter your email and password
 3. Click "Login"
 

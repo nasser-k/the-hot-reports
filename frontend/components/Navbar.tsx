@@ -374,13 +374,13 @@ export default function Navbar({ initialCategories = [], initialTourismTypes = [
             </div>
 
             {/* Categories - Dynamic from API */}
-            {reorderedCategories.length > 0 && (
+            {categories.length > 0 && (
               <div className="px-4 py-3">
                 <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-2">
                   Categories
                 </p>
                 <div className="grid grid-cols-2 gap-2">
-                  {reorderedCategories.map((cat) => (
+                  {categories.map((cat) => (
                     <Link
                       key={cat.slug}
                       href={`/category/${cat.slug}`}

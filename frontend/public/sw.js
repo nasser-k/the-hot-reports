@@ -1,4 +1,4 @@
-const CACHE_NAME = "pulse-of-kigezi-v6";
+const CACHE_NAME = "the-hot-reports-v1";
 const OFFLINE_URL = "/";
 
 const PRECACHE_URLS = [
@@ -133,7 +133,7 @@ self.addEventListener("push", (event) => {
 
   event.waitUntil(
     self.registration.showNotification(
-      data.title || "Pulse of Kigezi",
+      data.title || "The Hot Reports",
       options
     )
   );

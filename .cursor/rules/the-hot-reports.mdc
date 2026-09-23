@@ -1,5 +1,5 @@
 ---
-description: Product identity, SEO, and what must stay out of The Hot Reports
+description: Identity, SEO, and publishing rules for The Hot Reports
 alwaysApply: true
 ---
 
@@ -7,8 +7,8 @@ alwaysApply: true
 
 This is a nationwide Ugandan news site. The public name is **The Hot Reports**.
 
-- Do not reintroduce Pulse of Kigezi, PoKi, Kigezi News, or copy that positions the site as a regional Kigezi outlet.
-- Tourism is travel across Uganda. Stories are serial journalism, not a regional desk.
+- The product is The Hot Reports, a nationwide news site. Do not reintroduce Pulse of Kigezi, Kigezi News, or regional-only positioning.
+- Tourism is travel across Uganda. Stories are serial journalism.
 - Do not add public vanity statistics (article totals, monthly readers, years active) or admin analytics charts.
 - Keep the advertising system: ad slots, the ads API, AdSense, and the Ads Manager role.
 - Do not seed placeholder articles, listings, or made-up audience numbers. Empty states stay empty until real content is published.

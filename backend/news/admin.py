@@ -101,6 +101,7 @@ class ArticleAdmin(FilterActionsMixin, MediaPreviewMixin, admin.ModelAdmin):
         "created_by",
         "published_at",
         "highlight",
+        "views_total",
     )
     list_filter = ("status", "category", "highlight", "published_at", "created_by")
     search_fields = ("title", "slug", "excerpt", "content")

@@ -36,53 +36,53 @@ class Command(BaseCommand):
                 "name": "Technology",
                 "slug": "technology",
                 "color": "#7C3AED",  # Violet
-                "order": 5,
+                "order": 4,
             },
             # Education & Society
             {
                 "name": "Education",
                 "slug": "education",
                 "color": "#2563EB",  # Blue
-                "order": 6,
+                "order": 5,
             },
             {
                 "name": "Health",
                 "slug": "health",
                 "color": "#10B981",  # Green
-                "order": 7,
+                "order": 6,
             },
             {
                 "name": "Culture & Society",
                 "slug": "culture-society",
                 "color": "#DB2777",  # Pink
-                "order": 8,
+                "order": 7,
             },
             # Sports
             {
                 "name": "Sports",
                 "slug": "sports",
                 "color": "#16A34A",  # Green
-                "order": 9,
+                "order": 8,
             },
             # Opinion & Analysis
             {
                 "name": "Op-Ed",
                 "slug": "op-ed",
                 "color": "#6D28D9",  # Violet
-                "order": 10,
+                "order": 9,
             },
             # International
             {
                 "name": "Africa",
                 "slug": "africa",
                 "color": "#CA8A04",  # Yellow
-                "order": 11,
+                "order": 10,
             },
             {
                 "name": "World",
                 "slug": "world",
                 "color": "#0D9488",  # Teal
-                "order": 12,
+                "order": 11,
             },
         ]
 
@@ -125,10 +125,6 @@ class Command(BaseCommand):
                     updated_count += 1
                 else:
                     self.stdout.write(f"  Category already exists: {category.name}")
-
-        removed, _ = Category.objects.filter(slug="kigezi-news").delete()
-        if removed:
-            self.stdout.write(self.style.WARNING("Removed category: Kigezi News"))
 
         self.stdout.write("")
         self.stdout.write(

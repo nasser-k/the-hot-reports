@@ -63,10 +63,10 @@ Add variables under **Project → Settings → Environment Variables** (copy val
 |----------|--------------|-------------|
 | `DEBUG` | `False` | Disable debug mode |
 | `DJANGO_SECRET_KEY` | (generate 50+ chars) | Django secret key |
-| `ALLOWED_HOSTS` | `pulse-of-kigezi-backend.onrender.com,localhost` | Comma-separated allowed hosts |
+| `ALLOWED_HOSTS` | `the-hot-reports-backend.onrender.com,localhost` | Comma-separated allowed hosts |
 | `CORS_ALLOWED_ORIGINS` | `https://thehotreports.com,https://thehotreports.vercel.app` | Frontend origin(s) |
 | `SITE_URL` | `https://thehotreports.com` | Canonical frontend domain |
-| `BACKEND_URL` | `https://pulse-of-kigezi-backend.onrender.com` | Absolute URLs for uploaded media |
+| `BACKEND_URL` | `https://the-hot-reports-backend.onrender.com` | Absolute URLs for uploaded media |
 | `EMAIL_HOST_USER` | `thehotreports@gmail.com` | SMTP email for sending |
 | `DEFAULT_FROM_EMAIL` | `The Hot Reports <thehotreports@gmail.com>` | From email address |
 | `VAPID_PUBLIC_KEY` | (generate) | Web push public key |
@@ -77,7 +77,7 @@ Add variables under **Project → Settings → Environment Variables** (copy val
 
 | Variable | Example Value | Description |
 |----------|--------------|-------------|
-| `NEXT_PUBLIC_API_BASE_URL` | `https://pulse-of-kigezi-backend.onrender.com/api/v1` | Backend API URL |
+| `NEXT_PUBLIC_API_BASE_URL` | `https://the-hot-reports-backend.onrender.com/api/v1` | Backend API URL |
 | `NEXT_PUBLIC_SITE_URL` | `https://thehotreports.com` | Frontend domain |
 | `NEXT_PUBLIC_VAPID_PUBLIC_KEY` | (from backend) | Push notification key |
 | `NEXT_PUBLIC_EMAIL` | `info@thehotreports.com` | Public contact email |
@@ -186,7 +186,7 @@ Add the generated keys to:
 
 ### Backend (Render)
 1. In Render dashboard → your service → Settings → Custom Domains
-2. Add your domain (e.g., `pulse-of-kigezi-backend.onrender.com`)
+2. Add your domain (e.g., `the-hot-reports-backend.onrender.com`)
 3. Follow DNS instructions (CNAME)
 
 ### Frontend (Vercel)
