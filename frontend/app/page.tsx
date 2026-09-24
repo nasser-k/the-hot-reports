@@ -130,15 +130,15 @@ export default async function Home() {
       </div>
 
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6 lg:py-8">
-        <div className="grid grid-cols-1 xl:grid-cols-3 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8">
           {hasLead && (
-            <div className="xl:col-span-2 space-y-8 sm:space-y-10 order-2 xl:order-1">
+            <div className="lg:col-span-2 space-y-8 sm:space-y-10 order-2 lg:order-1">
               <Desk slug="national" layout="mixed" articles={articles("national")} />
               <Desk slug="politics" layout="mixed" articles={articles("politics")} />
             </div>
           )}
-          <aside className={`space-y-6 ${hasLead ? "order-1 xl:order-2" : "xl:col-span-3"}`}>
-            <div className="hidden xl:block">
+          <aside className={`space-y-6 ${hasLead ? "order-1 lg:order-2" : "lg:col-span-3"}`}>
+            <div className="hidden lg:block">
               <LiveAdBannerWrapper slot="homepage_sidebar" />
             </div>
             <LatestNewsSidebar />

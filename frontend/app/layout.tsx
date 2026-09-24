@@ -21,7 +21,7 @@ const merriweather = Merriweather({
 });
 
 export const viewport: Viewport = {
-  themeColor: "#DC2626",
+  themeColor: "#A21A47",
   width: "device-width",
   initialScale: 1,
 };

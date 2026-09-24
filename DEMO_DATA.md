@@ -43,7 +43,7 @@ Pick one of these when you add an article.
   "tags": ["kabale", "infrastructure", "business", "trading"],
   "metaTitle": "Kabale Gets Modern Market Complex | The Hot Reports",
   "metaDescription": "New KSH 2.5B market facility opens in Kabale with 500 shops, modern amenities for 3,000+ vendors. See photos and details.",
-  "metaKeywords": "kabale market, uganda infrastructure, kigezi business, kabale traders"
+  "metaKeywords": "kabale market, uganda infrastructure, uganda business, kabale traders"
 }
 ```
 
@@ -64,7 +64,7 @@ Pick one of these when you add an article.
   "tags": ["kisoro", "disaster", "weather", "emergency"],
   "metaTitle": "Landslides Hit Kisoro: 12 Families Displaced | Breaking",
   "metaDescription": "Heavy rains trigger landslides in Kisoro. Emergency teams deployed, 12 families displaced. Latest updates.",
-  "metaKeywords": "kisoro landslides, uganda floods, kigezi weather emergency"
+  "metaKeywords": "kisoro landslides, uganda floods, uganda weather emergency"
 }
 ```
 
@@ -85,7 +85,7 @@ Pick one of these when you add an article.
   "tags": ["culture", "bakiga", "heritage", "youth", "tradition"],
   "metaTitle": "Bakiga Cultural Revival: Youth Reclaim Heritage | Culture",
   "metaDescription": "Young Bakiga lead cultural renaissance in Uganda. Traditional dance, language festivals draw thousands. Full story.",
-  "metaKeywords": "bakiga culture, kigezi heritage, uganda traditional dance, bakiga youth"
+  "metaKeywords": "bakiga culture, uganda heritage, uganda traditional dance, bakiga youth"
 }
 ```
 
@@ -127,14 +127,14 @@ Pick one of these when you add an article.
   "tags": ["agriculture", "organic", "potatoes", "rubanda", "exports"],
   "metaTitle": "Rubanda Farmers Go Organic: Premium Export Push | Agriculture",
   "metaDescription": "840 Uganda potato farmers pursue organic certification. Premium European markets targeted. Full story.",
-  "metaKeywords": "organic farming uganda, irish potatoes kigezi, rubanda agriculture, export farming"
+  "metaKeywords": "organic farming uganda, irish potatoes uganda, rubanda agriculture, export farming"
 }
 ```
 
 ### Article 6: Politics
 ```json
 {
-  "slug": "kigezi-leaders-demand-road-upgrade",
+  "slug": "uganda-leaders-demand-road-upgrade",
   "title": "Uganda Leaders Demand Urgent Upgrade of Kabale-Kisoro Highway",
   "excerpt": "District chairmen from Kabale, Kisoro, and Kanungu unite to petition parliament over the deteriorating highway that serves as a lifeline for tourism and trade.",
   "content": "Political leaders across the country have presented a united front in demanding immediate government intervention on the Kabale-Kisoro highway, a critical 76-kilometer stretch that has deteriorated to dangerous levels.\n\nThe road, which serves as the primary access route to Bwindi Impenetrable National Park and Mgahinga Gorilla National Park, has become notorious for its potholes, eroded sections, and frequent accidents during the rainy season.\n\n\"This road is not just a convenience—it is an economic artery,\" said Kabale District Chairman Nelson Nshangabasheija during a press conference at the district headquarters. \"Every tourist who comes to see our gorillas travels this road. Every farmer who sends produce to Kampala uses this route. Every sick person who needs referral to Kabale Regional Referral Hospital depends on it.\"\n\nThe leaders have petitioned the Ministry of Works and Transport, requesting an emergency maintenance budget of KSH 12 billion. They argue that the cost of inaction far exceeds repair costs, citing lost tourism revenue and increased vehicle maintenance expenses for local businesses.\n\nOpposition MP Betty Muzanira criticized the government's prioritization, noting that less economically significant roads in other regions have received recent upgrades while Uganda waits.\n\nThe Ministry has promised to send a technical team to assess the road next month, but leaders remain skeptical. \"We've heard promises before,\" said Kisoro District Chairperson Abel Bizimana. \"What we need is action.\"\n\nThe petition includes signatures from 47 sub-county chairpersons, 12 Members of Parliament, and representatives from the Uganda Tourism Board and Uganda National Roads Authority.",
@@ -148,14 +148,14 @@ Pick one of these when you add an article.
   "tags": ["politics", "infrastructure", "roads", "tourism", "petition"],
   "metaTitle": "Uganda Leaders Demand Highway Upgrade | Politics",
   "metaDescription": "District chairmen unite to demand urgent Kabale-Kisoro highway repairs. Tourism and trade at stake. Full story.",
-  "metaKeywords": "kabale kisoro highway, uganda roads, kigezi infrastructure, district leaders petition"
+  "metaKeywords": "kabale kisoro highway, uganda roads, uganda infrastructure, district leaders petition"
 }
 ```
 
 ### Article 7: Sports
 ```json
 {
-  "slug": "kigezi-marathon-2024-record-participation",
+  "slug": "uganda-marathon-2024-record-participation",
   "title": "Uganda Marathon 2024 Sees Record 5,000 Runners",
   "excerpt": "The annual race through Kabale's terraced hills attracts participants from 12 countries, with Kenyan runner claiming men's title and Ugandan athlete winning women's division.",
   "content": "The 6th edition of the Uganda Marathon broke all previous records this weekend, with over 5,000 registered participants running through the breathtaking terraced landscapes of Kabale District.\n\nThe full marathon (42.195km) saw Kenyan athlete Peter Kipchoge cross the finish line first with a time of 2:14:32, while Uganda's own Stella Chesang dominated the women's division with a winning time of 2:32:15. Both times set new course records for the challenging high-altitude route, which starts at 1,800 meters above sea level and climbs to over 2,000 meters.\n\n\"The hills here are brutal,\" said Kipchoge after the race, catching his breath but smiling. \"But the views make the pain worth it. I've never seen such beautiful countryside.\"\n\nThe event featured multiple categories: the full marathon, half marathon (21km), 10km fun run, and a 5km family race. Participants came from 12 countries including Kenya, Ethiopia, Rwanda, Tanzania, the United States, and the United Kingdom.\n\nBeyond athletics, the marathon serves as a significant economic driver for the region. Organizers estimate that visiting runners and their supporters injected over KSH 800 million into the local economy over the three-day event period.\n\n\"This is more than a race—it's a celebration of Uganda,\" said race director Amos Tindyebwa. \"We want the world to see our hills, our culture, and our hospitality.\"\n\nProceeds from the marathon will fund scholarships for promising young athletes from the sub-region and support the construction of a new athletics track in Kabale Municipality.",
@@ -169,7 +169,7 @@ Pick one of these when you add an article.
   "tags": ["sports", "marathon", "athletics", "kabale", "running"],
   "metaTitle": "Uganda Marathon 2024: 5,000 Runners, New Records | Sports",
   "metaDescription": "Record participation at Uganda Marathon. Kenyan and Ugandan winners set course records. 12 countries represented.",
-  "metaKeywords": "kigezi marathon 2024, kabale running, uganda athletics, marathon results"
+  "metaKeywords": "uganda marathon 2024, kabale running, uganda athletics, marathon results"
 }
 ```
 
@@ -190,7 +190,7 @@ Pick one of these when you add an article.
   "tags": ["health", "maternity", "rubanda", "hospital", "maternal-care"],
   "metaTitle": "Rubanda Hospital Maternity Wing Opens | Health News",
   "metaDescription": "New KSH 450M maternity wing opens at Rubanda Hospital. Operating theater, NICU, 50 beds. Serving 3,000+ deliveries yearly.",
-  "metaKeywords": "rubanda hospital, maternity ward uganda, maternal health kigezi, hospital upgrade"
+  "metaKeywords": "rubanda hospital, maternity ward uganda, maternal health uganda, hospital upgrade"
 }
 ```
 
@@ -218,7 +218,7 @@ Pick one of these when you add an article.
 ### Article 10: Sports - Local Focus
 ```json
 {
-  "slug": "kigezi-secondary-schools-football-champions-crowned",
+  "slug": "uganda-secondary-schools-football-champions-crowned",
   "title": "St. Paul's Seminary Crowned Uganda Schools Football Champions",
   "excerpt": "The Kabale-based school defeated defending champions Uganda High School 2-1 in a thrilling final match at Kabale Stadium.",
   "content": "St. Paul's Seminary Kabale has been crowned champions of the 2024 Uganda Secondary Schools Football Championship after a dramatic 2-1 victory over defending champions Uganda High School in the final match at Kabale Stadium.\n\nThe match, attended by over 3,000 enthusiastic supporters, lived up to its billing as the clash of regional titans. Uganda High School took an early lead through their star striker Denis Okello in the 23rd minute, controlling possession for most of the first half.\n\nBut St. Paul's, known for their resilience, equalized just before halftime when midfielder Emmanuel Turyamureeba curled a stunning free-kick into the top corner.\n\nThe decisive moment came in the 67th minute when substitute Patrick Aheebwa, who had been on the pitch for only four minutes, pounced on a defensive error and slotted home the winner.\n\n\"This victory means everything to our school,\" said an emotional St. Paul's coach Alex Kwikiriza after the match. \"These boys trained every morning before classes, sacrificing their sleep and comfort. Now they are champions.\"\n\nThe tournament featured 32 schools from across the country and lasted three weeks. Individual awards went to Denis Okello (Golden Boot with 12 goals), Emmanuel Turyamureeba (Most Valuable Player), and St. Paul's captain Samuel Tugume (Best Defender).\n\nThe champions will now represent Uganda at the national secondary schools championship in Masaka next month.\n\nEducation officials praised the tournament's role in nurturing both academic and sporting excellence. \"We want well-rounded students,\" said Kabale Municipal Education Officer. \"Football teaches teamwork, discipline, and perseverance—skills that help in the classroom and in life.\"",
@@ -232,7 +232,7 @@ Pick one of these when you add an article.
   "tags": ["sports", "football", "schools", "championship", "kabale"],
   "metaTitle": "St. Paul's Wins Uganda Schools Football Championship | Sports",
   "metaDescription": "St. Paul's Seminary crowned Uganda schools football champions. Beat Uganda High 2-1 in thrilling final. Full match report.",
-  "metaKeywords": "kigezi schools football, st pauls seminary kabale, secondary schools championship, youth football uganda"
+  "metaKeywords": "uganda schools football, st pauls seminary kabale, secondary schools championship, youth football uganda"
 }
 ```
 
@@ -260,7 +260,7 @@ Pick one of these when you add an article.
 ### Article 12: National - Education Focus
 ```json
 {
-  "slug": "uneb-releases-2023-results-kigezi-schools-excel",
+  "slug": "uneb-releases-2023-results-uganda-schools-excel",
   "title": "UNEB Releases 2023 Results: Uganda Schools Excel in Sciences",
   "excerpt": "Districts from southwestern Uganda dominate top rankings in mathematics and science subjects, outperforming national averages.",
   "content": "The Uganda National Examinations Board has released the 2023 Uganda Certificate of Education results, and country schools have once again demonstrated academic excellence, particularly in science subjects.\n\nUganda High School, St. Paul's Seminary Kabale, and Uganda College Butobere all ranked in the top 50 nationally for mathematics performance, with pass rates exceeding 85% compared to the national average of 64%.\n\nEducation experts attribute the success to several factors: strong traditional emphasis on education in Bakiga culture, the cool highland climate that supports concentration, and the relative absence of urban distractions that affect lowland schools.\n\nHowever, the results also reveal ongoing challenges. Many schools in remote sub-counties continue to struggle with laboratory equipment shortages and limited internet access for research.\n\nThe government has announced a KSH 2 billion fund to build science laboratories in 40 underserved schools across the region, beginning next financial year.",
@@ -271,10 +271,10 @@ Pick one of these when you add an article.
   "publishedAt": "2024-01-04T11:30:00+03:00",
   "readTime": 5,
   "highlight": "trending",
-  "tags": ["education", "uneb", "kigezi", "science", "schools"],
+  "tags": ["education", "uneb", "uganda", "science", "schools"],
   "metaTitle": "Uganda Schools Excel in 2023 UNEB Exams | National",
   "metaDescription": "Uganda schools dominate national science rankings. 85% math pass rates vs 64% national. Full analysis.",
-  "metaKeywords": "uneb results 2023, kigezi education, uganda schools ranking, national exams"
+  "metaKeywords": "uneb results 2023, uganda education, uganda schools ranking, national exams"
 }
 ```
 
@@ -292,10 +292,10 @@ Pick one of these when you add an article.
   "publishedAt": "2024-01-03T14:15:00+03:00",
   "readTime": 4,
   "highlight": "featured",
-  "tags": ["technology", "5g", "safaricom", "internet", "kigezi"],
+  "tags": ["technology", "5g", "safaricom", "internet", "uganda"],
   "metaTitle": "Safaricom 5G Arrives in Uganda | Technology News",
   "metaDescription": "5G network launched in Kabale and Kisoro. 200 Mbps speeds, transformation for business and healthcare. Tech news.",
-  "metaKeywords": "5g uganda, safaricom kabale, internet kigezi, technology uganda"
+  "metaKeywords": "5g uganda, safaricom kabale, internet uganda, technology uganda"
 }
 ```
 
@@ -344,7 +344,7 @@ Pick one of these when you add an article.
 ### Article 16: Education - Teacher Training
 ```json
 {
-  "slug": "kigezi-teachers-receive-digital-literacy-training",
+  "slug": "uganda-teachers-receive-digital-literacy-training",
   "title": "Uganda Teachers Receive Digital Literacy Training",
   "excerpt": "1,200 teachers from Kabale, Kisoro, and Rubanda complete certification in technology-enhanced teaching methods.",
   "content": "A comprehensive digital literacy program has equipped 1,200 teachers from across the country with skills to integrate technology into their classrooms, marking a significant step toward modernizing education in rural Uganda.\n\nThe six-month program, funded by the Mastercard Foundation and implemented by Kabale University, covered basic computer skills, using tablets for lesson delivery, accessing online educational resources, and creating digital assessments.\n\n\"Before this training, I was afraid of computers,\" admitted Grace Turyamureeba, a primary teacher with 18 years of experience. \"Now I use a tablet to show my students videos about volcanoes when we study geography. They understand so much better.\"\n\nEach participating school received 10 tablets and a solar charging station to overcome electricity challenges. The program specifically targeted schools without existing technology infrastructure.\n\nEducation officials say the goal is to create a critical mass of tech-savvy teachers who can mentor colleagues, spreading digital skills throughout the region without requiring every teacher to undergo formal training.",
@@ -379,7 +379,7 @@ Pick one of these when you add an article.
   "tags": ["opinion", "infrastructure", "aviation", "tourism", "economy"],
   "metaTitle": "Invest in Kabale Airport | Op-Ed by David Tumwine",
   "metaDescription": "Opinion: Kabale Airport upgrade would keep tourism revenue in Uganda. Analysis of aviation infrastructure needs.",
-  "metaKeywords": "kabale airport, uganda aviation, kigezi tourism, opinion"
+  "metaKeywords": "kabale airport, uganda aviation, uganda tourism, opinion"
 }
 ```
 
@@ -400,7 +400,7 @@ Pick one of these when you add an article.
   "tags": ["opinion", "culture", "language", "education", "identity"],
   "metaTitle": "Protect Runyankole-Rukiga | Op-Ed by Prof. Aharikundira",
   "metaDescription": "Opinion: Decline of mother tongue threatens Uganda cultural identity. Call for linguistic revival. Op-ed.",
-  "metaKeywords": "runyankole rukiga, kigezi language, cultural identity, uganda languages"
+  "metaKeywords": "runyankole rukiga, uganda language, cultural identity, uganda languages"
 }
 ```
 
@@ -491,7 +491,7 @@ Pick one of these when you add an article.
 ### Article 23: Politics - Additional
 ```json
 {
-  "slug": "new-cabinet-reshuffle-reshapes-kigezi-representation",
+  "slug": "new-cabinet-reshuffle-reshapes-uganda-representation",
   "title": "New Cabinet Reshuffle Reshapes Uganda Representation",
   "excerpt": "Three ministers from southwestern Uganda appointed in government shakeup affecting education, trade, and local government portfolios.",
   "content": "President Museveni has announced a significant cabinet reshuffle, appointing three new ministers from the country to key government positions in a move analysts say strengthens southwestern representation at the national table.\n\nThe changes see a former Kabale District Chairman elevated to State Minister for Local Government, while a Kisoro MP with a background in economics takes over Trade and Industry. Perhaps most significantly, a respected educator from Rubanda becomes State Minister for Higher Education.\n\nPolitical observers interpret the reshuffle as recognition of Uganda's strategic importance—both electorally and as a tourism and agricultural hub. The region has consistently delivered high voter turnout for the ruling party, and the appointments reward that loyalty.\n\nOpposition figures have criticized the changes as cosmetic rather than substantive. \"What Uganda needs is budget allocation, not new faces in old offices,\" said the Leader of the Opposition.\n\nThe new ministers take office immediately, inheriting portfolios facing significant challenges from funding constraints to implementation gaps.",
@@ -502,10 +502,10 @@ Pick one of these when you add an article.
   "publishedAt": "2023-11-25T16:00:00+03:00",
   "readTime": 3,
   "highlight": "",
-  "tags": ["politics", "cabinet", "government", "kigezi", "appointments"],
+  "tags": ["politics", "cabinet", "government", "uganda", "appointments"],
   "metaTitle": "Cabinet Reshuffle: Uganda Ministers Appointed | Politics",
   "metaDescription": "Three Uganda ministers appointed in cabinet reshuffle. New faces in education, trade, local government. Politics.",
-  "metaKeywords": "uganda cabinet reshuffle, kigezi ministers, museveni appointments, government uganda"
+  "metaKeywords": "uganda cabinet reshuffle, uganda ministers, museveni appointments, government uganda"
 }
 ```
 
@@ -526,7 +526,7 @@ Pick one of these when you add an article.
   "tags": ["business", "investment", "industrial-park", "manufacturing", "jobs"],
   "metaTitle": "Kabale Industrial Park Attracts KSH 12B | Business",
   "metaDescription": "KSH 12 billion investment commitments secured for Kabale Industrial Park. 2,000 jobs expected. Business news.",
-  "metaKeywords": "kabale industrial park, uganda investment, manufacturing uganda, kigezi business"
+  "metaKeywords": "kabale industrial park, uganda investment, manufacturing uganda, uganda business"
 }
 ```
 
@@ -568,7 +568,7 @@ Pick one of these when you add an article.
   "tags": ["culture", "marriage", "bakiga", "tradition", "society"],
   "metaTitle": "Bakiga Marriage Traditions Evolve | Culture & Society",
   "metaDescription": "Bakiga traditional marriage ceremonies adapt to modern times. Couples blend customs with contemporary values. Culture news.",
-  "metaKeywords": "bakiga marriage, uganda culture, traditional ceremony, kigezi society"
+  "metaKeywords": "bakiga marriage, uganda culture, traditional ceremony, uganda society"
 }
 ```
 
@@ -616,7 +616,7 @@ Pick one of these when you add an article.
   "tags": ["business-hotel", "conference", "central-location", "restaurant", "wifi"],
   "metaTitle": "White Horse Inn Kabale | Business Hotel Uganda",
   "metaDescription": "Modern hotel in Kabale town center. Conference facilities, restaurant, WiFi. Ideal base for Uganda exploration.",
-  "metaKeywords": "hotel kabale, white horse inn, business accommodation kigezi, conference facilities uganda"
+  "metaKeywords": "hotel kabale, white horse inn, business accommodation uganda, conference facilities uganda"
 }
 ```
 
@@ -682,7 +682,7 @@ Pick one of these when you add an article.
   "tags": ["camping", "budget", "backpackers", "lakeside", "social", "canoe"],
   "metaTitle": "Bunyonyi Overland Camp | Budget Camping Uganda",
   "metaDescription": "Affordable lakeside camping at Lake Bunyonyi. Tent sites, bandas, hot showers. Popular with overland travelers.",
-  "metaKeywords": "camping lake bunyonyi, budget accommodation uganda, overland camp, backpackers kigezi"
+  "metaKeywords": "camping lake bunyonyi, budget accommodation uganda, overland camp, backpackers uganda"
 }
 ```
 
@@ -755,7 +755,7 @@ Pick one of these when you add an article.
 ### Listing 9: Safari (Birding Focus)
 ```json
 {
-  "slug": "kigezi-birding-safaris",
+  "slug": "uganda-birding-safaris",
   "name": "Uganda Birding Safaris",
   "type": "safari",
   "tagline": "Expert-guided birding tours in the Uganda highlands with 350+ species recorded",
@@ -765,12 +765,12 @@ Pick one of these when you add an article.
   "priceRange": "$120 – $450",
   "rating": 4.9,
   "featured": false,
-  "website": "https://kigezibirding.com",
+  "website": "https://ugandabirding.com",
   "phone": "+256 772 345678",
   "tags": ["birding", "bird-watching", "albertine-rift", "endemic-species", "photography"],
   "metaTitle": "Uganda Birding Safaris | Bird Watching Uganda",
   "metaDescription": "Expert birding guides in Uganda. 350+ species, Albertine Rift endemics. Day trips to multi-day expeditions.",
-  "metaKeywords": "kigezi birding, bird watching uganda, albertine rift endemics, bwindi birds"
+  "metaKeywords": "uganda birding, bird watching uganda, albertine rift endemics, bwindi birds"
 }
 ```
 
