@@ -10,7 +10,7 @@ The Hot Reports is a professional news and stories website built with modern web
 - 📖 **Serial Stories**: Dedicated stories section with episodes, likes, comments, and share tracking
 - 💼 **Advertising System**: Complete ad management with slot targeting and click/impression analytics
 - 🏔️ **Tourism Showcase**: Travel listings from across Uganda
-- 👥 **Role-Based Access**: Superadmin, Editor, Reporter, Story Writer, and Ads Manager roles
+- 👥 **Role-Based Access**: Superadmin, Editor, Reporter, and Story Writer
 - 📊 **Analytics**: Article & story views, likes, comments, share tracking
 - 📱 **Mobile-First**: Responsive design for all devices
 - 🌙 **Dark Mode**: Full dark mode support
@@ -52,7 +52,6 @@ python -m venv .venv
 
 pip install -r requirements.txt
 python manage.py migrate
-# News desks are fixed in code: National through World.
 python manage.py setup_ad_slots          # 8 ad slot positions
 python manage.py create_default_users --insecure  # 5 default users (dev only)
 python manage.py runserver
@@ -121,8 +120,6 @@ the-hot-reports/
 | **Editor** | editor@thehotreports.com | Articles (full), categories, tourism, stories (view/delete), comment moderation |
 | **Reporter** | reporter@thehotreports.com | Create/edit own articles; author auto-set; draft-only |
 | **Story Writer** | stories@thehotreports.com | Create/edit own stories; author auto-set; draft-only |
-| **Ads Manager** | ads@thehotreports.com | Create tourism listings; created_by auto-set; draft-only |
-
 > **Note:** Storywriters and Editors can create/edit stories. Storywriters can only save as Draft and must have Editor approval to publish.
 
 ## 🔑 Key Features
@@ -237,7 +234,6 @@ After running `create_default_users --insecure` (development only):
 | Editor | editor@thehotreports.com | editor123 |
 | Reporter | reporter@thehotreports.com | reporter123 |
 | Storywriter | stories@thehotreports.com | stories123 |
-| Ads Manager | ads@thehotreports.com | ads123 |
 
 **⚠️ Use `create_default_users` (without `--insecure`) in production — it generates secure random passwords shown once at creation time.**
 

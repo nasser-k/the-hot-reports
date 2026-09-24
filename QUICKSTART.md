@@ -19,7 +19,6 @@ copy .env.example .env
 
 # 4. Setup database and seed data
 python manage.py migrate
-# News desks are fixed in code. Do not add categories.
 python manage.py setup_ad_slots          # Creates 8 ad slot positions
 python manage.py create_default_users --insecure  # Creates 5 default users (dev only)
 
@@ -39,8 +38,6 @@ python manage.py runserver
 | Editor | editor@thehotreports.com | editor123 |
 | Reporter | reporter@thehotreports.com | reporter123 |
 | Story Writer | stories@thehotreports.com | stories123 |
-| Ads Manager | ads@thehotreports.com | ads123 |
-
 ---
 
 ## 🎨 Frontend (2 minutes)

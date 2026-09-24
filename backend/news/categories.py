@@ -1,17 +1,17 @@
-"""The eleven news desks. These are fixed in code and are not created in admin."""
+"""News desks for The Hot Reports."""
 
 NEWS_CATEGORIES = (
     {"name": "National", "slug": "national", "color": "#A21A47", "order": 1},
-    {"name": "Politics", "slug": "politics", "color": "#9333EA", "order": 2},
-    {"name": "Business", "slug": "business", "color": "#EA580C", "order": 3},
-    {"name": "Technology", "slug": "technology", "color": "#7C3AED", "order": 4},
-    {"name": "Education", "slug": "education", "color": "#2563EB", "order": 5},
-    {"name": "Health", "slug": "health", "color": "#10B981", "order": 6},
-    {"name": "Culture & Society", "slug": "culture-society", "color": "#DB2777", "order": 7},
-    {"name": "Sports", "slug": "sports", "color": "#16A34A", "order": 8},
-    {"name": "Op-Ed", "slug": "op-ed", "color": "#6D28D9", "order": 9},
-    {"name": "Africa", "slug": "africa", "color": "#CA8A04", "order": 10},
-    {"name": "World", "slug": "world", "color": "#0D9488", "order": 11},
+    {"name": "Politics", "slug": "politics", "color": "#152238", "order": 2},
+    {"name": "Business", "slug": "business", "color": "#1B4D3E", "order": 3},
+    {"name": "Technology", "slug": "technology", "color": "#243044", "order": 4},
+    {"name": "Education", "slug": "education", "color": "#3A4578", "order": 5},
+    {"name": "Health", "slug": "health", "color": "#0E5C56", "order": 6},
+    {"name": "Culture & Society", "slug": "culture-society", "color": "#6B3050", "order": 7},
+    {"name": "Sports", "slug": "sports", "color": "#8C3A14", "order": 8},
+    {"name": "Op-Ed", "slug": "op-ed", "color": "#4A4036", "order": 9},
+    {"name": "Africa", "slug": "africa", "color": "#8A5A12", "order": 10},
+    {"name": "World", "slug": "world", "color": "#1A5670", "order": 11},
 )
 
 CATEGORY_CHOICES = tuple((item["slug"], item["name"]) for item in NEWS_CATEGORIES)

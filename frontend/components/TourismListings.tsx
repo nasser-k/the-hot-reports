@@ -263,8 +263,6 @@ export default function TourismListings() {
           </>
         )}
 
-        <ResponsiveAdBanner desktopSlot="tourism_banner" mobileSlot="tourism_banner_mobile" />
-
         {/* CTA */}
         <div className="bg-gradient-to-r from-red-600 to-red-700 rounded-2xl p-6 sm:p-10 text-center">
           <h2 className="text-2xl sm:text-3xl font-black text-white mb-3">

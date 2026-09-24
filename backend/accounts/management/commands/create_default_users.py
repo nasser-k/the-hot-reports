@@ -51,6 +51,8 @@ class Command(BaseCommand):
                         "delete_pushsubscription", "view_pushsubscription",
                         # Tourism - full control
                         "add_tourismlisting", "change_tourismlisting", "delete_tourismlisting", "view_tourismlisting",
+                        "add_ad", "change_ad", "delete_ad", "view_ad",
+                        "view_adslot", "view_adevent",
                         # Analytics - view only (article stats)
                         "view_articleviewevent", "view_articlevisitorday",
                         # Users - view team members
@@ -85,12 +87,6 @@ class Command(BaseCommand):
                 )
                 storywriter_group.permissions.set(storywriter_perms)
                 self.stdout.write(self.style.SUCCESS("Created Story Writer group with full story permissions"))
-
-            ads_group, created = Group.objects.get_or_create(name="Ads Manager")
-            if created:
-                ads_perms = Permission.objects.filter(content_type__app_label="ads")
-                ads_group.permissions.set(ads_perms)
-                self.stdout.write(self.style.SUCCESS("Created Ads Manager group with full ad permissions"))
 
             self.stdout.write("\nCreating users...")
             credentials = []
@@ -129,15 +125,6 @@ class Command(BaseCommand):
                     "bio": "Reporting news from across Uganda.",
                 },
                 {
-                    "email": config("USER_ADS_EMAIL", default=f"ads@{site_domain}"),
-                    "role": "Ads Manager",
-                    "name": "David Byaruhanga",
-                    "superuser": False,
-                    "group": ads_group,
-                    "perms": [],
-                    "bio": "Managing advertising partnerships and campaigns.",
-                },
-                {
                     "email": config("USER_STORIES_EMAIL", default=f"stories@{site_domain}"),
                     "role": "Story Writer",
                     "name": "Anita Tumukunde",
@@ -171,8 +158,6 @@ class Command(BaseCommand):
                     
                     if user_data["email"] in [config("USER_REPORTER_EMAIL", default=f"reporter@{site_domain}"), config("USER_EDITOR_EMAIL", default=f"editor@{site_domain}")]:
                         extra_fields["show_on_about_page"] = True
-                    elif user_data["email"] == config("USER_ADS_EMAIL", default=f"ads@{site_domain}"):
-                        extra_fields["show_on_about_page"] = False
                     
                     if user_data["superuser"]:
                         user = User.objects.create_superuser(

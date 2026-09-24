@@ -113,7 +113,7 @@ from .serializers import (
 
 
 class CategoryListView(APIView):
-    """Fixed desks. The public site does not create categories."""
+    """News desks."""
 
     def get(self, request):
         return Response(

@@ -52,7 +52,7 @@ class UserAdmin(FilterActionsMixin, MediaPreviewMixin, admin.ModelAdmin):
         }),
         ("Permissions", {
             "fields": ("is_active", "is_superuser", "groups", "user_permissions"),
-            "description": "Superusers have full access. Users in 'Editor' or 'Ads Manager' groups get admin access to their respective areas."
+            "description": "Superusers have full access. Editors, reporters, and story writers see the areas that match their group."
         }),
         ("Important Dates", {
             "fields": ("last_login", "date_joined"),

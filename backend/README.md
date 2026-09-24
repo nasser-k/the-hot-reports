@@ -13,7 +13,6 @@ copy .env.example .env
 # Edit .env — set DJANGO_SECRET_KEY to a long random string
 
 python manage.py migrate
-# News desks are fixed in code. Do not add categories.
 python manage.py setup_ad_slots            # 10 ad slots
 python manage.py create_default_users --insecure  # dev only
 python manage.py runserver
@@ -130,9 +129,8 @@ All JSON responses use **camelCase** (`djangorestframework-camel-case`).
 | Group | Permissions |
 |-------|-------------|
 | `Reporter` | Create/edit own articles (author auto-set), draft-only, view own content only |
-| `Editor` | Full article/story/tourism control, categories/tags, approve content, comment moderation |
+| `Editor` | Articles, tourism, advertising, and comment moderation |
 | `storywriter` | Create/edit own stories (author auto-set), draft-only, view own series only |
-| `Ads Manager` | Create tourism listings (created_by auto-set), draft-only, view own listings only |
 
 > Superadmin (is_superuser) has unrestricted access to all models.
 

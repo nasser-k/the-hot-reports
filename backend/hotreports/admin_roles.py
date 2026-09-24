@@ -11,10 +11,6 @@ def is_reporter(user) -> bool:
     return user.groups.filter(name="Reporter").exists()
 
 
-def is_ads_manager(user) -> bool:
-    return user.groups.filter(name="Ads Manager").exists()
-
-
 def is_storywriter(user) -> bool:
     return user.groups.filter(name="storywriter").exists()
 
@@ -24,7 +20,7 @@ def is_content_creator(user) -> bool:
 
 
 def can_manage_ads(user) -> bool:
-    return is_editor(user) or is_ads_manager(user)
+    return is_editor(user)
 
 
 class FilterActionsMixin:

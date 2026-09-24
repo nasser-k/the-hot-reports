@@ -13,7 +13,7 @@ from .models import AdSlot, Ad, AdEvent
 
 
 class AdsManagerPermissionMixin:
-    """Mixin to restrict access to Ads Managers, Editors, and Superusers."""
+    """Editors place and update advertisements."""
 
     def has_module_permission(self, request):
         return can_manage_ads(request.user)

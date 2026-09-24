@@ -17,7 +17,7 @@ This guide explains how to use the The Hot Reports content management system.
 - [Story Writer Guide](#story-writer-guide)
   - [Creating Story Series](#creating-story-series)
   - [Adding Episodes](#adding-episodes)
-- [Ads Manager Guide](#ads-manager-guide)
+- [Tourism listings](#tourism-listings)
   - [Creating Tourism Listings](#creating-tourism-listings)
 
 ---
@@ -702,13 +702,9 @@ Editors can view and manage browser push notification subscriptions.
 
 ---
 
-# Ads Manager Guide
+# Tourism listings
 
-**Your Permissions:**
-- Create and manage tourism listings
-- **Created by is automatically tracked** (field is auto-set)
-- Can only save listings as **Draft** (cannot publish directly)
-- Cannot publish listings directly (requires Editor approval)
+Editors add tourism listings and advertisements.
 
 ---
 
@@ -825,6 +821,6 @@ For technical issues or questions:
 | Article | Title, Category, Content | ✅ | ✅ | Reporters |
 | Story Series | Title, Genre | ❌ | ✅ | Storywriters |
 | Story Episode | Series, Title, Episode Number, Content | ✅ | ❌ | Storywriters |
-| Tourism Listing | Name, Type, Location, Description | ❌ | ✅ | Ads Managers (as Created By) |
+| Tourism Listing | Name, Type, Location, Description | ❌ | ✅ | Editor (as Created By) |
 
 ---

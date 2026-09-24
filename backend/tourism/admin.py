@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 from hotreports.admin_media import MediaPreviewMixin
-from hotreports.admin_roles import FilterActionsMixin, can_manage_ads
+from hotreports.admin_roles import FilterActionsMixin, is_editor
 
 from .forms import TourismListingAdminForm
 from .models import TourismListing
@@ -10,7 +10,7 @@ from .models import TourismListing
 @admin.register(TourismListing)
 class TourismListingAdmin(FilterActionsMixin, MediaPreviewMixin, admin.ModelAdmin):
     def allowed_action_names(self, request):
-        if can_manage_ads(request.user):
+        if is_editor(request.user):
             return {"delete_selected"}
         return set()
 
@@ -22,19 +22,19 @@ class TourismListingAdmin(FilterActionsMixin, MediaPreviewMixin, admin.ModelAdmi
     search_fields = ("name", "slug", "location")
 
     def has_module_permission(self, request):
-        return can_manage_ads(request.user)
+        return is_editor(request.user)
 
     def has_view_permission(self, request, obj=None):
-        return can_manage_ads(request.user)
+        return is_editor(request.user)
 
     def has_add_permission(self, request):
-        return can_manage_ads(request.user)
+        return is_editor(request.user)
 
     def has_change_permission(self, request, obj=None):
-        return can_manage_ads(request.user)
+        return is_editor(request.user)
 
     def has_delete_permission(self, request, obj=None):
-        return can_manage_ads(request.user)
+        return is_editor(request.user)
 
     readonly_fields = ("slug", "created_by")
 

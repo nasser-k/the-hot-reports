@@ -24,7 +24,6 @@ import {
 import { getTourismTypes, type TourismTypeInfo } from "@/lib/api";
 import { NEWS_CATEGORIES } from "@/lib/categories";
 import SearchModal from "./SearchModal";
-import LiveAdBanner from "./LiveAdBanner";
 import { getDarkMode, saveDarkMode } from "@/lib/preferences";
 
 const TikTokIcon = ({ size = 14 }: { size?: number }) => (
@@ -157,10 +156,6 @@ export default function Navbar({ initialTourismTypes = [] }: NavbarProps) {
             <Link href="/" className="inline-block">
               <img src="/logo.png" alt="The Hot Reports" className="h-20 w-20 sm:h-28 sm:w-28 lg:h-32 lg:w-32 rounded-lg object-cover" />
             </Link>
-          </div>
-
-          <div className="hidden lg:flex items-center">
-            <LiveAdBanner slot="homepage_banner" />
           </div>
 
           {/* Mobile right actions */}

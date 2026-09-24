@@ -4,21 +4,23 @@ Use this data to manually populate your Django backend admin panel.
 
 ---
 
-## Categories (Create These First)
+## News desks
+
+Pick one of these when you add an article.
 
 | Name | Slug | Color |
 |------|------|-------|
 | National | national | #A21A47 |
-| Politics | politics | #9333EA |
-| Business | business | #EA580C |
-| Technology | technology | #7C3AED |
-| Education | education | #2563EB |
-| Health | health | #10B981 |
-| Culture & Society | culture-society | #DB2777 |
-| Sports | sports | #16A34A |
-| Op-Ed | op-ed | #6D28D9 |
-| Africa | africa | #CA8A04 |
-| World | world | #0D9488 |
+| Politics | politics | #152238 |
+| Business | business | #1B4D3E |
+| Technology | technology | #243044 |
+| Education | education | #3A4578 |
+| Health | health | #0E5C56 |
+| Culture & Society | culture-society | #6B3050 |
+| Sports | sports | #8C3A14 |
+| Op-Ed | op-ed | #4A4036 |
+| Africa | africa | #8A5A12 |
+| World | world | #1A5670 |
 
 ---
 
@@ -73,7 +75,7 @@ Use this data to manually populate your Django backend admin panel.
   "title": "Reclaiming Bakiga Heritage: The Youth-Led Cultural Revival",
   "excerpt": "A new generation of Uganda youth are embracing traditional dance, language, and customs through innovative cultural festivals.",
   "content": "In the hills of modern-day Kabale and Rubanda districts, a quiet cultural revolution is taking place. Young Bakiga, aged 18 to 35, are increasingly turning to their roots, organizing cultural festivals that blend traditional music with contemporary expression.\n\nThe annual \"Ekituutu Kya Bakiga\" festival, now in its fourth year, attracted over 5,000 attendees last weekend. Events included traditional wrestling (Ekitaguriro), folk storytelling, and the iconic Bakiga dance known for its energetic high jumps.\n\n\"We grew up speaking English and Runyankole-Rukiga in school, but many of us never learned the deeper cultural practices,\" says festival organizer Peace Naturinda, 28. \"This is about reclaiming who we are.\"\n\nLocal elders have embraced the movement, offering their knowledge of clan histories, traditional medicine, and oral literature. The revival has also sparked interest in traditional cuisine, with young entrepreneurs opening restaurants serving authentic Bakiga dishes like \"oburo\" (millet bread) and \"enkoko\" (traditional chicken stew).\n\nCultural scholars note that this grassroots movement differs from previous state-sponsored cultural programs by being genuinely youth-driven and utilizing social media to reach diaspora communities.",
-  "category": { "name": "Culture & Society", "slug": "culture-society", "color": "#DB2777" }
+  "category": { "name": "Culture & Society", "slug": "culture-society", "color": "#6B3050" }
   "author": { "name": "Patricia Turyamureeba", "avatar": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100" },
   "image": "https://images.unsplash.com/photo-1533551059283-e68530e3f19e?w=800",
   "imageAttribution": "Photo: African dance performance by Shalom Mwenesi on Unsplash",
@@ -136,7 +138,7 @@ Use this data to manually populate your Django backend admin panel.
   "title": "Uganda Leaders Demand Urgent Upgrade of Kabale-Kisoro Highway",
   "excerpt": "District chairmen from Kabale, Kisoro, and Kanungu unite to petition parliament over the deteriorating highway that serves as a lifeline for tourism and trade.",
   "content": "Political leaders across the country have presented a united front in demanding immediate government intervention on the Kabale-Kisoro highway, a critical 76-kilometer stretch that has deteriorated to dangerous levels.\n\nThe road, which serves as the primary access route to Bwindi Impenetrable National Park and Mgahinga Gorilla National Park, has become notorious for its potholes, eroded sections, and frequent accidents during the rainy season.\n\n\"This road is not just a convenience—it is an economic artery,\" said Kabale District Chairman Nelson Nshangabasheija during a press conference at the district headquarters. \"Every tourist who comes to see our gorillas travels this road. Every farmer who sends produce to Kampala uses this route. Every sick person who needs referral to Kabale Regional Referral Hospital depends on it.\"\n\nThe leaders have petitioned the Ministry of Works and Transport, requesting an emergency maintenance budget of KSH 12 billion. They argue that the cost of inaction far exceeds repair costs, citing lost tourism revenue and increased vehicle maintenance expenses for local businesses.\n\nOpposition MP Betty Muzanira criticized the government's prioritization, noting that less economically significant roads in other regions have received recent upgrades while Uganda waits.\n\nThe Ministry has promised to send a technical team to assess the road next month, but leaders remain skeptical. \"We've heard promises before,\" said Kisoro District Chairperson Abel Bizimana. \"What we need is action.\"\n\nThe petition includes signatures from 47 sub-county chairpersons, 12 Members of Parliament, and representatives from the Uganda Tourism Board and Uganda National Roads Authority.",
-  "category": { "name": "Politics", "slug": "politics", "color": "#9333EA" }
+  "category": { "name": "Politics", "slug": "politics", "color": "#152238" }
   "author": { "name": "Emmanuel Ainebyona", "avatar": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100" },
   "image": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800",
   "imageAttribution": "Photo: Mountain landscape by Willian Justen de Vasconcellos on Unsplash",
@@ -157,7 +159,7 @@ Use this data to manually populate your Django backend admin panel.
   "title": "Uganda Marathon 2024 Sees Record 5,000 Runners",
   "excerpt": "The annual race through Kabale's terraced hills attracts participants from 12 countries, with Kenyan runner claiming men's title and Ugandan athlete winning women's division.",
   "content": "The 6th edition of the Uganda Marathon broke all previous records this weekend, with over 5,000 registered participants running through the breathtaking terraced landscapes of Kabale District.\n\nThe full marathon (42.195km) saw Kenyan athlete Peter Kipchoge cross the finish line first with a time of 2:14:32, while Uganda's own Stella Chesang dominated the women's division with a winning time of 2:32:15. Both times set new course records for the challenging high-altitude route, which starts at 1,800 meters above sea level and climbs to over 2,000 meters.\n\n\"The hills here are brutal,\" said Kipchoge after the race, catching his breath but smiling. \"But the views make the pain worth it. I've never seen such beautiful countryside.\"\n\nThe event featured multiple categories: the full marathon, half marathon (21km), 10km fun run, and a 5km family race. Participants came from 12 countries including Kenya, Ethiopia, Rwanda, Tanzania, the United States, and the United Kingdom.\n\nBeyond athletics, the marathon serves as a significant economic driver for the region. Organizers estimate that visiting runners and their supporters injected over KSH 800 million into the local economy over the three-day event period.\n\n\"This is more than a race—it's a celebration of Uganda,\" said race director Amos Tindyebwa. \"We want the world to see our hills, our culture, and our hospitality.\"\n\nProceeds from the marathon will fund scholarships for promising young athletes from the sub-region and support the construction of a new athletics track in Kabale Municipality.",
-  "category": { "name": "Sports", "slug": "sports", "color": "#16A34A" },
+  "category": { "name": "Sports", "slug": "sports", "color": "#8C3A14" },
   "author": { "name": "Daniel Kato", "avatar": "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=100" },
   "image": "https://images.unsplash.com/photo-z4WH11FMfIQ?w=800",
   "imageAttribution": "Photo: Marathon runner by Fitsum Admasu on Unsplash",
@@ -178,7 +180,7 @@ Use this data to manually populate your Django backend admin panel.
   "title": "Rubanda Hospital Opens New Maternity Wing After KSH 450M Upgrade",
   "excerpt": "The renovated facility now includes an operating theater, neonatal intensive care unit, and 50-bed maternity ward serving thousands of mothers annually.",
   "content": "Rubanda Hospital has officially opened its new maternity wing following a KSH 450 million renovation and expansion project funded by the World Bank and the Uganda Ministry of Health.\n\nThe upgraded facility addresses a critical gap in maternal healthcare for the highland district, which previously saw many women traveling 40+ kilometers to Kabale Regional Referral Hospital for emergency deliveries.\n\nThe new wing features a modern operating theater for emergency cesarean sections, a 6-bed neonatal intensive care unit equipped with incubators and phototherapy units, and a 50-bed maternity ward with private delivery rooms.\n\n\"This will save lives,\" said Dr. Jennifer Ninsiima, the hospital's senior medical superintendent. \"Before, we had to refer complicated cases to Kabale, and sometimes the delay meant we lost mothers or babies. Now we can handle most emergencies here.\"\n\nThe facility also includes a blood bank refrigerator, allowing the hospital to store blood for transfusions—a capability previously unavailable in the district.\n\nHealth Minister Dr. Jane Ruth Aceng, who officiated the opening ceremony, announced that the government has deployed two additional obstetricians and four midwives to staff the expanded facility.\n\nLocal leaders praised the upgrade but called for improved road access to ensure ambulances can reach remote villages quickly. \"The hospital is ready,\" said LC5 Chairman Stephen Kasyaba. \"Now we need to make sure women can reach it in time.\"\n\nThe hospital now projects capacity to handle over 3,000 deliveries annually, up from 1,200 before the expansion.",
-  "category": { "name": "Health", "slug": "health", "color": "#10B981" }
+  "category": { "name": "Health", "slug": "health", "color": "#0E5C56" }
   "author": { "name": "Grace Ninsiima", "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100" },
   "image": "https://images.unsplash.com/photo-tE7_jvK-_YU?w=800",
   "imageAttribution": "Photo: Hospital building by Alex Podvalny on Unsplash",
@@ -199,7 +201,7 @@ Use this data to manually populate your Django backend admin panel.
   "title": "Kisoro Tech Hub Launches Startup Incubator for Rural Innovation",
   "excerpt": "The KSH 200 million program will fund 20 young entrepreneurs developing technology solutions for agriculture, healthcare, and education challenges.",
   "content": "Kisoro District has joined Uganda's growing tech ecosystem with the launch of the Kisoro Innovation Hub, a new startup incubator aimed at nurturing technology solutions tailored to rural challenges.\n\nThe hub, housed in a renovated colonial-era building in Kisoro town, opened its doors this week with seed funding from the Uganda Development Bank and several international development partners.\n\n\"We don't need copy-paste solutions from Silicon Valley,\" said hub director Patrick Byarugaba, himself a native of the district who returned after working in Nairobi's tech scene. \"We need technology designed by people who understand life in rural Uganda—unreliable electricity, limited internet, and real problems that need fixing.\"\n\nThe incubator's first cohort of 20 startups will receive KSH 10 million each in seed funding, along with mentorship, workspace, and technical training. Priority sectors include agricultural technology, healthcare access solutions, and educational tools.\n\nAmong the selected startups is a team developing a mobile app that connects smallholder farmers with buyers in Kampala, eliminating exploitative middlemen. Another team is working on a low-cost solar-powered medical refrigeration unit for rural health centers.\n\n\"The talent is here,\" Byarugaba insisted. \"What was missing was opportunity and support. We provide both.\"\n\nThe hub has already partnered with Kampala-based innovation centers to ensure promising startups can scale beyond the district. They are also working with local universities to create internship pipelines.\n\nDistrict officials hope the tech hub will help retain educated youth who typically migrate to Kampala or abroad after graduation. \"If we can create jobs here, our children will stay and build their future at home,\" said the District Commercial Officer.",
-  "category": { "name": "Business", "slug": "business", "color": "#EA580C" }
+  "category": { "name": "Business", "slug": "business", "color": "#1B4D3E" }
   "author": { "name": "Michael Tumusiime", "avatar": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100" },
   "image": "https://images.unsplash.com/photo-9majps0fBCM?w=800",
   "imageAttribution": "Photo: Startup office by Israel Andrade on Unsplash",
@@ -220,7 +222,7 @@ Use this data to manually populate your Django backend admin panel.
   "title": "St. Paul's Seminary Crowned Uganda Schools Football Champions",
   "excerpt": "The Kabale-based school defeated defending champions Uganda High School 2-1 in a thrilling final match at Kabale Stadium.",
   "content": "St. Paul's Seminary Kabale has been crowned champions of the 2024 Uganda Secondary Schools Football Championship after a dramatic 2-1 victory over defending champions Uganda High School in the final match at Kabale Stadium.\n\nThe match, attended by over 3,000 enthusiastic supporters, lived up to its billing as the clash of regional titans. Uganda High School took an early lead through their star striker Denis Okello in the 23rd minute, controlling possession for most of the first half.\n\nBut St. Paul's, known for their resilience, equalized just before halftime when midfielder Emmanuel Turyamureeba curled a stunning free-kick into the top corner.\n\nThe decisive moment came in the 67th minute when substitute Patrick Aheebwa, who had been on the pitch for only four minutes, pounced on a defensive error and slotted home the winner.\n\n\"This victory means everything to our school,\" said an emotional St. Paul's coach Alex Kwikiriza after the match. \"These boys trained every morning before classes, sacrificing their sleep and comfort. Now they are champions.\"\n\nThe tournament featured 32 schools from across the country and lasted three weeks. Individual awards went to Denis Okello (Golden Boot with 12 goals), Emmanuel Turyamureeba (Most Valuable Player), and St. Paul's captain Samuel Tugume (Best Defender).\n\nThe champions will now represent Uganda at the national secondary schools championship in Masaka next month.\n\nEducation officials praised the tournament's role in nurturing both academic and sporting excellence. \"We want well-rounded students,\" said Kabale Municipal Education Officer. \"Football teaches teamwork, discipline, and perseverance—skills that help in the classroom and in life.\"",
-  "category": { "name": "Sports", "slug": "sports", "color": "#16A34A" },
+  "category": { "name": "Sports", "slug": "sports", "color": "#8C3A14" },
   "author": { "name": "Brian Okello", "avatar": "https://images.unsplash.com/photo-1507591064344-4c6ce005b968?w=100" },
   "image": "https://images.unsplash.com/photo-O6YH7VuZT_A?w=800",
   "imageAttribution": "Photo: Youth football by Alliance Football Club on Unsplash",
@@ -283,7 +285,7 @@ Use this data to manually populate your Django backend admin panel.
   "title": "Safaricom Expands 5G Network to Kabale and Kisoro",
   "excerpt": "High-speed internet now available in major Uganda towns, promising transformation for businesses, education, and healthcare.",
   "content": "Telecommunications giant Safaricom Uganda has officially launched 5G services in Kabale and Kisoro municipalities, making the country the latest beneficiary of next-generation mobile connectivity.\n\nThe rollout covers Kabale town center, Kikungiri, and central Kisoro, with expansion to rural trading centers planned for later in the year. Speed tests during the launch showed download rates exceeding 200 Mbps, compared to 15-20 Mbps on existing 4G networks.\n\nFor businesses, this means reliable video conferencing, cloud computing access, and faster mobile money transactions. Medical facilities can now access telemedicine platforms without the frustrating delays of slower connections.\n\n\"This changes everything for our lodge,\" said Peace Tumwine, manager of a Lake Bunyonyi resort. \"We can now offer guests reliable WiFi and process international bookings in real-time.\"\n\nThe expansion is part of a KSH 50 billion nationwide 5G investment. However, affordability remains a concern, as 5G data bundles currently cost 40% more than 4G equivalents.",
-  "category": { "name": "Technology", "slug": "technology", "color": "#7C3AED" },
+  "category": { "name": "Technology", "slug": "technology", "color": "#243044" },
   "author": { "name": "Allen Kobusingye", "avatar": "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=100" },
   "image": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800",
   "imageAttribution": "Photo: 5G technology by Frederik Lipfert on Unsplash",
@@ -304,7 +306,7 @@ Use this data to manually populate your Django backend admin panel.
   "title": "AI-Powered App Helps Farmers Predict Rains with 85% Accuracy",
   "excerpt": "Ugandan startup launches machine learning weather app specifically trained on East African climate patterns.",
   "content": "A Kampala-based technology startup has launched AgriPredict, a mobile application using artificial intelligence to provide hyper-local weather forecasts tailored for smallholder farmers across Uganda.\n\nUnlike generic weather apps that rely on international models, AgriPredict uses machine learning trained on 20 years of local meteorological data. The app provides 7-day rainfall predictions with 85% accuracy, plus advice on optimal planting and harvesting times.\n\n\"I used to plant when my grandfather did, but rains have become unpredictable,\" said farmer Steven Mwesigye from Ntungamo. \"Last season, the app told me to delay by two weeks. I was skeptical, but it was right—the early rains were a false start.\"\n\nThe app works on basic smartphones and includes voice interaction in Runyankole-Rukiga, making it accessible to farmers with limited literacy. Currently, 12,000 farmers are using the beta version, with plans to scale to 100,000 by year-end.\n\nDevelopment partners including the Bill & Melinda Gates Foundation have provided seed funding, seeing potential for similar tools across African agricultural communities.",
-  "category": { "name": "Technology", "slug": "technology", "color": "#7C3AED" },
+  "category": { "name": "Technology", "slug": "technology", "color": "#243044" },
   "author": { "name": "Peter Okello", "avatar": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=100" },
   "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800",
   "imageAttribution": "Photo: Weather technology by NASA on Unsplash",
@@ -325,7 +327,7 @@ Use this data to manually populate your Django backend admin panel.
   "title": "Government Expands Free Secondary Education to Day Scholars",
   "excerpt": "New policy will benefit 500,000 additional students nationwide, including thousands from Uganda.",
   "content": "President Museveni has announced the expansion of the Universal Secondary Education program to cover all day scholars in government schools, removing the remaining fees that kept many families from accessing secondary education.\n\nPreviously, while USE covered tuition, parents still paid for uniforms, books, and other charges totaling KSH 200,000-300,000 annually—prohibitive sums for rural families. The new policy eliminates these costs entirely for day students.\n\nIn Kabale District alone, an estimated 3,500 additional students are expected to enroll in S1 next term. District Education Officer Peace Arinda says preparations are underway, including hiring 45 new teachers to maintain quality.\n\nCritics have raised concerns about overcrowding. Some schools already have student-teacher ratios exceeding 60:1. The government has promised infrastructure grants to expand classroom capacity.\n\nThe policy takes effect starting Term 1 2024, with full implementation expected by 2025.",
-  "category": { "name": "Education", "slug": "education", "color": "#2563EB" },
+  "category": { "name": "Education", "slug": "education", "color": "#3A4578" },
   "author": { "name": "Sarah Ninsiima", "avatar": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100" },
   "image": "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800",
   "imageAttribution": "Photo: School by Vasily Koloda on Unsplash",
@@ -346,7 +348,7 @@ Use this data to manually populate your Django backend admin panel.
   "title": "Uganda Teachers Receive Digital Literacy Training",
   "excerpt": "1,200 teachers from Kabale, Kisoro, and Rubanda complete certification in technology-enhanced teaching methods.",
   "content": "A comprehensive digital literacy program has equipped 1,200 teachers from across the country with skills to integrate technology into their classrooms, marking a significant step toward modernizing education in rural Uganda.\n\nThe six-month program, funded by the Mastercard Foundation and implemented by Kabale University, covered basic computer skills, using tablets for lesson delivery, accessing online educational resources, and creating digital assessments.\n\n\"Before this training, I was afraid of computers,\" admitted Grace Turyamureeba, a primary teacher with 18 years of experience. \"Now I use a tablet to show my students videos about volcanoes when we study geography. They understand so much better.\"\n\nEach participating school received 10 tablets and a solar charging station to overcome electricity challenges. The program specifically targeted schools without existing technology infrastructure.\n\nEducation officials say the goal is to create a critical mass of tech-savvy teachers who can mentor colleagues, spreading digital skills throughout the region without requiring every teacher to undergo formal training.",
-  "category": { "name": "Education", "slug": "education", "color": "#2563EB" },
+  "category": { "name": "Education", "slug": "education", "color": "#3A4578" },
   "author": { "name": "Ronald Mugisha", "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100" },
   "image": "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800",
   "imageAttribution": "Photo: Digital learning by Kenny Eliason on Unsplash",
@@ -367,7 +369,7 @@ Use this data to manually populate your Django backend admin panel.
   "title": "Opinion: Time to Invest in Kabale Airport",
   "excerpt": "The chronic neglect of our regional airport is costing Uganda billions in lost tourism revenue and economic growth.",
   "content": "For twenty years, we have been promised that Kabale Airport would be upgraded to handle commercial flights. For twenty years, we have watched our tourism dollars fly—literally—to Kigali instead.\n\nThe economics are undeniable. A tourist flying into Rwanda and driving three hours to Bwindi spends their first night in a Kigali hotel, eats Kigali meals, and pays Kigali tour operators. By the time they reach Uganda, they are already halfway through their budget.\n\nIf we had a functioning airport in Kabale, that money would stay here. Local hotels would fill. Local restaurants would thrive. Local youth would find jobs in hospitality rather than migrating to Kampala.\n\nThe government says the cost is prohibitive. But what is the cost of not building it? Estimates suggest Uganda loses KSH 50 billion annually in tourism revenue that goes to Rwanda because of their superior air connectivity.\n\nEnough studies. Enough promises. The people of Uganda deserve the infrastructure that our taxes have already paid for, many times over.\n\nThe writer is a tourism operator based in Kabale.",
-  "category": { "name": "Op-Ed", "slug": "op-ed", "color": "#6D28D9" },
+  "category": { "name": "Op-Ed", "slug": "op-ed", "color": "#4A4036" },
   "author": { "name": "David Tumwine", "avatar": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100" },
   "image": "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=800",
   "imageAttribution": "Photo: Airport by Jordan Sanchez on Unsplash",
@@ -388,7 +390,7 @@ Use this data to manually populate your Django backend admin panel.
   "title": "Opinion: We Must Protect Our Mother Tongue",
   "excerpt": "The decline of Runyankole-Rukiga among educated youth threatens our cultural identity and intergenerational bonds.",
   "content": "I sat in a restaurant in Kabale last week and watched a grandmother struggle to communicate with her grandchildren. They had spent their school years in Kampala, immersed in English and Luganda, and could barely understand her Runyankole-Rukiga. The pain on her face was unmistakable.\n\nThis scene repeats itself in thousands of Uganda homes. We have raised a generation that can code, can speak fluent English, can navigate global culture—but cannot speak to their own grandparents.\n\nI am not against English. As a professor, I know its value. But must it come at the expense of the language that carries our proverbs, our oral histories, our very way of seeing the world?\n\nOur schools are complicit. The government policy of teaching in local languages only until P3 is destroying linguistic foundations before they can solidify. By P7, students associate Runyankole-Rukiga with backwardness, English with sophistication.\n\nWe need a cultural revival. Parents must speak their mother tongue at home without apology. Schools should offer Runyankole-Rukiga literature as an elective. Media should celebrate, not mock, local language use.\n\nA people without their language are a people without their soul. We must not let that happen to Uganda.\n\nThe writer is a professor of linguistics at Kabale University.",
-  "category": { "name": "Op-Ed", "slug": "op-ed", "color": "#6D28D9" },
+  "category": { "name": "Op-Ed", "slug": "op-ed", "color": "#4A4036" },
   "author": { "name": "Prof. Grace Aharikundira", "avatar": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100" },
   "image": "https://images.unsplash.com/photo-1516979187457-637abb4f9353?w=800",
   "imageAttribution": "Photo: Books by Susan Yin on Unsplash",
@@ -409,7 +411,7 @@ Use this data to manually populate your Django backend admin panel.
   "title": "East African Community Launches Single Currency Roadmap",
   "excerpt": "Seven-nation bloc aims for monetary union by 2030, with East African Shilling to replace national currencies.",
   "content": "The East African Community has unveiled an ambitious roadmap toward monetary union, with a single regional currency—the East African Shilling—expected to replace the Kenyan, Ugandan, Tanzanian, Rwandan, Burundian, South Sudanese, and Congolese currencies by 2030.\n\nThe plan, adopted at the EAC Heads of State Summit in Arusha, outlines convergence criteria including inflation caps, debt-to-GDP ratios, and fiscal deficit limits that member states must meet before joining the currency union.\n\n\"This is the next logical step in our integration,\" said EAC Secretary-General Peter Mathuki. \"Businesses currently lose billions to currency conversion costs. A single currency will make East Africa a more attractive investment destination.\"\n\nEconomists have expressed cautious optimism while noting significant hurdles. The Eurozone's struggles offer cautionary lessons about monetary union without fiscal union. And convergence criteria exclude several current members—South Sudan and Burundi currently far exceed debt limits.\n\nUganda, which has met most criteria, is expected to be among the first adopters when the currency launches.",
-  "category": { "name": "Africa", "slug": "africa", "color": "#CA8A04" },
+  "category": { "name": "Africa", "slug": "africa", "color": "#8A5A12" },
   "author": { "name": "James Nkurunziza", "avatar": "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=100" },
   "image": "https://images.unsplash.com/photo-1489392191049-fc10c97e64b6?w=800",
   "imageAttribution": "Photo: African map by Husna Miskandar on Unsplash",
@@ -430,7 +432,7 @@ Use this data to manually populate your Django backend admin panel.
   "title": "African Leaders Demand Climate Justice at COP28",
   "excerpt": "Continent produces 4% of global emissions but suffers disproportionate climate impacts, leaders remind developed nations.",
   "content": "African heads of state have presented a united front at the COP28 climate summit in Dubai, demanding that developed nations honor their commitment to provide $100 billion annually in climate finance and acknowledge historical responsibility for global warming.\n\nDespite contributing less than 4% of global greenhouse gas emissions, Africa faces the most severe climate impacts—from cyclones in Mozambique to droughts in the Horn of Africa to floods in Libya that killed thousands.\n\nUganda's President, representing the African Union negotiating bloc, emphasized that adaptation funding remains critically underfunded. \"We cannot eat solar panels when floods destroy our crops,\" he told delegates. \"We need concrete support for resilient infrastructure.\"\n\nThe African position calls for a new climate finance target beyond the $100 billion pledge, arguing that true costs of adaptation in developing nations exceed trillions of dollars. They also demand reforms to multilateral development banks to unlock more concessional lending.\n\nCivil society activists praised the unified stance while expressing skepticism about implementation. Previous climate finance promises have gone unfulfilled, with actual flows averaging only $80 billion annually.",
-  "category": { "name": "Africa", "slug": "africa", "color": "#CA8A04" },
+  "category": { "name": "Africa", "slug": "africa", "color": "#8A5A12" },
   "author": { "name": "Grace Ochieng", "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100" },
   "image": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800",
   "imageAttribution": "Photo: Climate by NASA on Unsplash",
@@ -451,7 +453,7 @@ Use this data to manually populate your Django backend admin panel.
   "title": "Global Food Prices Surge: Uganda Importers Warn of Higher Costs",
   "excerpt": "Conflict in grain-producing regions and climate disruptions drive wheat and fertilizer prices to multi-year highs.",
   "content": "Global commodity markets are experiencing significant volatility, with wheat prices rising 15% and fertilizer costs surging 30% over the past quarter—trends that will inevitably translate to higher food prices for Ugandan consumers.\n\nThe increases stem from a perfect storm of factors: ongoing conflict in Ukraine, one of the world's largest grain exporters; India's restriction on rice exports; and energy price shocks affecting fertilizer production. Climate disruptions have simultaneously reduced harvests in key producing regions.\n\nUganda, while self-sufficient in staples like matoke and maize, relies on imports for wheat and processed foods. Millers have already warned that bread prices could rise 20% by February unless government subsidies are implemented.\n\nThe timing is particularly challenging as families recover from holiday spending and prepare for school fees in the new term. Inflation had finally stabilized after last year's currency depreciation—this new shock threatens to reverse those gains.\n\nThe Bank of Uganda faces a difficult dilemma: raise interest rates to control inflation and risk slowing growth, or maintain rates and allow prices to climb.",
-  "category": { "name": "World", "slug": "world", "color": "#0D9488" },
+  "category": { "name": "World", "slug": "world", "color": "#1A5670" },
   "author": { "name": "Emmanuel Turyamureeba", "avatar": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100" },
   "image": "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=800",
   "imageAttribution": "Photo: Agriculture by Tim Mossholder on Unsplash",
@@ -472,7 +474,7 @@ Use this data to manually populate your Django backend admin panel.
   "title": "WHO Declares End of COVID-19 Global Health Emergency",
   "excerpt": "Three years after declaration, pandemic no longer constitutes international emergency—but vigilance remains essential.",
   "content": "The World Health Organization has officially declared an end to the COVID-19 global health emergency, marking the symbolic conclusion of a pandemic that killed millions, devastated economies, and transformed daily life worldwide.\n\nThe decision, announced by WHO Director-General Tedros Adhanom Ghebreyesus, reflects declining case numbers, reduced mortality rates, and widespread immunity from vaccination and prior infection. However, Tedros emphasized that the virus continues to circulate and cause deaths.\n\nFor Uganda, the declaration acknowledges what has been reality for months. Restrictions ended long ago, mask mandates were lifted, and life returned to pre-pandemic normalcy. Yet health officials warn against complacency.\n\n\"The virus hasn't disappeared,\" said Dr. Jane Ruth Aceng, Uganda's Health Minister. \"We maintain surveillance capacity, stockpile vaccines, and remain ready to respond if variants emerge.\"\n\nThe pandemic's impacts will persist for years. Economists estimate global losses exceeding $12 trillion. Education systems worldwide report significant learning losses, including in Uganda where schools closed for nearly two years. Mental health crises spiked globally.\n\nThe declaration represents not victory, but transition—from emergency response to long-term management of an endemic disease.",
-  "category": { "name": "World", "slug": "world", "color": "#0D9488" },
+  "category": { "name": "World", "slug": "world", "color": "#1A5670" },
   "author": { "name": "Dr. Sarah Nakalembe", "avatar": "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=100" },
   "image": "https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?w=800",
   "imageAttribution": "Photo: WHO by CDC on Unsplash",
@@ -493,7 +495,7 @@ Use this data to manually populate your Django backend admin panel.
   "title": "New Cabinet Reshuffle Reshapes Uganda Representation",
   "excerpt": "Three ministers from southwestern Uganda appointed in government shakeup affecting education, trade, and local government portfolios.",
   "content": "President Museveni has announced a significant cabinet reshuffle, appointing three new ministers from the country to key government positions in a move analysts say strengthens southwestern representation at the national table.\n\nThe changes see a former Kabale District Chairman elevated to State Minister for Local Government, while a Kisoro MP with a background in economics takes over Trade and Industry. Perhaps most significantly, a respected educator from Rubanda becomes State Minister for Higher Education.\n\nPolitical observers interpret the reshuffle as recognition of Uganda's strategic importance—both electorally and as a tourism and agricultural hub. The region has consistently delivered high voter turnout for the ruling party, and the appointments reward that loyalty.\n\nOpposition figures have criticized the changes as cosmetic rather than substantive. \"What Uganda needs is budget allocation, not new faces in old offices,\" said the Leader of the Opposition.\n\nThe new ministers take office immediately, inheriting portfolios facing significant challenges from funding constraints to implementation gaps.",
-  "category": { "name": "Politics", "slug": "politics", "color": "#9333EA" },
+  "category": { "name": "Politics", "slug": "politics", "color": "#152238" },
   "author": { "name": "Grace Mbabazi", "avatar": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100" },
   "image": "https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=800",
   "imageAttribution": "Photo: Government building by Tingey Injury Law Firm on Unsplash",
@@ -514,7 +516,7 @@ Use this data to manually populate your Django backend admin panel.
   "title": "New Kabale Industrial Park Attracts KSH 12B in Investor Commitments",
   "excerpt": "Government-backed development offers tax incentives, infrastructure to manufacturing and agro-processing firms.",
   "content": "The newly established Kabale Industrial Park has secured KSH 12 billion in preliminary investment commitments from domestic and regional investors, signaling confidence in the country's emerging industrial potential.\n\nLocated on 200 acres of former government land, the park offers investors tax holidays, ready-built factory shells, reliable electricity, and direct road access to the Rwanda border. The first phase includes 20 factory units targeting agro-processing and light manufacturing.\n\nCommitted investors include a Kenyan tea processing company planning to establish a blending facility, a Rwandan construction materials manufacturer expanding into Uganda, and several domestic food processors seeking to add value to Uganda agricultural products.\n\n\"We chose Kabale because of the skilled workforce and proximity to both Ugandan and Rwandan markets,\" said a representative of the Kenyan investor. \"The incentives sealed the deal.\"\n\nThe park is expected to create 2,000 direct jobs and thousands more indirect opportunities in supply chains and services. Training partnerships with local technical colleges aim to ensure residents benefit from employment opportunities.\n\nPhase one construction completes by mid-2024, with first factories operational by year-end.",
-  "category": { "name": "Business", "slug": "business", "color": "#EA580C" },
+  "category": { "name": "Business", "slug": "business", "color": "#1B4D3E" },
   "author": { "name": "Michael Ainebyona", "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100" },
   "image": "https://images.unsplash.com/photo-1565008447742-97f6f38c985c?w=800",
   "imageAttribution": "Photo: Factory by Ant Rozetsky on Unsplash",
@@ -535,7 +537,7 @@ Use this data to manually populate your Django backend admin panel.
   "title": "Malaria Vaccine Pilot Shows Promising Results in Kisoro",
   "excerpt": "First Ugandan trial of RTS,S vaccine reports 70% efficacy in children under five, raising hopes for national rollout.",
   "content": "A pilot vaccination program in Kisoro District has delivered promising results in the fight against malaria, with the RTS,S vaccine showing 70% efficacy in preventing severe malaria cases among children under five.\n\nThe year-long trial, conducted in partnership with the Uganda National Health Research Organization and international partners, enrolled 5,000 children in high-transmission areas surrounding Bwindi Impenetrable National Park.\n\nKisoro was selected because of its high malaria burden—year-round transmission due to altitude and climate—and its well-established health infrastructure. Results exceeded expectations, with vaccinated children showing not just reduced malaria incidence but also lower rates of anemia and improved overall development metrics.\n\nHealth workers involved in the trial report enthusiasm from participating families. \"Mothers would walk for hours to ensure their children got the doses on schedule,\" said Dr. Peter Mugyenyi, the trial coordinator. \"They see malaria take children every rainy season.\"\n\nThe Uganda Ministry of Health is now evaluating national rollout feasibility. Challenges include cold chain requirements, the four-dose schedule, and integration with existing immunization programs. If approved, Uganda would be among the first African nations to implement the vaccine nationwide.",
-  "category": { "name": "Health", "slug": "health", "color": "#10B981" },
+  "category": { "name": "Health", "slug": "health", "color": "#0E5C56" },
   "author": { "name": "Dr. Grace Tumwesigye", "avatar": "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=100" },
   "image": "https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=800",
   "imageAttribution": "Photo: Vaccine by CDC on Unsplash",
@@ -556,7 +558,7 @@ Use this data to manually populate your Django backend admin panel.
   "title": "Bakiga Traditional Marriage Ceremonies Evolve for Modern Times",
   "excerpt": "Young couples blend ancestral customs with contemporary celebration, keeping traditions alive while adapting to changing times.",
   "content": "The traditional Bakiga marriage ceremony—known as Okugyera—is undergoing a quiet transformation as young couples seek to honor their heritage while accommodating modern realities and personal preferences.\n\nTraditionally, the ceremony involved extensive bride price negotiations, multi-day celebrations at the bride's family home, and strict gender roles in the rituals. Today, couples increasingly opt for condensed celebrations, shared costs, and personalized touches that reflect their individual relationships.\n\n\"We did the traditional ceremony on Saturday and a church wedding on Sunday,\" explains Peace Naturinda, who married last month in Kabale. \"My husband and I split the costs, and we chose which traditions mattered to us. Some old requirements felt outdated.\"\n\nElders have mixed reactions. Some lament the loss of formality and the shortened ceremonies that now often last hours rather than days. Others appreciate that adaptations keep traditions relevant rather than abandoning them entirely.\n\nThe changes reflect broader shifts in Uganda society. With more couples meeting at university or in urban workplaces, family-arranged marriages have declined. Gender roles have evolved, with more women pursuing careers and expecting partnership rather than submission.\n\nCultural scholars note that traditions have always evolved—the ceremonies practiced today differ significantly from those of a century ago. The challenge is maintaining meaning while allowing necessary change.",
-  "category": { "name": "Culture & Society", "slug": "culture-society", "color": "#DB2777" },
+  "category": { "name": "Culture & Society", "slug": "culture-society", "color": "#6B3050" },
   "author": { "name": "Patricia Kyomugisha", "avatar": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100" },
   "image": "https://images.unsplash.com/photo-1519741497674-611481863552?w=800",
   "imageAttribution": "Photo: Wedding by Photos by Lanty on Unsplash",

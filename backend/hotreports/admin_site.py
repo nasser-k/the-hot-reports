@@ -30,7 +30,6 @@ class HotReportsAdminSite(AdminSite):
         is_super = user.is_superuser
         is_editor = user.groups.filter(name="Editor").exists()
         is_reporter = user.groups.filter(name="Reporter").exists()
-        is_ads = user.groups.filter(name="Ads Manager").exists()
         is_storywriter = user.groups.filter(name="storywriter").exists()
         
         # Role-based model visibility
@@ -40,8 +39,6 @@ class HotReportsAdminSite(AdminSite):
             return self._organize_editor_apps(app_list)
         elif is_reporter:
             return self._organize_reporter_apps(app_list)
-        elif is_ads:
-            return self._organize_ads_apps(app_list)
         elif is_storywriter:
             return self._organize_storywriter_apps(app_list)
         
@@ -66,8 +63,8 @@ class HotReportsAdminSite(AdminSite):
         return ordered
     
     def _organize_editor_apps(self, app_list):
-        """Editor sees news, stories, tourism, and users."""
-        allowed_apps = {'news', 'tourism', 'accounts'}
+        """Editor sees news, stories, tourism, advertising, and users."""
+        allowed_apps = {'news', 'tourism', 'ads', 'accounts'}
         allowed_models = {
             'news': [
                 'article', 'category', 'tag', 'author',
@@ -76,6 +73,7 @@ class HotReportsAdminSite(AdminSite):
                 'storyseries', 'storyepisode', 'storyepisodecomment',
             ],
             'tourism': ['tourismlisting'],
+            'ads': ['adslot', 'ad', 'adevent'],
             'accounts': ['user', 'group'],
         }
         
@@ -111,29 +109,6 @@ class HotReportsAdminSite(AdminSite):
         
         return filtered
 
-    def _organize_ads_apps(self, app_list):
-        """Ads manager sees ads, tourism listings, and contact messages."""
-        allowed_apps = {'ads', 'tourism', 'news'}
-        allowed_models = {
-            'ads': ['adslot', 'ad', 'adevent'],
-            'tourism': ['tourismlisting'],
-            'news': ['contactmessage'],
-        }
-
-        filtered = []
-        for app in app_list:
-            app_label = app.get('app_label')
-            if app_label in allowed_apps:
-                if app_label in allowed_models:
-                    app['models'] = [
-                        m for m in app.get('models', [])
-                        if m.get('object_name', '').lower() in allowed_models[app_label]
-                    ]
-                if app.get('models'):
-                    filtered.append(app)
-
-        return filtered
-    
     def _organize_storywriter_apps(self, app_list):
         """Storywriter sees series, episodes, and comments."""
         allowed_apps = {'news'}
@@ -166,14 +141,12 @@ class HotReportsAdminSite(AdminSite):
         is_super = user.is_superuser
         is_editor = user.groups.filter(name="Editor").exists()
         is_reporter = user.groups.filter(name="Reporter").exists()
-        is_ads = user.groups.filter(name="Ads Manager").exists()
         is_storywriter = user.groups.filter(name="storywriter").exists()
         
         ctx["hotreports_role"] = (
             "superadmin" if is_super
             else "editor" if is_editor
             else "reporter" if is_reporter
-            else "ads" if is_ads
             else "storywriter" if is_storywriter
             else ""
         )
@@ -188,16 +161,12 @@ class HotReportsAdminSite(AdminSite):
             ctx["hotreports_links"] = [
                 ("Pending Review", "/admin/news/article/?status__exact=pending"),
                 ("Stories", "/admin/news/storyseries/"),
+                ("Ads", "/admin/ads/ad/"),
                 ("View Site", "/"),
             ]
         elif is_reporter:
             ctx["hotreports_links"] = [
                 ("My Drafts", "/admin/news/article/?status__exact=draft"),
-                ("View Site", "/"),
-            ]
-        elif is_ads:
-            ctx["hotreports_links"] = [
-                ("Active Ads", "/admin/ads/ad/?is_active__exact=1"),
                 ("View Site", "/"),
             ]
         elif is_storywriter:
@@ -223,7 +192,6 @@ class HotReportsAdminSite(AdminSite):
         is_super = user.is_superuser
         is_editor = user.groups.filter(name="Editor").exists()
         is_reporter = user.groups.filter(name="Reporter").exists()
-        is_ads = user.groups.filter(name="Ads Manager").exists()
         is_storywriter = user.groups.filter(name="storywriter").exists()
 
         stats = {
@@ -290,7 +258,6 @@ class HotReportsAdminSite(AdminSite):
             "superadmin" if is_super
             else "editor" if is_editor
             else "reporter" if is_reporter
-            else "ads" if is_ads
             else "storywriter" if is_storywriter
             else ""
         )
