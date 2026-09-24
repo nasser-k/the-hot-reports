@@ -180,25 +180,6 @@ export default function Navbar({ initialTourismTypes = [] }: NavbarProps) {
             </button>
           </div>
         </div>
-        <div className="lg:hidden border-t border-gray-100 dark:border-gray-800">
-          <div className="desk-scroll flex gap-1 overflow-x-auto px-3 py-2">
-            {NEWS_CATEGORIES.map((cat) => (
-              <Link
-                key={cat.slug}
-                href={`/category/${cat.slug}`}
-                className="shrink-0 rounded-full px-3 py-1 text-[12px] font-semibold text-gray-700 dark:text-gray-200 bg-gray-100 dark:bg-gray-900"
-              >
-                {cat.name}
-              </Link>
-            ))}
-            <Link href="/stories" className="shrink-0 rounded-full px-3 py-1 text-[12px] font-bold text-purple-700 dark:text-purple-300 bg-purple-50 dark:bg-purple-950/40">
-              Stories
-            </Link>
-            <Link href="/tourism" className="shrink-0 rounded-full px-3 py-1 text-[12px] font-bold text-red-700 dark:text-red-300 bg-red-50 dark:bg-red-950/40">
-              Tourism
-            </Link>
-          </div>
-        </div>
       </header>
 
       {/* ── Main navigation bar ── */}

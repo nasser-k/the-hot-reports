@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { AlertTriangle, RefreshCw, WifiOff } from "lucide-react";
 
 function isConnectionError(error: Error): boolean {
@@ -30,7 +30,7 @@ export default function Error({
   }, [error]);
 
   const isServerDown = isConnectionError(error);
-  const errorId = error.digest || Math.random().toString(36).substring(2, 15);
+  const [errorId] = useState(() => error.digest || Math.random().toString(36).substring(2, 15));
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-950 flex items-center justify-center px-4">

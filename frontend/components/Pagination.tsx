@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
@@ -9,15 +10,23 @@ interface PaginationProps {
   baseUrl: string;
 }
 
-// Hook to get responsive max visible pages
+function visiblePageCount(width: number): number {
+  if (width < 640) return 3;
+  if (width < 768) return 5;
+  return 7;
+}
+
 function useResponsiveMaxVisible(): number {
-  // Default for SSR
-  if (typeof window === "undefined") return 5;
-  
-  const width = window.innerWidth;
-  if (width < 640) return 3;  // Mobile: show only 3 pages
-  if (width < 768) return 5; // Tablet: show 5 pages
-  return 7;                   // Desktop: show 7 pages
+  const [maxVisible, setMaxVisible] = useState(5);
+
+  useEffect(() => {
+    const update = () => setMaxVisible(visiblePageCount(window.innerWidth));
+    update();
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
+  }, []);
+
+  return maxVisible;
 }
 
 export default function Pagination({

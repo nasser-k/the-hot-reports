@@ -27,7 +27,7 @@ export default function NotificationPrompt() {
 
   // Check local storage for dismissal
   useEffect(() => {
-    const dismissed = localStorage.getItem("poki-notifications-dismissed");
+    const dismissed = localStorage.getItem("hotreports-notifications-dismissed");
     if (dismissed) {
       setIsDismissed(true);
     }
@@ -48,7 +48,7 @@ export default function NotificationPrompt() {
 
   const handleDismiss = () => {
     setIsDismissed(true);
-    localStorage.setItem("poki-notifications-dismissed", "true");
+    localStorage.setItem("hotreports-notifications-dismissed", "true");
   };
 
   if (showSuccess) {
