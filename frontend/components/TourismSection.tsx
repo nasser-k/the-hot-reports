@@ -85,7 +85,7 @@ async function TourismContent() {
               Tourism & Travel
             </h2>
             <p className="text-gray-300 text-sm mt-1 max-w-lg">
-              Discover the Switzerland of Africa - gorilla safaris, stunning lakes, volcanic mountains, and rich Bakiga culture.
+              Safaris, lakes, cities, and lodges from every region of Uganda.
             </p>
           </div>
           <Link

@@ -10,7 +10,7 @@ This is a nationwide Ugandan news site. The public name is **The Hot Reports**.
 - The product is The Hot Reports, a nationwide news site. Do not reintroduce Pulse of Kigezi, Kigezi News, or regional-only positioning.
 - Tourism is travel across Uganda. Stories are serial journalism.
 - Do not add public vanity statistics (article totals, monthly readers, years active) or admin analytics charts.
-- Keep the advertising system: ad slots, the ads API, AdSense, and the Ads Manager role.
+- Keep the advertising system: ad slots, the ads API, and AdSense. Editors place the ads.
 - Do not seed placeholder articles, listings, or made-up audience numbers. Empty states stay empty until real content is published.
 - Public pages need a title, description, and canonical URL. Use `NewsArticle` on articles and `NewsMediaOrganization` / `WebSite` on the homepage.
 - Site name, description, and canonical URL come from environment settings, with `https://thehotreports.com` only as a fallback.

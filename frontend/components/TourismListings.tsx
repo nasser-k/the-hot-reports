@@ -107,7 +107,7 @@ export default function TourismListings() {
           <p className="text-base sm:text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
             {validActive
               ? `Browse our curated selection of ${typeConfig[validActive].label.toLowerCase()} in Uganda.`
-              : "The Switzerland of Africa awaits. Discover world-class gorilla safaris, breathtaking lake resorts, volcanic adventures, and authentic Bakiga cultural experiences."}
+              : "Safaris, lakes, cities, and lodges from every region of Uganda."}
           </p>
 
           {/* Filter Sheet */}
