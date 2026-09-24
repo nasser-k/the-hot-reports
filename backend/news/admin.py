@@ -15,7 +15,6 @@ from hotreports.admin_roles import (
 from .forms import ArticleAdminForm, StoryEpisodeAdminForm, StorySeriesAdminForm
 from .models import (
     Article,
-    Category,
     ContactMessage,
     NewsletterSubscriber,
     StoryEpisode,
@@ -38,31 +37,6 @@ class StorywriterPermissionMixin:
 
     def has_change_permission(self, request, obj=None):
         return request.user.is_superuser or is_storywriter(request.user)
-
-
-@admin.register(Category)
-class CategoryAdmin(FilterActionsMixin, admin.ModelAdmin):
-    def allowed_action_names(self, request):
-        if is_editor(request.user):
-            return {"delete_selected"}
-        return set()
-
-    list_display = ("name", "slug", "color", "order", "article_count")
-    list_editable = ("order",)
-    search_fields = ("name", "slug")
-    readonly_fields = ("slug",)
-    ordering = ("order", "name")
-    
-    fieldsets = (
-        (None, {
-            "fields": ("name", "slug", "color", "order"),
-            "description": "Slug is auto-generated from the name."
-        }),
-    )
-    
-    def article_count(self, obj):
-        return obj.articles.count()
-    article_count.short_description = "Articles"
 
 
 @admin.register(Tag)
@@ -124,7 +98,7 @@ class ArticleAdmin(FilterActionsMixin, MediaPreviewMixin, admin.ModelAdmin):
         }),
         ("Classification", {
             "fields": ("category",),
-            "description": "Category for article classification."
+            "description": "Choose one of the fixed news desks."
         }),
         ("Tags", {
             "fields": ("tags",)

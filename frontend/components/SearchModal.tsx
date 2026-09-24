@@ -3,8 +3,9 @@
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { Search, X, Clock, TrendingUp, ArrowRight } from "lucide-react";
-import { getCategories, listArticles } from "@/lib/api";
-import type { Article, CategoryInfo } from "@/data/data";
+import { listArticles } from "@/lib/api";
+import { NEWS_CATEGORIES } from "@/lib/categories";
+import type { Article } from "@/data/data";
 
 interface SearchModalProps {
   open: boolean;
@@ -14,7 +15,6 @@ interface SearchModalProps {
 export default function SearchModal({ open, onClose }: SearchModalProps) {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState<Article[]>([]);
-  const [categories, setCategories] = useState<CategoryInfo[]>([]);
   const [trendingArticles, setTrendingArticles] = useState<Article[]>([]);
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -36,7 +36,6 @@ export default function SearchModal({ open, onClose }: SearchModalProps) {
   }, [open]);
 
   useEffect(() => {
-    getCategories().then(setCategories).catch(() => setCategories([]));
     // Fetch trending articles for popular searches
     listArticles({ highlight: "trending", pageSize: 5, noStore: true })
       .then((r) => setTrendingArticles(r.results))
@@ -152,7 +151,7 @@ export default function SearchModal({ open, onClose }: SearchModalProps) {
                 Browse Categories
               </p>
               <div className="grid grid-cols-2 gap-1">
-                {categories.map((cat) => (
+                {NEWS_CATEGORIES.map((cat) => (
                   <button
                     key={cat.slug}
                     onClick={() => setQuery(cat.name)}
@@ -189,7 +188,7 @@ export default function SearchModal({ open, onClose }: SearchModalProps) {
                   className="flex items-start gap-4 px-5 py-3 hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors group"
                 >
                   <div className="flex-1 min-w-0">
-                    <p className="text-xs font-semibold uppercase tracking-wider mb-1" style={{ color: categories.find(c => c.slug === article.category.slug)?.color || article.category.color }}>
+                    <p className="text-xs font-semibold uppercase tracking-wider mb-1" style={{ color: article.category.color }}>
                       {article.category.name}
                     </p>
                     <p className="text-sm font-semibold text-gray-900 dark:text-white line-clamp-2 group-hover:text-red-600 transition-colors">

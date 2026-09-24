@@ -19,7 +19,7 @@ copy .env.example .env
 
 # 4. Setup database and seed data
 python manage.py migrate
-python manage.py setup_categories        # Creates 11 news categories
+# News desks are fixed in code. Do not add categories.
 python manage.py setup_ad_slots          # Creates 8 ad slot positions
 python manage.py create_default_users --insecure  # Creates 5 default users (dev only)
 
@@ -90,7 +90,6 @@ Remove-Item db.sqlite3 -ErrorAction SilentlyContinue
 
 # Re-run setup
 python manage.py migrate
-python manage.py setup_categories
 python manage.py setup_ad_slots
 python manage.py create_default_users --insecure
 ```

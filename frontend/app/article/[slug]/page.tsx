@@ -4,7 +4,6 @@ import Link from "next/link";
 import Image from "next/image";
 import {
   getArticle,
-  getCategories,
   getRelated,
   getSiteSettingsWithFallback,
   isApiNotFound,
@@ -17,6 +16,7 @@ import ArticleCard from "@/components/ArticleCard";
 import { Clock, ArrowLeft, Tag, Feather, ChevronRight } from "lucide-react";
 import ShareButton from "@/components/ShareButton";
 import TrackArticleView from "@/components/TrackArticleView";
+import { getNewsCategory } from "@/lib/categories";
 import InlineContentImage from "@/components/InlineContentImage";
 import { hasImage } from "@/lib/media";
 
@@ -90,9 +90,9 @@ export default async function ArticlePage({ params }: Props) {
     throw err;
   }
 
-  const [related, categories] = await Promise.all([getRelated(slug), getCategories()]);
-  const catInfo = categories.find((c) => c.slug === article.category.slug);
-  const catColor = catInfo?.color || article.category.color || "#A21A47";
+  const related = await getRelated(slug);
+  const catInfo = getNewsCategory(article.category.slug) || article.category;
+  const catColor = catInfo.color || "#A21A47";
 
   const publishDate = new Date(article.publishedAt).toLocaleDateString("en-UG", {
     weekday: "long",

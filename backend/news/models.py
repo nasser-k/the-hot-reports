@@ -3,30 +3,7 @@ from django.utils.text import slugify
 from hotreports.fields import ProcessedImageField
 from hotreports.media_storage import article_image_path, episode_image_path, story_cover_path
 
-
-class Category(models.Model):
-    name = models.CharField(max_length=120, unique=True)
-    slug = models.SlugField(max_length=140, unique=True, blank=True)
-    color = models.CharField(max_length=20)
-    order = models.PositiveIntegerField(default=0, db_index=True)
-
-    class Meta:
-        ordering = ("order", "name")
-        verbose_name_plural = "categories"
-
-    def save(self, *args, **kwargs):
-        if not self.slug:
-            self.slug = slugify(self.name)
-            # Ensure uniqueness
-            original_slug = self.slug
-            counter = 1
-            while Category.objects.filter(slug=self.slug).exclude(pk=self.pk).exists():
-                self.slug = f"{original_slug}-{counter}"
-                counter += 1
-        super().save(*args, **kwargs)
-
-    def __str__(self) -> str:
-        return self.name
+from .categories import CATEGORY_CHOICES
 
 
 class Tag(models.Model):
@@ -62,7 +39,7 @@ class Article(models.Model):
     title = models.CharField(max_length=500)
     excerpt = models.TextField()
     content = models.TextField(blank=True)
-    category = models.ForeignKey(Category, on_delete=models.PROTECT, related_name="articles")
+    category = models.CharField(max_length=32, choices=CATEGORY_CHOICES, db_index=True)
     author = models.ForeignKey("accounts.User", on_delete=models.PROTECT, related_name="authored_articles")
     image_url = models.URLField(max_length=500, blank=True)
     image_attribution = models.CharField(

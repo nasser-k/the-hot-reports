@@ -1,5 +1,6 @@
 import { MetadataRoute } from "next";
-import { getCategories, listArticles, listTourism, listStorySeries } from "@/lib/api";
+import { listArticles, listTourism, listStorySeries } from "@/lib/api";
+import { NEWS_CATEGORIES } from "@/lib/categories";
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://thehotreports.com";
 
@@ -57,18 +58,17 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     // Fetch all data in parallel with timeout
     const timeout = (ms: number) => new Promise((_, reject) => setTimeout(() => reject(new Error('Timeout')), ms));
 
-    const [categories, articles, tourism, storySeries] = await Promise.race([
+    const [articles, tourism, storySeries] = await Promise.race([
       Promise.all([
-        getCategories().catch(() => []),
         listArticles({ page: 1, pageSize: 500 }).catch(() => ({ count: 0, results: [] })),
         listTourism({ page: 1, pageSize: 100 }).catch(() => ({ count: 0, results: [] })),
         listStorySeries({ page: 1, pageSize: 500 }).catch(() => ({ count: 0, results: [] })),
       ]),
       timeout(5000), // 5 second timeout
-    ]) as [any[], any, any, any];
+    ]) as [any, any, any];
 
     // Build dynamic pages only if we got data
-    const categoryPages: MetadataRoute.Sitemap = (categories || []).map((cat: any) => ({
+    const categoryPages: MetadataRoute.Sitemap = NEWS_CATEGORIES.map((cat) => ({
       url: `${BASE_URL}/category/${cat.slug}`,
       lastModified: new Date(),
       changeFrequency: "daily" as const,

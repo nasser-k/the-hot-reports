@@ -1,31 +1,31 @@
 import { Suspense } from "react";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { getCategories, listArticles } from "@/lib/api";
 import ArticleCard from "./ArticleCard";
-import EmptyState, { CategorySectionSkeleton } from "./EmptyState";
-import type { Article, CategoryInfo } from "@/data/data";
+import { CategorySectionSkeleton } from "./EmptyState";
+import { getNewsCategory } from "@/lib/categories";
+import type { Article } from "@/data/data";
 
 interface CategorySectionProps {
   categorySlug: string;
   layout?: "grid" | "list" | "mixed";
   initialArticles: Article[];
-  allCategories: CategoryInfo[];
 }
 
 async function CategoryContent({
   categorySlug,
   layout = "mixed",
   initialArticles,
-  allCategories,
 }: CategorySectionProps) {
   const slug = categorySlug;
   const articles = initialArticles;
-  const categories = allCategories;
-
-  const cat = categories.find((c) => c.slug === categorySlug);
+  const cat = getNewsCategory(categorySlug);
   const catColor = cat?.color || "#A21A47";
   const categoryName = cat?.name || categorySlug;
+
+  if (articles.length === 0) {
+    return null;
+  }
 
   return (
     <section id={slug} className="scroll-mt-16">
@@ -50,17 +50,6 @@ async function CategoryContent({
           </Link>
         )}
       </div>
-
-      {/* Show empty state when no articles */}
-      {articles.length === 0 ? (
-        <div className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-100 dark:border-gray-800">
-          <EmptyState
-            variant="category"
-            categoryName={categoryName}
-          />
-        </div>
-      ) : (
-        <>
 
       {/* Content */}
       {layout === "mixed" && articles.length >= 3 ? (
@@ -125,8 +114,6 @@ async function CategoryContent({
             )}
           </div>
         </div>
-      )}
-      </>
       )}
     </section>
   );

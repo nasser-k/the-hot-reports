@@ -21,8 +21,8 @@ import {
   MapPin,
   BookOpen,
 } from "lucide-react";
-import { getCategories, getTourismTypes, type TourismTypeInfo } from "@/lib/api";
-import type { CategoryInfo } from "@/data/data";
+import { getTourismTypes, type TourismTypeInfo } from "@/lib/api";
+import { NEWS_CATEGORIES } from "@/lib/categories";
 import SearchModal from "./SearchModal";
 import LiveAdBanner from "./LiveAdBanner";
 import { getDarkMode, saveDarkMode } from "@/lib/preferences";
@@ -34,11 +34,10 @@ const TikTokIcon = ({ size = 14 }: { size?: number }) => (
 );
 
 interface NavbarProps {
-  initialCategories?: CategoryInfo[];
   initialTourismTypes?: TourismTypeInfo[];
 }
 
-export default function Navbar({ initialCategories = [], initialTourismTypes = [] }: NavbarProps) {
+export default function Navbar({ initialTourismTypes = [] }: NavbarProps) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
@@ -49,11 +48,10 @@ export default function Navbar({ initialCategories = [], initialTourismTypes = [
   const [mobileTourismOpen, setMobileTourismOpen] = useState(false);
   const tourismRef = useRef<HTMLDivElement>(null);
 
-  const [categories, setCategories] = useState<CategoryInfo[]>(initialCategories);
   const [tourismTypes, setTourismTypes] = useState<TourismTypeInfo[]>(initialTourismTypes);
 
-  const inlineCategories = categories.slice(0, 8);
-  const moreCategories = categories.slice(8);
+  const inlineCategories = NEWS_CATEGORIES.slice(0, 8);
+  const moreCategories = NEWS_CATEGORIES.slice(8);
 
   // Map icon names to Lucide components
   const iconMap: Record<string, any> = {
@@ -75,13 +73,10 @@ export default function Navbar({ initialCategories = [], initialTourismTypes = [
 
   useEffect(() => {
     // Only fetch if we don't have initial data (client-side navigation)
-    if (initialCategories.length === 0) {
-      getCategories().then(setCategories).catch(() => setCategories([]));
-    }
     if (initialTourismTypes.length === 0) {
       getTourismTypes().then(setTourismTypes).catch(() => setTourismTypes([]));
     }
-  }, [initialCategories, initialTourismTypes]);
+  }, [initialTourismTypes]);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 10);
@@ -190,6 +185,25 @@ export default function Navbar({ initialCategories = [], initialTourismTypes = [
             </button>
           </div>
         </div>
+        <div className="lg:hidden border-t border-gray-100 dark:border-gray-800">
+          <div className="desk-scroll flex gap-1 overflow-x-auto px-3 py-2">
+            {NEWS_CATEGORIES.map((cat) => (
+              <Link
+                key={cat.slug}
+                href={`/category/${cat.slug}`}
+                className="shrink-0 rounded-full px-3 py-1 text-[12px] font-semibold text-gray-700 dark:text-gray-200 bg-gray-100 dark:bg-gray-900"
+              >
+                {cat.name}
+              </Link>
+            ))}
+            <Link href="/stories" className="shrink-0 rounded-full px-3 py-1 text-[12px] font-bold text-purple-700 dark:text-purple-300 bg-purple-50 dark:bg-purple-950/40">
+              Stories
+            </Link>
+            <Link href="/tourism" className="shrink-0 rounded-full px-3 py-1 text-[12px] font-bold text-red-700 dark:text-red-300 bg-red-50 dark:bg-red-950/40">
+              Tourism
+            </Link>
+          </div>
+        </div>
       </header>
 
       {/* ── Main navigation bar ── */}
@@ -233,8 +247,7 @@ export default function Navbar({ initialCategories = [], initialTourismTypes = [
             )}
 
             {/* Divider, Stories, and Tourism */}
-            {categories.length > 0 && (
-              <>
+            <>
                 <span className="w-px h-5 bg-gray-200 dark:bg-gray-700 mx-1.5" />
 
                 {/* Stories Link */}
@@ -267,7 +280,7 @@ export default function Navbar({ initialCategories = [], initialTourismTypes = [
                       {/* Tourism dropdown header */}
                       <div className="bg-gradient-to-r from-gray-950 to-red-950 px-6 py-4">
                         <h3 className="text-white font-black text-sm sm:text-base">Explore Uganda</h3>
-                        <p className="text-gray-300 text-[11px] sm:text-xs mt-0.5">The Switzerland of Africa - Safaris, lodges, and unforgettable experiences</p>
+                        <p className="text-gray-300 text-[11px] sm:text-xs mt-0.5">Safaris, lodges, and travel across Uganda</p>
                       </div>
                       <div className="p-4 grid grid-cols-2 gap-1.5">
                         {tourismLinks.map((item) => (
@@ -309,8 +322,7 @@ export default function Navbar({ initialCategories = [], initialTourismTypes = [
                     </div>
                   )}
                 </div>
-              </>
-            )}
+            </>
           </div>
 
           {/* Right side: search + theme - positioned far right */}
@@ -373,14 +385,12 @@ export default function Navbar({ initialCategories = [], initialTourismTypes = [
               </button>
             </div>
 
-            {/* Categories - Dynamic from API */}
-            {categories.length > 0 && (
-              <div className="px-4 py-3">
+            <div className="px-4 py-3">
                 <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-2">
-                  Categories
+                  Desks
                 </p>
                 <div className="grid grid-cols-2 gap-2">
-                  {categories.map((cat) => (
+                  {NEWS_CATEGORIES.map((cat) => (
                     <Link
                       key={cat.slug}
                       href={`/category/${cat.slug}`}
@@ -393,7 +403,6 @@ export default function Navbar({ initialCategories = [], initialTourismTypes = [
                   ))}
                 </div>
               </div>
-            )}
 
             {/* Featured Sections - Stories & Tourism */}
             <div className="px-4 py-3 border-t border-gray-100 dark:border-gray-800">

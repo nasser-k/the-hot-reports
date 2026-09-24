@@ -20,7 +20,7 @@ Local development keeps files on disk. Production sets `USE_S3=True`.
 ```bash
 python manage.py migrate
 python manage.py collectstatic --noinput
-python manage.py setup_categories
+# News desks are fixed in code. Do not add categories.
 python manage.py setup_ad_slots
 python manage.py create_default_users
 gunicorn hotreports.wsgi:application --bind 0.0.0.0:8000

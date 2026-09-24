@@ -57,6 +57,14 @@ body {
   animation-play-state: paused;
 }
 
+.desk-scroll {
+  scrollbar-width: none;
+}
+
+.desk-scroll::-webkit-scrollbar {
+  display: none;
+}
+
 /* Smooth scroll */
 html {
   scroll-behavior: smooth;

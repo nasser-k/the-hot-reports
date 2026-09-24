@@ -82,11 +82,11 @@ def _track_content_view(
             pass
     
     return is_new_view, visitor_key
+from .categories import NEWS_CATEGORIES
 from .models import (
     Article,
     ArticleViewEvent,
     ArticleVisitorDay,
-    Category,
     ContactMessage,
     NewsletterSubscriber,
     PushSubscription,
@@ -101,7 +101,6 @@ from .models import (
 from .serializers import (
     ArticleDetailSerializer,
     ArticleListSerializer,
-    CategorySerializer,
     ContactMessageSerializer,
     NewsletterSubscribeSerializer,
     StoryCommentCreateSerializer,
@@ -113,14 +112,20 @@ from .serializers import (
 )
 
 
-class CategoryListView(generics.ListAPIView):
-    queryset = Category.objects.all()
-    serializer_class = CategorySerializer
-    pagination_class = None
+class CategoryListView(APIView):
+    """Fixed desks. The public site does not create categories."""
+
+    def get(self, request):
+        return Response(
+            [
+                {"name": item["name"], "slug": item["slug"], "color": item["color"]}
+                for item in NEWS_CATEGORIES
+            ]
+        )
 
 
 class ArticleViewSet(viewsets.ReadOnlyModelViewSet):
-    queryset = Article.objects.select_related("category", "author").prefetch_related("tags").all()
+    queryset = Article.objects.select_related("author").prefetch_related("tags").all()
     lookup_field = "slug"
     filter_backends = [
         DjangoFilterBackend,
@@ -128,7 +133,7 @@ class ArticleViewSet(viewsets.ReadOnlyModelViewSet):
         filters.OrderingFilter,
     ]
     filterset_class = ArticleFilter
-    search_fields = ("title", "excerpt", "category__name", "tags__name")
+    search_fields = ("title", "excerpt", "tags__name")
     ordering_fields = ("published_at", "created_at", "title")
     ordering = ("-published_at",)
 
@@ -160,13 +165,13 @@ class ArticleViewSet(viewsets.ReadOnlyModelViewSet):
         except ValueError:
             limit = 4
         tag_ids = list(article.tags.values_list("pk", flat=True))
-        q = Q(category_id=article.category_id)
+        q = Q(category=article.category)
         if tag_ids:
             q |= Q(tags__in=tag_ids)
         qs = (
             Article.objects.filter(q)
             .exclude(pk=article.pk)
-            .select_related("category", "author")
+            .select_related("author")
             .prefetch_related("tags")
             .distinct()
             .order_by("-published_at")[:limit]

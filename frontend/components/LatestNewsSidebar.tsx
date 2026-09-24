@@ -1,28 +1,24 @@
 import { Suspense } from "react";
 import Link from "next/link";
 import { Clock, Flame } from "lucide-react";
-import { getCategories, listArticles } from "@/lib/api";
+import { listArticles } from "@/lib/api";
 import NewsletterForm from "./NewsletterForm";
 import EmptyState, { SidebarSkeleton } from "./EmptyState";
-import type { Article, CategoryInfo } from "@/data/data";
+import type { Article } from "@/data/data";
 
 async function SidebarContent() {
-  let categories: CategoryInfo[] = [];
   let latest: Article[] = [];
   let mostRead: Article[] = [];
   let hasError = false;
   try {
-    const [categoriesRes, latestRes, mostReadRes] = await Promise.all([
-      getCategories(),
+    const [latestRes, mostReadRes] = await Promise.all([
       listArticles({ page: 1, pageSize: 5 }),
       listArticles({ ordering: "-views_total", page: 1, pageSize: 5 }),
     ]);
-    categories = categoriesRes;
     latest = latestRes.results;
     mostRead = mostReadRes.results;
   } catch {
     hasError = true;
-    categories = [];
     latest = [];
     mostRead = [];
   }
@@ -58,9 +54,7 @@ async function SidebarContent() {
           </div>
           <div className="space-y-0">
             {latest.map((article, idx) => {
-              const catColor =
-                categories.find((c) => c.slug === article.category.slug)?.color ||
-                "#A21A47";
+              const catColor = article.category.color || "#A21A47";
               return (
                 <Link
                   key={article.id}
@@ -106,9 +100,7 @@ async function SidebarContent() {
         </div>
         <div className="space-y-0">
           {mostRead.map((article, idx) => {
-            const catColor =
-              categories.find((c) => c.slug === article.category.slug)?.color ||
-              "#A21A47";
+            const catColor = article.category.color || "#A21A47";
             return (
               <Link
                 key={article.id}

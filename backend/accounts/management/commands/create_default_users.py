@@ -22,8 +22,7 @@ class Command(BaseCommand):
                     codename__in=[
                         # Articles - create, edit own, view
                         "add_article", "change_article", "view_article",
-                        # Categories and Tags - view only (for article creation)
-                        "view_category", "view_tag",
+                        "view_tag",
                         # Contact messages - view only (news tips)
                         "view_contactmessage",
                     ]
@@ -39,8 +38,6 @@ class Command(BaseCommand):
                         # Articles - full control
                         "add_article", "change_article", "delete_article", "view_article",
                         "can_publish_article",
-                        # Categories - full control
-                        "add_category", "change_category", "delete_category", "view_category",
                         # Tags - full control
                         "add_tag", "change_tag", "delete_tag", "view_tag",
                         # Newsletter subscribers - full control

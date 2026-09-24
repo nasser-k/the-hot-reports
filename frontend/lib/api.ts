@@ -1,6 +1,5 @@
 import type {
   Article,
-  CategoryInfo,
   StoryEpisode,
   StoryGenreInfo,
   StorySeries,
@@ -122,12 +121,6 @@ export interface Paginated<T> {
   previous: string | null;
   totalPages: number;
   results: T[];
-}
-
-export async function getCategories(): Promise<CategoryInfo[]> {
-  return request<CategoryInfo[]>("/categories/", { 
-    next: { tags: ['categories'] }
-  });
 }
 
 export async function listArticles(params?: {

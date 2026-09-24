@@ -4,9 +4,9 @@ from rest_framework import serializers
 from hotreports.media_urls import default_avatar_url, resolve_media_image
 
 from news.analytics_utils import visitor_key_from_request
+from .categories import category_payload
 from .models import (
     Article,
-    Category,
     ContactMessage,
     StoryEpisode,
     StoryEpisodeComment,
@@ -14,15 +14,9 @@ from .models import (
 )
 
 
-class CategorySerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Category
-        fields = ("name", "slug", "color")
-
-
 class ArticleListSerializer(serializers.ModelSerializer):
     id = serializers.SerializerMethodField()
-    category = CategorySerializer(read_only=True)
+    category = serializers.SerializerMethodField()
     author = serializers.SerializerMethodField()
     image = serializers.SerializerMethodField()
     imageAttribution = serializers.CharField(source="image_attribution", read_only=True)
@@ -55,6 +49,9 @@ class ArticleListSerializer(serializers.ModelSerializer):
 
     def get_id(self, obj: Article) -> str:
         return str(obj.pk)
+
+    def get_category(self, obj: Article) -> dict:
+        return category_payload(obj.category)
 
     def get_author(self, obj: Article) -> dict:
         author = obj.author

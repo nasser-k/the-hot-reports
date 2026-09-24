@@ -8,15 +8,15 @@ import TourismSection from "@/components/TourismSection";
 import StoriesCTA from "@/components/StoriesCTA";
 import LiveAdBannerWrapper from "@/components/LiveAdBannerWrapper";
 import { ResponsiveAdBanner } from "@/components/ResponsiveAdBanner";
-import { listArticles, getCategories } from "@/lib/api";
-import type { Article, CategoryInfo } from "@/data/data";
+import { listArticles } from "@/lib/api";
+import type { Article } from "@/data/data";
 
 export const revalidate = 300;
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://thehotreports.com";
 const SITE_NAME = "The Hot Reports";
 
-const HOME_CATEGORIES = [
+const HOME_DESKS = [
   "national",
   "politics",
   "business",
@@ -25,27 +25,39 @@ const HOME_CATEGORIES = [
   "health",
   "sports",
   "culture-society",
+  "op-ed",
   "africa",
   "world",
 ] as const;
 
-async function prefetchHomeData() {
-  const categories = await getCategories().catch(() => [] as CategoryInfo[]);
-
-  const articleResults = await Promise.all(
-    HOME_CATEGORIES.map((slug) =>
+async function loadDeskArticles() {
+  const results = await Promise.all(
+    HOME_DESKS.map((slug) =>
       listArticles({ category: slug, page: 1, pageSize: 6 })
-        .then((res) => ({ slug, articles: res.results, error: false }))
-        .catch(() => ({ slug, articles: [] as Article[], error: true }))
+        .then((res) => ({ slug, articles: res.results }))
+        .catch(() => ({ slug, articles: [] as Article[] }))
     )
   );
+  return new Map(results.map((result) => [result.slug, result.articles]));
+}
 
-  const articlesBySlug = new Map<string, Article[]>();
-  for (const result of articleResults) {
-    articlesBySlug.set(result.slug, result.articles);
-  }
-
-  return { categories, articlesBySlug };
+function Desk({
+  slug,
+  layout,
+  articles,
+}: {
+  slug: (typeof HOME_DESKS)[number];
+  layout: "mixed" | "grid" | "list";
+  articles: Article[];
+}) {
+  if (articles.length === 0) return null;
+  return (
+    <CategorySection
+      categorySlug={slug}
+      layout={layout}
+      initialArticles={articles}
+    />
+  );
 }
 
 const homeJsonLd = {
@@ -83,7 +95,19 @@ const homeJsonLd = {
 };
 
 export default async function Home() {
-  const { categories, articlesBySlug } = await prefetchHomeData();
+  const articlesBySlug = await loadDeskArticles();
+  const articles = (slug: (typeof HOME_DESKS)[number]) => articlesBySlug.get(slug) ?? [];
+  const hasLead = articles("national").length > 0 || articles("politics").length > 0;
+  const hasMiddle =
+    articles("business").length > 0 ||
+    articles("technology").length > 0 ||
+    articles("education").length > 0 ||
+    articles("health").length > 0;
+  const hasLower =
+    articles("sports").length > 0 ||
+    articles("culture-society").length > 0 ||
+    articles("op-ed").length > 0;
+  const hasWorld = articles("africa").length > 0 || articles("world").length > 0;
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-950">
@@ -95,6 +119,64 @@ export default async function Home() {
       <TrendingBar />
       <HeroSection />
 
+      <div className="px-4 sm:px-6 lg:px-8 sm:hidden">
+        <div className="max-w-[1400px] mx-auto">
+          <ResponsiveAdBanner
+            desktopSlot="homepage_banner"
+            mobileSlot="homepage_mobile"
+            className="py-3"
+          />
+        </div>
+      </div>
+
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6 lg:py-8">
+        {hasLead ? (
+          <div className="grid grid-cols-1 xl:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
+            <div className="xl:col-span-2 space-y-6 sm:space-y-8 lg:space-y-10">
+              <Desk slug="national" layout="mixed" articles={articles("national")} />
+              <Desk slug="politics" layout="mixed" articles={articles("politics")} />
+            </div>
+            <aside className="space-y-4 sm:space-y-6">
+              <div className="hidden sm:block">
+                <LiveAdBannerWrapper slot="homepage_sidebar" />
+              </div>
+              <LatestNewsSidebar />
+            </aside>
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <div className="hidden sm:block">
+              <LiveAdBannerWrapper slot="homepage_sidebar" />
+            </div>
+            <div className="lg:col-span-2">
+              <LatestNewsSidebar />
+            </div>
+          </div>
+        )}
+      </div>
+
+      {hasMiddle && (
+      <div className="bg-white dark:bg-gray-900 py-6 sm:py-8 lg:py-10">
+        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 space-y-6 sm:space-y-8 lg:space-y-10">
+          <Desk slug="business" layout="grid" articles={articles("business")} />
+          <Desk slug="technology" layout="grid" articles={articles("technology")} />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
+            <Desk slug="education" layout="list" articles={articles("education")} />
+            <Desk slug="health" layout="list" articles={articles("health")} />
+          </div>
+        </div>
+      </div>
+      )}
+
+      {hasLower && (
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 lg:py-10 space-y-6 sm:space-y-8 lg:space-y-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
+          <Desk slug="sports" layout="list" articles={articles("sports")} />
+          <Desk slug="culture-society" layout="list" articles={articles("culture-society")} />
+        </div>
+        <Desk slug="op-ed" layout="list" articles={articles("op-ed")} />
+      </div>
+
       <div className="px-4 sm:px-6 lg:px-8">
         <div className="max-w-[1400px] mx-auto">
           <ResponsiveAdBanner
@@ -105,106 +187,18 @@ export default async function Home() {
         </div>
       </div>
 
-      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6 lg:py-8">
-        <div className="grid grid-cols-1 xl:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
-          <div className="xl:col-span-2 space-y-6 sm:space-y-8 lg:space-y-10">
-            <CategorySection
-              categorySlug="national"
-              layout="mixed"
-              initialArticles={articlesBySlug.get("national") ?? []}
-              allCategories={categories}
-            />
-            <CategorySection
-              categorySlug="politics"
-              layout="mixed"
-              initialArticles={articlesBySlug.get("politics") ?? []}
-              allCategories={categories}
-            />
-            <CategorySection
-              categorySlug="business"
-              layout="grid"
-              initialArticles={articlesBySlug.get("business") ?? []}
-              allCategories={categories}
-            />
-          </div>
-
-          <aside className="space-y-4 sm:space-y-6 xl:space-y-6">
-            <div className="hidden sm:block">
-              <LiveAdBannerWrapper slot="homepage_sidebar" />
-            </div>
-            <div className="block sm:hidden">
-              <ResponsiveAdBanner desktopSlot="homepage_banner" mobileSlot="homepage_mobile" />
-            </div>
-            <LatestNewsSidebar />
-          </aside>
-        </div>
-      </div>
-
-      <div className="bg-white dark:bg-gray-900 py-6 sm:py-8 lg:py-10">
-        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 space-y-6 sm:space-y-8 lg:space-y-10">
-          <CategorySection
-            categorySlug="technology"
-            layout="grid"
-            initialArticles={articlesBySlug.get("technology") ?? []}
-            allCategories={categories}
-          />
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
-            <CategorySection
-              categorySlug="education"
-              layout="list"
-              initialArticles={articlesBySlug.get("education") ?? []}
-              allCategories={categories}
-            />
-            <CategorySection
-              categorySlug="health"
-              layout="list"
-              initialArticles={articlesBySlug.get("health") ?? []}
-              allCategories={categories}
-            />
-          </div>
-        </div>
-      </div>
-
-      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 lg:py-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
-          <CategorySection
-            categorySlug="sports"
-            layout="list"
-            initialArticles={articlesBySlug.get("sports") ?? []}
-            allCategories={categories}
-          />
-          <CategorySection
-            categorySlug="culture-society"
-            layout="list"
-            initialArticles={articlesBySlug.get("culture-society") ?? []}
-            allCategories={categories}
-          />
-        </div>
-      </div>
-
       <TourismSection />
 
       <div className="bg-white dark:bg-gray-900 py-6 sm:py-8 lg:py-10">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
-            <CategorySection
-              categorySlug="africa"
-              layout="list"
-              initialArticles={articlesBySlug.get("africa") ?? []}
-              allCategories={categories}
-            />
-            <CategorySection
-              categorySlug="world"
-              layout="list"
-              initialArticles={articlesBySlug.get("world") ?? []}
-              allCategories={categories}
-            />
+            <Desk slug="africa" layout="list" articles={articles("africa")} />
+            <Desk slug="world" layout="list" articles={articles("world")} />
           </div>
         </div>
       </div>
 
       <StoriesCTA />
-
       <FooterWrapper />
     </div>
   );

@@ -13,7 +13,7 @@ copy .env.example .env
 # Edit .env — set DJANGO_SECRET_KEY to a long random string
 
 python manage.py migrate
-python manage.py setup_categories          # 11 news categories
+# News desks are fixed in code. Do not add categories.
 python manage.py setup_ad_slots            # 10 ad slots
 python manage.py create_default_users --insecure  # dev only
 python manage.py runserver
@@ -117,7 +117,7 @@ All JSON responses use **camelCase** (`djangorestframework-camel-case`).
 | Command | Description |
 |---------|-------------|
 | `python manage.py migrate` | Apply all migrations |
-| `python manage.py setup_categories` | Create 11 default news categories |
+| News desks | Fixed in code: National, Politics, Business, Technology, Education, Health, Culture & Society, Sports, Op-Ed, Africa, World |
 | `python manage.py setup_ad_slots` | Create 8 ad slot positions |
 | `python manage.py create_default_users` | Create 5 default users with secure random passwords |
 | `python manage.py create_default_users --insecure` | Create users with simple passwords (dev only) |

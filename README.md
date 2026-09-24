@@ -52,7 +52,7 @@ python -m venv .venv
 
 pip install -r requirements.txt
 python manage.py migrate
-python manage.py setup_categories        # 11 default news categories
+# News desks are fixed in code: National through World.
 python manage.py setup_ad_slots          # 8 ad slot positions
 python manage.py create_default_users --insecure  # 5 default users (dev only)
 python manage.py runserver

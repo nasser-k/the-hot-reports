@@ -3,9 +3,9 @@ from django.contrib.auth.models import Group
 from django.db.models import Count
 from django.utils import timezone
 
+from news.categories import NEWS_CATEGORIES, category_by_slug
 from news.models import (
     Article,
-    Category,
     ContactMessage,
     NewsletterSubscriber,
     StorySeries,
@@ -228,7 +228,7 @@ class HotReportsAdminSite(AdminSite):
 
         stats = {
             "articles": Article.objects.count(),
-            "categories": Category.objects.count(),
+            "categories": len(NEWS_CATEGORIES),
             "tourism": TourismListing.objects.count(),
             "newsletter": NewsletterSubscriber.objects.count(),
             "contact": ContactMessage.objects.count(),
@@ -255,10 +255,19 @@ class HotReportsAdminSite(AdminSite):
             else 0,
         }
 
-        top_categories = (
-            Category.objects.annotate(article_count=Count("articles"))
-            .order_by("-article_count", "name")[:6]
-        )
+        top_categories = []
+        for row in (
+            Article.objects.values("category")
+            .annotate(article_count=Count("id"))
+            .order_by("-article_count")[:6]
+        ):
+            info = category_by_slug(row["category"])
+            top_categories.append(
+                {
+                    "name": info["name"] if info else row["category"],
+                    "article_count": row["article_count"],
+                }
+            )
         recent_articles = Article.objects.order_by("-published_at")[:8]
         recent_messages = ContactMessage.objects.order_by("-created_at")[:8]
 

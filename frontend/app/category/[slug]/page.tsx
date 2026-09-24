@@ -2,7 +2,8 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import Link from "next/link";
 import type { Article } from "@/data/data";
-import { getCategories, listArticles, getSiteSettingsWithFallback, isApiNotFound } from "@/lib/api";
+import { listArticles, getSiteSettingsWithFallback } from "@/lib/api";
+import { getNewsCategory, NEWS_CATEGORIES } from "@/lib/categories";
 import NavbarWrapper from "@/components/NavbarWrapper";
 import FooterWrapper from "@/components/FooterWrapper";
 import LiveAdBannerWrapper from "@/components/LiveAdBannerWrapper";
@@ -21,12 +22,10 @@ interface Props {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const [categories, settings] = await Promise.all([
-    getCategories().catch(() => []),
+  const [category, settings] = await Promise.all([
+    Promise.resolve(getNewsCategory(slug)),
     getSiteSettingsWithFallback(),
   ]);
-
-  const category = categories.find((c) => c.slug === slug);
 
   if (!category) {
     return {
@@ -71,14 +70,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function CategoryPage({ params, searchParams }: Props) {
   const { slug } = await params;
   const { page } = await searchParams;
-  let cats;
-  try {
-    cats = await getCategories();
-  } catch (err) {
-    if (isApiNotFound(err)) notFound();
-    throw err;
-  }
-  const cat = cats.find((c) => c.slug === slug);
+  const cat = getNewsCategory(slug);
   if (!cat) notFound();
 
   const articlesPerPage = 6;
@@ -142,7 +134,7 @@ export default async function CategoryPage({ params, searchParams }: Props) {
                   {cat.name}
                 </h1>
                 <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400 mt-0.5">
-                  {pageRes.count} article{pageRes.count !== 1 && "s"} - Latest news and updates
+                  Latest {cat.name} news from across Uganda.
                 </p>
               </div>
             </div>
@@ -176,7 +168,7 @@ export default async function CategoryPage({ params, searchParams }: Props) {
                   More Categories
                 </h3>
                 <div className="grid grid-cols-2 gap-1">
-                  {cats
+                  {NEWS_CATEGORIES
                     .filter((c) => c.slug !== slug)
                     .map((c) => (
                       <Link

@@ -9,7 +9,6 @@ Use this data to manually populate your Django backend admin panel.
 | Name | Slug | Color |
 |------|------|-------|
 | National | national | #A21A47 |
-| National | national | #A21A47 |
 | Politics | politics | #9333EA |
 | Business | business | #EA580C |
 | Technology | technology | #7C3AED |
@@ -1009,10 +1008,8 @@ Episode 1 of From Rocks to Roster:
 
 ## Usage Instructions
 
-### Creating Categories
-1. Go to Django Admin → Categories
-2. Create each category from the table above
-3. Note the exact slugs - articles reference these
+### News desks
+The eleven desks below are fixed in the site. Do not create extra categories. When you add an article, pick one of these slugs.
 
 ### Creating Articles
 1. Django Admin → Articles → Add
